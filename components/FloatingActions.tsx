@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 
 /* ─── SVG Icons ─────────────────────────────────────────────── */
 const WhatsAppIcon = ({ size = 22 }: { size?: number }) => (
@@ -93,32 +92,21 @@ export default function FloatingActions() {
                 <XIcon size={16} />
               </button>
             </div>
-            <div className="p-4 space-y-3">
+            <div className="p-4">
               <a
-                href="https://wa.me/919422296495?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Sitaram%20Hospital."
+                href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
                 target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 bg-green-50 hover:bg-green-100 rounded-xl transition-colors group"
+                className="flex items-center gap-3 p-4 bg-green-50 hover:bg-green-100 rounded-xl transition-colors group"
                 onClick={() => setOpen(null)}
               >
-                <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center text-white font-black text-base flex-shrink-0">R</div>
-                <div>
-                  <div className="font-bold text-[#111827] text-sm group-hover:text-[#25D366] transition-colors">Dr. Ravi Wankhedkar</div>
-                  <div className="text-[#6B7280] text-xs">+91 94222 96495</div>
+                <div className="w-11 h-11 bg-[#25D366] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                  <WhatsAppIcon size={22} />
                 </div>
-                <WhatsAppIcon size={18} />
-              </a>
-              <a
-                href="https://wa.me/918275008768?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Sitaram%20Hospital."
-                target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 bg-green-50 hover:bg-green-100 rounded-xl transition-colors group"
-                onClick={() => setOpen(null)}
-              >
-                <div className="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center text-white font-black text-base flex-shrink-0">M</div>
                 <div>
-                  <div className="font-bold text-[#111827] text-sm group-hover:text-[#25D366] transition-colors">Dr. Meena Wankhedkar</div>
-                  <div className="text-[#6B7280] text-xs">+91 82750 08768</div>
+                  <div className="font-bold text-[#111827] text-sm group-hover:text-[#25D366] transition-colors">Sitaram Hospital</div>
+                  <div className="text-[#25D366] font-bold text-base">+91 94212 79065</div>
+                  <div className="text-[#6B7280] text-xs mt-0.5">Tap to open WhatsApp chat</div>
                 </div>
-                <WhatsAppIcon size={18} />
               </a>
             </div>
           </div>
@@ -147,28 +135,20 @@ export default function FloatingActions() {
                 <XIcon size={16} />
               </button>
             </div>
-            <div className="p-3 space-y-1">
-              {[
-                { initial: "R", name: "Dr. Ravi Wankhedkar",  number: "94222 96495", tel: "9422296495",  color: "#C62828", bg: "bg-red-50 hover:bg-red-100" },
-                { initial: "M", name: "Dr. Meena Wankhedkar", number: "82750 08768", tel: "8275008768",  color: "#2E7D32", bg: "bg-green-50 hover:bg-green-100" },
-                { initial: "☎", name: "Hospital Landline",    number: "02562-235795", tel: "02562235795", color: "#1565C0", bg: "bg-blue-50 hover:bg-blue-100" },
-                { initial: "☎", name: "Alternate",            number: "9421279065",  tel: "9421279065",  color: "#7C3AED", bg: "bg-purple-50 hover:bg-purple-100" },
-              ].map(c => (
-                <a key={c.tel} href={`tel:${c.tel}`}
-                  className={`flex items-center gap-3 p-3 ${c.bg} rounded-xl transition-colors group`}
-                  onClick={() => setOpen(null)}
-                >
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-black flex-shrink-0"
-                    style={{ background: c.color }}>
-                    {c.initial}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-[#111827] text-xs truncate">{c.name}</div>
-                    <div className="font-bold text-sm" style={{ color: c.color }}>{c.number}</div>
-                  </div>
-                  <PhoneIcon size={14} />
-                </a>
-              ))}
+            <div className="p-4">
+              <a href="tel:9421279065"
+                className="flex items-center gap-3 p-4 bg-red-50 hover:bg-red-100 rounded-xl transition-colors group"
+                onClick={() => setOpen(null)}
+              >
+                <div className="w-11 h-11 bg-[#C62828] rounded-full flex items-center justify-center text-white flex-shrink-0">
+                  <PhoneIcon size={20} />
+                </div>
+                <div>
+                  <div className="font-bold text-[#111827] text-sm group-hover:text-[#C62828] transition-colors">Sitaram Hospital</div>
+                  <div className="text-[#C62828] font-bold text-lg">+91 94212 79065</div>
+                  <div className="text-[#6B7280] text-xs mt-0.5">Mon–Sat · 10AM–2PM &amp; 6PM–9PM</div>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -222,12 +202,12 @@ export default function FloatingActions() {
                 </div>
               </a>
               <div className="border-t border-gray-100 pt-1">
-                <Link href="/#appointment"
-                  className="w-full block text-center bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm py-2.5 rounded-xl transition-colors"
+                <a href="tel:9421279065"
+                  className="w-full flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm py-2.5 rounded-xl transition-colors"
                   onClick={() => setOpen(null)}
                 >
-                  Book an Appointment →
-                </Link>
+                  <PhoneIcon size={14} /> Call 9421279065
+                </a>
               </div>
             </div>
           </div>
@@ -244,25 +224,16 @@ export default function FloatingActions() {
 
       {/* ───── Mobile: bottom bar ───── */}
       <div className="fixed bottom-0 left-0 right-0 z-[60] md:hidden flex border-t border-gray-200 bg-white shadow-2xl">
-        <a href="https://wa.me/919422296495" target="_blank" rel="noopener noreferrer"
+        <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
+          target="_blank" rel="noopener noreferrer"
           className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#25D366] text-white active:bg-[#1da851]">
           <WhatsAppIcon size={20} />
           <span className="text-[9px] font-bold tracking-wide">WhatsApp</span>
         </a>
-        <a href="tel:9422296495"
+        <a href="tel:9421279065"
           className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#C62828] text-white active:bg-[#8E0000]">
           <PhoneIcon size={20} />
-          <span className="text-[9px] font-bold tracking-wide">Dr. Ravi</span>
-        </a>
-        <a href="tel:8275008768"
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#2E7D32] text-white active:bg-[#1B5E20]">
-          <PhoneIcon size={20} />
-          <span className="text-[9px] font-bold tracking-wide">Dr. Meena</span>
-        </a>
-        <a href="/#appointment"
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#1565C0] text-white active:bg-[#0D47A1]">
-          <CalIcon size={20} />
-          <span className="text-[9px] font-bold tracking-wide">Appointment</span>
+          <span className="text-[9px] font-bold tracking-wide">Call Now</span>
         </a>
       </div>
     </>

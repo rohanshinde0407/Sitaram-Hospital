@@ -1,188 +1,195 @@
 "use client";
 
-import Image from "next/image";
-import { Phone, ArrowRight, CheckCircle2, Clock, MapPin, Shield } from "lucide-react";
+import { Phone, ArrowRight, Clock, MapPin, Zap } from "lucide-react";
 
 const pills = [
-  { label: "Piles", color: "#C62828", bg: "#FFF5F5" },
-  { label: "Fissure", color: "#E65100", bg: "#FFF8F4" },
-  { label: "Fistula", color: "#2E7D32", bg: "#F0FDF4" },
-  { label: "Pilonidal Sinus", color: "#1565C0", bg: "#EFF6FF" },
+  { label: "Piles",           color: "#FF8A80", bg: "rgba(255,138,128,0.12)", border: "rgba(255,138,128,0.30)" },
+  { label: "Fissure",         color: "#FFAB76", bg: "rgba(255,171,118,0.12)", border: "rgba(255,171,118,0.30)" },
+  { label: "Fistula",         color: "#69F0AE", bg: "rgba(105,240,174,0.10)", border: "rgba(105,240,174,0.28)" },
+  { label: "Pilonidal Sinus", color: "#82B1FF", bg: "rgba(130,177,255,0.10)", border: "rgba(130,177,255,0.28)" },
 ];
 
 const checks = [
-  "No Cuts · No Stitches",
-  "Day Care – Home Same Day",
-  "Painless & Scarless",
-  "3–5 Day Recovery",
+  { text: "No Cuts · No Stitches",    icon: "✂️" },
+  { text: "Day Care – Home Same Day", icon: "🏠" },
+  { text: "Painless & Scarless",      icon: "😌" },
+  { text: "3–5 Day Recovery",         icon: "⚡" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden flex flex-col" style={{ background: "#0D1B2A" }}>
 
-      {/* Very subtle top gradient wash */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFF5F5] via-white to-[#EFF6FF] pointer-events-none" />
+      {/* ── Main content — LEFT aligned ── */}
+      <div className="relative flex-1 max-w-7xl mx-auto px-4 md:px-10 py-10 w-full flex flex-col justify-center">
+        <div className="max-w-3xl space-y-5">
 
-      {/* Decorative circles */}
-      <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-red-50 opacity-60 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-blue-50 opacity-40 pointer-events-none" />
+          {/* Eyebrow */}
+          <div className="anim-up inline-flex items-center gap-2">
+            <Zap size={12} color="#DFF1F1" fill="#DFF1F1" />
+            <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#DFF1F1" }}>
+              One-Stop Advanced Laser Proctology Centre
+            </span>
+          </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 pt-12 pb-0">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* ═══ BRAND CARD — title only ═══ */}
+          <div
+            className="anim-up d1 relative rounded-3xl p-7 md:p-10 overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, rgba(223,241,241,0.13) 0%, rgba(195,228,228,0.09) 45%, rgba(223,241,241,0.12) 100%)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              border: "1.5px solid rgba(223,241,241,0.20)",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(223,241,241,0.12)",
+            }}
+          >
+            {/* Top shimmer */}
+            <div className="absolute inset-x-0 top-0 h-px"
+              style={{ background: "linear-gradient(90deg, transparent, rgba(223,241,241,0.35), transparent)" }} />
 
-          {/* ── LEFT COLUMN ── */}
-          <div className="pb-12 lg:pb-20">
+            {/* Left red accent bar */}
+            <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-r-full"
+              style={{ background: "linear-gradient(to bottom, transparent, #C62828 30%, #C62828 70%, transparent)" }} />
 
-            {/* Eyebrow */}
-            <div className="anim-up inline-flex items-center gap-2 bg-red-50 border border-red-100 rounded-full px-4 py-1.5 mb-5">
-              <Shield size={13} className="text-[#C62828]" />
-              <span className="text-[#C62828] text-xs font-bold uppercase tracking-widest">
-                One-Stop Advanced Laser Proctology Centre
-              </span>
+            {/* Dot grid */}
+            <div className="absolute right-5 top-5 opacity-15 pointer-events-none grid grid-cols-4 gap-1.5">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: "#DFF1F1" }} />
+              ))}
             </div>
 
-            {/* ZEN brand headline */}
-            <div className="anim-up d1 mb-2">
-              <div className="flex items-end flex-wrap gap-x-2 gap-y-0">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pl-4">
+              {/* ZEN */}
+              <div>
                 <span
-                  className="font-black leading-none tracking-tight"
-                  style={{ fontSize: "clamp(3.2rem,8vw,5.5rem)", color: "#C62828" }}
+                  className="font-black leading-none tracking-tighter select-none block"
+                  style={{
+                    fontSize: "clamp(4.5rem,11vw,8rem)",
+                    background: "linear-gradient(135deg, #E53935 0%, #C62828 35%, #FF5252 65%, #E53935 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    filter: "drop-shadow(0 0 28px rgba(229,57,53,0.45))",
+                  }}
                 >
                   ZEN
                 </span>
-                <div className="mb-1.5">
-                  <div className="text-[#111827] font-black uppercase tracking-[.18em] text-base md:text-xl leading-tight">
-                    Laser Procto Care
-                  </div>
-                  <div className="h-[3px] mt-1 rounded-full bg-gradient-to-r from-[#C62828] to-[#2E7D32]" />
+                <div className="h-[3px] w-28 rounded-full mb-2"
+                  style={{ background: "linear-gradient(90deg, #C62828, #2E7D32, #1565C0)" }} />
+                <div className="font-black uppercase tracking-[.20em] leading-tight"
+                  style={{ fontSize: "clamp(1rem,2.6vw,1.65rem)", color: "#DFF1F1" }}>
+                  Laser Procto Care
                 </div>
               </div>
-            </div>
 
-            {/* Tagline */}
-            <p className="anim-up d2 text-[#C62828] font-semibold italic text-base md:text-lg mb-1">
-              "Number one clinic for your number two problems!"
-            </p>
-
-            <p className="anim-up d2 text-[#374151] text-base md:text-lg leading-relaxed mb-6 max-w-lg">
-              Advanced Comprehensive Treatment for <strong>Piles, Fissure &amp; Fistula.</strong><br />
-              Relief through Precision and Expertise with Modern Scientific Care.
-            </p>
-
-            {/* Condition pills */}
-            <div className="anim-up d3 flex flex-wrap gap-2 mb-6">
-              {pills.map((p) => (
-                <span
-                  key={p.label}
-                  className="text-xs font-bold px-3.5 py-1.5 rounded-full border"
-                  style={{ color: p.color, background: p.bg, borderColor: `${p.color}30` }}
-                >
-                  {p.label}
-                </span>
-              ))}
-            </div>
-
-            {/* Checkmarks */}
-            <ul className="anim-up d3 grid grid-cols-2 gap-x-4 gap-y-2 mb-8">
-              {checks.map((c) => (
-                <li key={c} className="flex items-center gap-2 text-sm text-[#374151]">
-                  <CheckCircle2 size={15} className="text-[#2E7D32] flex-shrink-0" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTAs */}
-            <div className="anim-up d4 flex flex-wrap gap-3 mb-8">
-              <a href="#appointment" className="btn btn-red">
-                Book Appointment <ArrowRight size={15} />
-              </a>
-              <a href="tel:9422296495" className="btn btn-green">
-                <Phone size={15} /> Call Dr. Ravi
-              </a>
-              <a href="tel:8275008768" className="btn btn-outline-red">
-                <Phone size={15} /> Dr. Meena
-              </a>
-            </div>
-
-            {/* OPD badge */}
-            <div className="anim-up d5 inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl px-5 py-3 shadow-sm">
-              <Clock size={16} className="text-[#C62828]" />
-              <div>
-                <div className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">OPD Hours</div>
-                <div className="text-sm font-bold text-[#111827]">10AM–2PM &amp; 6PM–9PM</div>
+              {/* Tagline */}
+              <div className="rounded-xl px-4 py-3"
+                style={{ background: "rgba(198,40,40,0.14)", border: "1px solid rgba(198,40,40,0.28)", maxWidth: 290 }}>
+                <p className="font-bold italic text-sm leading-snug" style={{ color: "#FFCDD2" }}>
+                  &ldquo;Number one clinic for your number two problems!&rdquo;
+                </p>
               </div>
-              <div className="w-px h-8 bg-gray-200" />
-              <MapPin size={16} className="text-[#2E7D32]" />
-              <div>
-                <div className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Location</div>
-                <div className="text-sm font-bold text-[#111827]">Dhule, Maharashtra</div>
+            </div>
+
+            {/* Corner badge */}
+            <div className="absolute bottom-0 right-0 rounded-tl-2xl rounded-br-3xl px-3 py-1.5"
+              style={{ background: "rgba(0,137,123,0.18)", border: "1px solid rgba(0,137,123,0.22)" }}>
+              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: "#80CBC4" }}>
+                Advanced Laser Centre · Sitaram Hospital
+              </span>
+            </div>
+          </div>
+          {/* ════════════════════════ */}
+
+          {/* Description — plain */}
+          <p className="anim-up d2 text-sm md:text-base leading-relaxed max-w-xl" style={{ color: "#9CA3AF" }}>
+            Advanced Comprehensive Treatment for{" "}
+            <strong style={{ color: "#E5E7EB" }}>Piles, Fissure &amp; Fistula.</strong>{" "}
+            Painless, scarless, day-care procedures with modern laser technology.
+          </p>
+
+          {/* Condition pills — plain */}
+          <div className="anim-up d2 flex flex-wrap gap-2">
+            {pills.map((p) => (
+              <span key={p.label} className="text-xs font-bold px-3 py-1 rounded-full border"
+                style={{ color: p.color, background: p.bg, borderColor: p.border }}>
+                {p.label}
+              </span>
+            ))}
+          </div>
+
+          {/* Check list — plain inline */}
+          <ul className="anim-up d3 flex flex-wrap gap-x-5 gap-y-1.5">
+            {checks.map((c) => (
+              <li key={c.text} className="flex items-center gap-1.5">
+                <span className="text-sm">{c.icon}</span>
+                <span className="text-xs font-medium" style={{ color: "#D1D5DB" }}>{c.text}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA buttons */}
+          <div className="anim-up d4 flex flex-wrap gap-3">
+            <a href="tel:9421279065" className="btn btn-red"><Phone size={14} /> Call Now</a>
+            <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital." target="_blank" rel="noopener noreferrer" className="btn btn-green">
+              <ArrowRight size={14} /> WhatsApp Us
+            </a>
+          </div>
+
+          {/* Address — highlighted */}
+          <div className="anim-up d5 inline-flex items-start gap-3 rounded-2xl px-5 py-4"
+            style={{
+              background: "linear-gradient(135deg, rgba(223,241,241,0.10) 0%, rgba(223,241,241,0.06) 100%)",
+              border: "1.5px solid rgba(223,241,241,0.22)",
+            }}>
+            <div className="mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
+              style={{ background: "rgba(76,175,80,0.18)", border: "1px solid rgba(76,175,80,0.30)" }}>
+              <MapPin size={16} color="#4CAF50" />
+            </div>
+            <div>
+              <div className="text-[10px] font-black uppercase tracking-widest mb-0.5" style={{ color: "#4CAF50" }}>
+                Our Location
+              </div>
+              <div className="font-bold text-sm leading-snug" style={{ color: "#F3F4F6" }}>
+                Bhangya Maruti Chowk, Lane No. 6
+              </div>
+              <div className="font-semibold text-sm" style={{ color: "#DFF1F1" }}>
+                Dhule – 424001, Maharashtra
               </div>
             </div>
           </div>
 
-          {/* ── RIGHT COLUMN – Hero Image ── */}
-          <div className="relative flex items-end justify-center pb-0 lg:pb-0 anim-scale d2">
-
-            {/* Main image frame */}
-            <div className="relative w-full max-w-md mx-auto">
-              {/* Glow ring */}
-              <div className="absolute inset-4 rounded-3xl bg-gradient-to-br from-blue-100 to-red-50 blur-2xl opacity-70" />
-
-              {/* Image */}
-              <div className="relative rounded-3xl overflow-hidden img-glow-blue border border-white/60">
-                <Image
-                  src="/img/laseev-machine.jpg"
-                  alt="LASEEV Advanced Laser System"
-                  width={540}
-                  height={480}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                {/* Overlay caption bar */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 py-4">
-                  <div className="text-white font-bold text-sm">LASEEV Advanced Laser System</div>
-                  <div className="text-white/70 text-xs">State-of-the-art laser technology for proctology</div>
-                </div>
-              </div>
-
-              {/* Floating badge – Day Care */}
-              <div className="float-badge -top-4 -left-4 text-[#2E7D32] border border-green-100">
-                <CheckCircle2 size={16} className="text-[#2E7D32]" />
-                Day Care Procedure
-              </div>
-
-              {/* Floating badge – Painless */}
-              <div className="float-badge -bottom-4 -right-4 text-[#C62828] border border-red-100" style={{ animationDelay: "1.2s" }}>
-                😌 Painless Treatment
-              </div>
-            </div>
+          {/* OPD hours — inline below address */}
+          <div className="anim-up d5 flex items-center gap-2 mt-1">
+            <Clock size={13} color="#EF5350" />
+            <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>
+              OPD: Mon–Sat &nbsp;·&nbsp; 10AM–2PM &amp; 6PM–9PM
+            </span>
           </div>
+
         </div>
       </div>
 
       {/* ── Bottom quick-access bar ── */}
-      <div className="relative border-t border-gray-100 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+      <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(0,0,0,0.25)" }}>
+        <div className="max-w-7xl mx-auto px-4 md:px-10">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { icon: "📅", label: "Book Appointment", sub: "Online & Phone", href: "#appointment" },
-              { icon: "🩺", label: "Our Doctors", sub: "2 Expert Proctologists", href: "#doctors" },
-              { icon: "🔬", label: "Treatments", sub: "8 Advanced Procedures", href: "#treatments" },
-              { icon: "📞", label: "02562-235795", sub: "Hospital Helpline", href: "tel:02562235795" },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group flex items-center gap-3 px-4 py-4 hover:bg-red-50 transition-colors"
+              { icon: "📞", label: "9421279065",        sub: "Call Us Now",             href: "tel:9421279065" },
+              { icon: "🩺", label: "Our Doctors",       sub: "2 Expert Proctologists",  href: "#doctors" },
+              { icon: "🔬", label: "Treatments",        sub: "8 Advanced Procedures",   href: "#treatments" },
+              { icon: "📍", label: "Find Us",           sub: "Dhule, Maharashtra",      href: "#contact" },
+            ].map((item, idx) => (
+              <a key={item.label} href={item.href}
+                className="group flex items-center gap-3 px-4 py-3 transition-colors"
+                style={{ borderRight: idx < 3 ? "1px solid rgba(255,255,255,0.07)" : "none" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(198,40,40,0.08)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
-                <span className="text-xl flex-shrink-0">{item.icon}</span>
+                <span className="text-lg flex-shrink-0">{item.icon}</span>
                 <div>
-                  <div className="text-xs md:text-sm font-bold text-[#111827] group-hover:text-[#C62828] transition-colors leading-tight">
-                    {item.label}
-                  </div>
-                  <div className="text-[10px] text-gray-400">{item.sub}</div>
+                  <div className="text-xs md:text-sm font-bold leading-tight" style={{ color: "#E5E7EB" }}>{item.label}</div>
+                  <div className="text-[10px]" style={{ color: "#6B7280" }}>{item.sub}</div>
                 </div>
               </a>
             ))}

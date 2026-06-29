@@ -32,7 +32,7 @@ const treatments = [
 
 const aboutItems = [
   { icon: Info,         label: "About the Clinic",  desc: "Our story, mission & technology",    href: "/about" },
-  { icon: Users,        label: "Our Doctors",        desc: "Dr. Ravi & Dr. Meena Wankhedkar",   href: "/about#ravi" },
+  { icon: Users,        label: "Our Doctors",        desc: "Dr. Ravindra & Dr. Meena Wankhedkar",   href: "/about#ravi" },
   { icon: ImageIcon,    label: "Photo Gallery",      desc: "Equipment & medical illustrations",  href: "/gallery" },
   { icon: CalendarCheck,label: "Book Appointment",  desc: "Schedule your consultation today",    href: "/#appointment" },
 ];
@@ -72,7 +72,7 @@ export default function Header() {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <a href="tel:9422296495" className="hover:text-white transition-colors font-semibold">Dr. Ravi: 94222 96495</a>
+            <a href="tel:9422296495" className="hover:text-white transition-colors font-semibold">Dr. Ravindra: 94222 96495</a>
             <span className="opacity-20">|</span>
             <a href="tel:8275008768" className="hover:text-white transition-colors font-semibold">Dr. Meena: 82750 08768</a>
           </div>
@@ -339,7 +339,7 @@ export default function Header() {
                   Book Appointment
                 </a>
                 <a href="tel:9422296495" className="btn btn-green w-full justify-center">
-                  <Phone size={15} />Dr. Ravi: 94222 96495
+                  <Phone size={15} />Dr. Ravindra: 94222 96495
                 </a>
                 <a href="tel:8275008768" className="btn btn-outline-red w-full justify-center">
                   <Phone size={15} />Dr. Meena: 82750 08768

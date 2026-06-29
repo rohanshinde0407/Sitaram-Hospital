@@ -24,7 +24,7 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#about" },
   { label: "Our Doctors", href: "/#doctors" },
-  { label: "Book Appointment", href: "/#appointment" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/#contact" },
 ];
 
@@ -60,14 +60,15 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <a href="/#appointment"
+              <a href="tel:9421279065"
                 className="flex items-center justify-center gap-2 bg-white text-[#C62828] font-bold px-6 py-3.5 rounded-xl hover:bg-red-50 transition-colors text-sm shadow-lg">
-                Book Free Consultation →
-              </a>
-              <a href="tel:9422296495"
-                className="flex items-center justify-center gap-2 bg-white/15 border border-white/30 hover:bg-white/25 text-white px-6 py-3.5 rounded-xl font-semibold text-sm transition-colors">
                 <Phone size={15} />
-                94222 96495
+                Call 9421279065
+              </a>
+              <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-white/15 border border-white/30 hover:bg-white/25 text-white px-6 py-3.5 rounded-xl font-semibold text-sm transition-colors">
+                WhatsApp Us →
               </a>
             </div>
           </div>
@@ -200,7 +201,7 @@ export default function Footer() {
                 </h4>
                 <div className="space-y-4">
                   <div className="bg-white/5 rounded-xl p-3.5 border border-white/8">
-                    <div className="text-[#EF5350] text-xs font-bold mb-1">Dr. Ravi Wankhedkar</div>
+                    <div className="text-[#EF5350] text-xs font-bold mb-1">Dr. Ravindra Wankhedkar</div>
                     <div className="text-[9px] text-white/40 mb-1.5">Senior Laser Proctologist</div>
                     <a href="tel:9422296495" className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors">
                       <Phone size={12} className="text-[#EF5350]" />

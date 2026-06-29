@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   title: "Zen Laser Procto Care – Advanced Treatment for Piles, Fissure & Fistula | Dhule",
   description:
-    "Zen Laser Procto Care at Sitaram Hospital, Dhule – A One-Stop Advanced Laser Centre for Piles, Fissure & Fistula. Painless, Scarless, Quick Recovery. Day Care Procedures. Dr. Ravi Wankhedkar.",
-  keywords: "piles treatment dhule, fissure laser surgery, fistula laser treatment, zen laser procto care, proctology dhule, laser piles surgery, ano-rectal diseases, Dr Ravi Wankhedkar",
+    "Zen Laser Procto Care at Sitaram Hospital, Dhule – A One-Stop Advanced Laser Centre for Piles, Fissure & Fistula. Painless, Scarless, Quick Recovery. Day Care Procedures. Dr. Ravindra Wankhedkar.",
+  keywords: "piles treatment dhule, fissure laser surgery, fistula laser treatment, zen laser procto care, proctology dhule, laser piles surgery, ano-rectal diseases, Dr Ravindra Wankhedkar",
 };
 
 export default function RootLayout({

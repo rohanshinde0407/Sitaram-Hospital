@@ -69,7 +69,7 @@ export default function LaserBenefits() {
               <div className="text-2xl mb-2">🏆</div>
               <h3 className="font-bold text-lg mb-2">Why Patients Choose Laser</h3>
               <p className="text-white/80 text-sm leading-relaxed mb-4">
-                Dr. Ravi Wankhedkar has acquired advanced expertise through specialized training in
+                Dr. Ravindra Wankhedkar has acquired advanced expertise through specialized training in
                 Coloproctology and Laser treatment in India and abroad — including advanced training
                 in Laser Surgery for Proctology, Germany.
               </p>

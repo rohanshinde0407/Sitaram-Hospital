@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 const doctors = [
   {
     name: "Dr. Ravindra S. Wankhedkar",
-    callName: "Dr. Ravi Wankhedkar",
+    callName: "Dr. Ravindra Wankhedkar",
     phone: "9422296495",
     initials: "RW",
     color: "#C62828",
@@ -91,14 +91,7 @@ export default function Doctors() {
                 <div className="min-w-0">
                   <h3 className="font-black text-[#111827] text-lg leading-tight">{doc.name}</h3>
                   <p className="text-sm font-medium mt-0.5 mb-2" style={{ color: doc.color }}>{doc.role}</p>
-                  <a
-                    href={`tel:${doc.phone}`}
-                    className="inline-flex items-center gap-1.5 text-sm font-bold hover:opacity-80 transition-opacity"
-                    style={{ color: doc.color }}
-                  >
-                    <Phone size={13} />
-                    {doc.phone.replace(/(\d{5})(\d{5})/, "$1 $2")}
-                  </a>
+                  <p className="text-sm font-medium text-[#6B7280]">{doc.role}</p>
                 </div>
               </div>
 
@@ -180,11 +173,8 @@ export default function Doctors() {
             <div className="text-red-400 text-sm font-semibold mt-1">⚠ Sunday Closed</div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-            <a href="tel:9422296495" className="btn btn-red">
-              <Phone size={15} /> Dr. Ravi: 94222 96495
-            </a>
-            <a href="tel:8275008768" className="btn btn-green">
-              <Phone size={15} /> Dr. Meena: 82750 08768
+            <a href="tel:9421279065" className="btn btn-red">
+              <Phone size={15} /> Call Now: 9421279065
             </a>
           </div>
         </div>

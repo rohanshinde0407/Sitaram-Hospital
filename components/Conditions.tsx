@@ -38,7 +38,55 @@ const conditions = [
     imgAlt: "Fistula anatomy diagram showing A B C D tracts",
     desc: "An abnormal tunnel connecting the anal canal to the skin outside, with persistent pus discharge.",
     symptoms: ["Pus or blood discharge", "Pain and swelling around anus", "Recurrent abscesses", "Foul-smelling drainage"],
-    treatment: "VAAFT · FILAC · Laser Fistulotomy",
+    treatment: "VAAFT · FiLaC · Laser Fistulotomy",
+  },
+  {
+    id: "pilonidal-sinus",
+    label: "Pilonidal Sinus",
+    color: "#1565C0",
+    bg: "#EFF6FF",
+    border: "#BFDBFE",
+    img: "/img/laser-treatment-overview.jpg",
+    imgAlt: "Laser treatment for pilonidal sinus",
+    desc: "A small cyst or abscess near the tailbone (coccyx) at the top of the buttocks cleft, often containing hair and skin debris, causing recurrent infection and discharge.",
+    symptoms: ["Pain and swelling near tailbone", "Pus or blood discharge", "Foul odour from the sinus", "Recurrent infection & abscess"],
+    treatment: "Laser Pilonidal Sinus Excision · Pit Picking · Sinusectomy",
+  },
+  {
+    id: "perineal-tear",
+    label: "Perineal Tear",
+    color: "#7B1FA2",
+    bg: "#FAF5FF",
+    border: "#E9D5FF",
+    img: "/img/piles-illustration.jpg",
+    imgAlt: "Perineal region anatomy",
+    desc: "A tear in the perineum — the tissue between the vaginal opening and the anus — most commonly occurring after childbirth or due to trauma, causing pain and functional difficulty.",
+    symptoms: ["Perineal pain and tenderness", "Difficulty sitting or walking", "Bleeding or wound discharge", "Bowel or urinary incontinence"],
+    treatment: "Perineal Repair · Sphincter Reconstruction · Laser-Assisted Wound Healing",
+  },
+  {
+    id: "recto-vaginal-fistula",
+    label: "Recto-Vaginal Fistula",
+    color: "#00695C",
+    bg: "#F0FDFA",
+    border: "#99F6E4",
+    img: "/img/fistula-anatomy.jpg",
+    imgAlt: "Recto-vaginal fistula diagram",
+    desc: "An abnormal opening or tunnel between the rectum and the vagina, allowing gas and faecal matter to pass through the vagina, causing significant distress and hygiene concerns.",
+    symptoms: ["Passage of gas or stool through vagina", "Foul-smelling vaginal discharge", "Recurrent vaginal infections", "Pain and discomfort in pelvic area"],
+    treatment: "Fistula Flap Repair · Sphincteroplasty · Laser-Assisted Fistula Closure",
+  },
+  {
+    id: "anal-stenosis",
+    label: "Anal Stenosis",
+    color: "#B45309",
+    bg: "#FFFBEB",
+    border: "#FDE68A",
+    img: "/img/hemorrhoid-anatomy.jpg",
+    imgAlt: "Anal canal anatomy",
+    desc: "Abnormal narrowing of the anal canal that makes passing stools difficult and painful. Can result from prior surgery, chronic inflammation, or scarring.",
+    symptoms: ["Difficulty passing stools", "Severe pain during defecation", "Narrow or ribbon-like stool", "Bleeding and straining"],
+    treatment: "Anal Dilation · Anoplasty · Laser Anal Sphincteroplasty",
   },
 ];
 
@@ -61,19 +109,19 @@ export default function Conditions() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-1 mb-10 bg-gray-50 border border-gray-200 rounded-2xl p-1.5 max-w-lg mx-auto">
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
           {conditions.map((cond, i) => (
             <button
               key={cond.id}
               onClick={() => setActive(i)}
-              className={`flex-1 py-2.5 px-3 rounded-xl text-sm font-bold transition-all duration-200 ${
+              className="py-2 px-4 rounded-full text-xs font-bold transition-all duration-200 border"
+              style={
                 active === i
-                  ? "bg-white shadow-sm"
-                  : "text-[#6B7280] hover:text-[#374151]"
-              }`}
-              style={active === i ? { color: cond.color } : {}}
+                  ? { color: cond.color, background: cond.bg, borderColor: cond.border, boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }
+                  : { color: "#6B7280", background: "#F9FAFB", borderColor: "#E5E7EB" }
+              }
             >
-              {cond.label.split(" ")[0]}
+              {cond.label}
             </button>
           ))}
         </div>
