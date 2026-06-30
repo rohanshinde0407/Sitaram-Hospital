@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const treatments = [
   {
@@ -98,15 +97,14 @@ export default function Treatments() {
               key={t.name}
               className="card group overflow-hidden"
             >
-              {/* Equipment photo */}
-              <div className="relative h-48 overflow-hidden bg-gray-50">
-                <Image
-                  src={t.img}
-                  alt={t.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width:640px)100vw,(max-width:1024px)50vw,25vw"
-                />
+              {/* Equipment photo placeholder */}
+              <div className="relative h-48 overflow-hidden flex flex-col items-center justify-center gap-2" style={{ background: t.bg }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${t.color}18` }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={t.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+                <div className="text-[10px] font-semibold" style={{ color: `${t.color}99` }}>Image coming soon</div>
                 {/* Short name badge */}
                 <div
                   className="absolute top-3 right-3 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"

@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description:
     "Zen Laser Procto Care at Sitaram Hospital, Dhule – A One-Stop Advanced Laser Centre for Piles, Fissure & Fistula. Painless, Scarless, Quick Recovery. Day Care Procedures. Dr. Ravindra Wankhedkar.",
   keywords: "piles treatment dhule, fissure laser surgery, fistula laser treatment, zen laser procto care, proctology dhule, laser piles surgery, ano-rectal diseases, Dr Ravindra Wankhedkar",
+  icons: {
+    icon: "/fav.png",
+    shortcut: "/fav.png",
+    apple: "/fav.png",
+  },
 };
 
 export default function RootLayout({

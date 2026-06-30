@@ -222,18 +222,24 @@ export default function FloatingActions() {
         </div>
       </div>
 
-      {/* ───── Mobile: bottom bar ───── */}
-      <div className="fixed bottom-0 left-0 right-0 z-[60] md:hidden flex border-t border-gray-200 bg-white shadow-2xl">
-        <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
+      {/* ───── Mobile: small floating icons ───── */}
+      <div className="fixed bottom-6 right-3 z-[60] md:hidden flex flex-col gap-2.5">
+        <a
+          href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
           target="_blank" rel="noopener noreferrer"
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#25D366] text-white active:bg-[#1da851]">
-          <WhatsAppIcon size={20} />
-          <span className="text-[9px] font-bold tracking-wide">WhatsApp</span>
+          className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform"
+          style={{ background: "rgba(37,211,102,0.82)", backdropFilter: "blur(8px)" }}
+          aria-label="WhatsApp"
+        >
+          <WhatsAppIcon size={18} />
         </a>
-        <a href="tel:9421279065"
-          className="flex-1 flex flex-col items-center justify-center gap-1 py-3 bg-[#C62828] text-white active:bg-[#8E0000]">
-          <PhoneIcon size={20} />
-          <span className="text-[9px] font-bold tracking-wide">Call Now</span>
+        <a
+          href="tel:9421279065"
+          className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform"
+          style={{ background: "rgba(198,40,40,0.82)", backdropFilter: "blur(8px)" }}
+          aria-label="Call"
+        >
+          <PhoneIcon size={17} />
         </a>
       </div>
     </>

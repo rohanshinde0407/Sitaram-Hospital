@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 const stats = [
@@ -21,7 +20,7 @@ export default function About() {
   return (
     <section id="about" className="py-16 md:py-24 bg-[#F8FAFB]">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 items-start">
 
           {/* LEFT – text */}
           <div>
@@ -66,24 +65,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* RIGHT – image + hospital info */}
+          {/* RIGHT – hospital info */}
           <div className="space-y-5">
-            {/* Overview image */}
-            <div className="relative rounded-3xl overflow-hidden img-glow-red border border-red-50">
-              <Image
-                src="/img/laser-treatment-overview.jpg"
-                alt="Advanced Laser Proctology Treatment Overview"
-                width={600}
-                height={420}
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <div className="text-lg font-bold">Advanced Laser Proctology Treatment</div>
-                  <div className="text-sm text-white/75">Fistula · Hemorrhoids · Fissure · Pilonidal Sinus</div>
-                </div>
-              </div>
-            </div>
 
             {/* Sitaram hospital card */}
             <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex gap-4 items-start">
@@ -98,6 +81,7 @@ export default function About() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

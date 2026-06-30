@@ -1,14 +1,15 @@
 import { Phone } from "lucide-react";
+import Image from "next/image";
 
 const doctors = [
   {
     name: "Dr. Ravindra S. Wankhedkar",
     callName: "Dr. Ravindra Wankhedkar",
-    phone: "9422296495",
-    initials: "RW",
+    photo: "/img/img1/Dr.%20Ravindra.jpg",
     color: "#C62828",
     gradFrom: "#C62828",
     gradTo: "#8E0000",
+    badge: "MS · Laser Proctologist",
     role: "Senior Laser Proctologist & Colorectal Surgeon",
     qualifications: [
       "M.B.B.S. – B.J. Medical College, Pune",
@@ -36,11 +37,11 @@ const doctors = [
   {
     name: "Dr. Meena R. Wankhedkar",
     callName: "Dr. Meena Wankhedkar",
-    phone: "8275008768",
-    initials: "MW",
+    photo: "/img/img1/Dr.%20Meena.jpg",
     color: "#2E7D32",
     gradFrom: "#2E7D32",
     gradTo: "#1B5E20",
+    badge: "MBBS · Ano-Rectal Specialist",
     role: "Proctologist & Ano-Rectal Specialist",
     qualifications: [
       "M.B.B.S. – Lokmanya Tilak Municipal Medical College, Mumbai",
@@ -76,32 +77,52 @@ export default function Doctors() {
           {doctors.map((doc) => (
             <div key={doc.name} className="card overflow-hidden">
 
-              {/* Header gradient band */}
+              {/* ── Header: passport photo + name ── */}
               <div
-                className="relative px-7 py-7 flex items-center gap-5"
-                style={{ background: `linear-gradient(135deg, ${doc.gradFrom}15, ${doc.gradTo}08)` }}
+                className="px-6 py-5 flex items-center gap-5"
+                style={{ background: `linear-gradient(135deg, ${doc.gradFrom}12, ${doc.gradTo}06)` }}
               >
-                {/* Large avatar */}
+                {/* Passport-size photo: w-[96px] h-[124px] ≈ 4:5 portrait */}
                 <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-2xl font-black flex-shrink-0 shadow-lg"
-                  style={{ background: `linear-gradient(135deg, ${doc.gradFrom}, ${doc.gradTo})` }}
+                  className="relative flex-shrink-0 rounded-xl overflow-hidden shadow-md"
+                  style={{
+                    width: 96,
+                    height: 124,
+                    border: `3px solid ${doc.color}`,
+                  }}
                 >
-                  {doc.initials}
+                  <Image
+                    src={doc.photo}
+                    alt={doc.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="96px"
+                    priority
+                  />
                 </div>
+
+                {/* Name + role */}
                 <div className="min-w-0">
+                  <span
+                    className="inline-block text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full mb-2"
+                    style={{ background: `${doc.color}15`, color: doc.color }}
+                  >
+                    {doc.badge}
+                  </span>
                   <h3 className="font-black text-[#111827] text-lg leading-tight">{doc.name}</h3>
-                  <p className="text-sm font-medium mt-0.5 mb-2" style={{ color: doc.color }}>{doc.role}</p>
-                  <p className="text-sm font-medium text-[#6B7280]">{doc.role}</p>
+                  <p className="text-sm font-medium mt-1 leading-snug" style={{ color: doc.color }}>{doc.role}</p>
                 </div>
               </div>
 
-              <div className="px-7 py-6 space-y-5">
+              {/* Divider */}
+              <div className="h-px mx-6" style={{ background: `${doc.color}20` }} />
+
+              {/* ── Credentials ── */}
+              <div className="px-6 py-5 flex flex-col gap-4">
+
                 {/* Qualifications */}
                 <div>
-                  <div
-                    className="text-[10px] font-black uppercase tracking-widest mb-2.5"
-                    style={{ color: doc.color }}
-                  >
+                  <div className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: doc.color }}>
                     Educational Qualifications
                   </div>
                   <ul className="space-y-1.5">
@@ -116,10 +137,7 @@ export default function Doctors() {
 
                 {/* Academic */}
                 <div>
-                  <div
-                    className="text-[10px] font-black uppercase tracking-widest mb-2.5"
-                    style={{ color: doc.color }}
-                  >
+                  <div className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: doc.color }}>
                     Academic Achievements & Training
                   </div>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
@@ -132,12 +150,9 @@ export default function Doctors() {
                   </ul>
                 </div>
 
-                {/* Professional services */}
+                {/* Professional */}
                 <div>
-                  <div
-                    className="text-[10px] font-black uppercase tracking-widest mb-2.5"
-                    style={{ color: doc.color }}
-                  >
+                  <div className="text-[10px] font-black uppercase tracking-widest mb-2" style={{ color: doc.color }}>
                     Professional Services
                   </div>
                   <div className="flex flex-wrap gap-1.5">

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const surgeryServices = [
   { icon: "🔪", title: "Hernia Repair",              desc: "Open & laparoscopic hernia repair with mesh fixation for all hernia types." },
   { icon: "💧", title: "Hydrocele Surgery",           desc: "Surgical correction of hydrocele with minimal post-operative discomfort." },
@@ -122,6 +124,47 @@ export default function DepartmentsSection() {
         </div>
 
       </div>
+
+      {/* ── Proctology CTA Banner ── */}
+      <div className="max-w-7xl mx-auto px-4 md:px-10 pb-14">
+        <div className="rounded-3xl overflow-hidden border border-red-100 shadow-sm bg-white flex flex-col md:flex-row items-center">
+
+          {/* Left – content */}
+          <div className="flex-1 px-8 py-10 md:px-12 md:py-12">
+            <div className="inline-block text-[10px] font-black uppercase tracking-widest text-[#C62828] bg-[#FFF5F5] border border-red-200 px-3.5 py-1.5 rounded-full mb-5">
+              ZEN Laser Procto Care
+            </div>
+            <h3 className="text-2xl md:text-3xl font-black text-[#111827] leading-tight mb-3">
+              Piles, Fissure &amp; Fistula
+            </h3>
+            <p className="text-lg md:text-xl font-bold text-[#C62828] mb-3">
+              Don&rsquo;t Be Embarrassed. Don&rsquo;t Suffer.
+            </p>
+            <p className="text-[#374151] text-base leading-relaxed mb-7">
+              Get expert care with safe, effective, and timely treatment.
+            </p>
+            <a
+              href="#appointment"
+              className="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm px-6 py-3 rounded-xl transition-colors duration-200 shadow-md"
+            >
+              Book a Consultation →
+            </a>
+          </div>
+
+          {/* Right – image */}
+          <div className="w-full md:w-auto md:flex-shrink-0 flex justify-center md:justify-end">
+            <Image
+              src="/img/img1/Comod.png"
+              alt="Piles Fissure Fistula Treatment"
+              width={420}
+              height={380}
+              className="w-64 md:w-80 lg:w-[380px] h-auto object-contain"
+            />
+          </div>
+
+        </div>
+      </div>
+
     </section>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 const conditions = [
   {
@@ -88,6 +87,18 @@ const conditions = [
     symptoms: ["Difficulty passing stools", "Severe pain during defecation", "Narrow or ribbon-like stool", "Bleeding and straining"],
     treatment: "Anal Dilation · Anoplasty · Laser Anal Sphincteroplasty",
   },
+  {
+    id: "genito-urinary-surgery",
+    label: "Genito Urinary Surgery",
+    color: "#0E7490",
+    bg: "#ECFEFF",
+    border: "#A5F3FC",
+    img: "/img/laser-treatment-overview.jpg",
+    imgAlt: "Genito-urinary surgical care",
+    desc: "Surgical management of conditions affecting the urinary tract and genital organs, including bladder, kidney, ureter, urethra and related structures using advanced minimally invasive techniques.",
+    symptoms: ["Urinary difficulty or retention", "Recurrent urinary tract infections", "Blood in urine (haematuria)", "Pelvic or lower abdominal pain"],
+    treatment: "Minimally Invasive Urological Surgery · Laparoscopic Procedures · Laser-Assisted Techniques",
+  },
 ];
 
 export default function Conditions() {
@@ -135,22 +146,23 @@ export default function Conditions() {
               className="absolute inset-0 rounded-3xl blur-2xl opacity-30 transition-all duration-500"
               style={{ background: c.color }}
             />
-            <div className="relative rounded-3xl overflow-hidden border-2 transition-all duration-300"
-              style={{ borderColor: c.border }}>
-              <Image
-                src={c.img}
-                alt={c.imgAlt}
-                width={600}
-                height={420}
-                className="w-full h-72 md:h-96 object-cover object-center"
-              />
+            <div className="relative rounded-3xl overflow-hidden border-2 transition-all duration-300 h-72 md:h-96 flex flex-col items-center justify-center gap-3"
+              style={{ borderColor: c.border, background: c.bg }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: `${c.color}18` }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={c.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div className="text-center px-6">
+                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: c.color }}>{c.label}</div>
+                <div className="text-[11px]" style={{ color: `${c.color}99` }}>Image coming soon</div>
+              </div>
               {/* Bottom label */}
               <div
                 className="absolute bottom-0 left-0 right-0 px-5 py-3"
                 style={{ background: `linear-gradient(to top, ${c.color}ee, transparent)` }}
               >
                 <div className="text-white font-bold text-sm">{c.label}</div>
-                <div className="text-white/75 text-xs">{c.imgAlt}</div>
               </div>
             </div>
           </div>

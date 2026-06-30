@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, ArrowRight, Clock, MapPin, Zap } from "lucide-react";
+import Image from "next/image";
 
 const pills = [
   { label: "Piles",           color: "#FF8A80", bg: "rgba(255,138,128,0.12)", border: "rgba(255,138,128,0.30)" },
@@ -20,149 +21,178 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden flex flex-col" style={{ background: "#0D1B2A" }}>
 
-      {/* ── Main content — LEFT aligned ── */}
-      <div className="relative flex-1 max-w-7xl mx-auto px-4 md:px-10 py-10 w-full flex flex-col justify-center">
-        <div className="max-w-3xl space-y-5">
+      {/* ── Main content ── */}
+      <div className="relative flex-1 max-w-7xl mx-auto px-3 md:px-10 py-5 md:py-10 w-full flex flex-col justify-center">
+        <div className="w-[57vw] sm:w-[58vw] md:max-w-5xl md:w-auto space-y-1.5 md:space-y-5">
 
           {/* Eyebrow */}
-          <div className="anim-up inline-flex items-center gap-2">
-            <Zap size={12} color="#DFF1F1" fill="#DFF1F1" />
-            <span className="text-[11px] font-black uppercase tracking-widest" style={{ color: "#DFF1F1" }}>
-              One-Stop Advanced Laser Proctology Centre
+          <div className="anim-up inline-flex items-center gap-1.5">
+            <Zap size={9} color="#DFF1F1" fill="#DFF1F1" className="md:hidden" />
+            <Zap size={12} color="#DFF1F1" fill="#DFF1F1" className="hidden md:block" />
+            <span className="font-black uppercase tracking-widest text-[7px] md:text-[11px]" style={{ color: "#DFF1F1" }}>
+              One-Stop Advanced Laser Proctology Centre · Sitaram Hospital
             </span>
           </div>
 
-          {/* ═══ BRAND CARD — title only ═══ */}
+          {/* ═══ BRAND CARD ═══ */}
           <div
-            className="anim-up d1 relative rounded-3xl p-7 md:p-10 overflow-hidden"
+            className="anim-up d1 relative p-3 md:p-10 overflow-hidden rounded-[1rem] md:rounded-l-[1.5rem] md:rounded-r-none md:-mr-10"
             style={{
-              background: "linear-gradient(135deg, rgba(223,241,241,0.13) 0%, rgba(195,228,228,0.09) 45%, rgba(223,241,241,0.12) 100%)",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
-              border: "1.5px solid rgba(223,241,241,0.20)",
-              boxShadow: "0 10px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(223,241,241,0.12)",
+              background: "linear-gradient(105deg, rgba(223,241,241,0.11) 0%, rgba(195,228,228,0.07) 55%, rgba(13,27,42,0.0) 100%)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "none",
+              boxShadow: "-4px 0 32px rgba(0,0,0,0.18)",
             }}
           >
-            {/* Top shimmer */}
-            <div className="absolute inset-x-0 top-0 h-px"
-              style={{ background: "linear-gradient(90deg, transparent, rgba(223,241,241,0.35), transparent)" }} />
-
             {/* Left red accent bar */}
-            <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-r-full"
+            <div className="absolute left-0 top-4 bottom-4 md:top-8 md:bottom-8 w-[2px] md:w-[3px] rounded-r-full"
               style={{ background: "linear-gradient(to bottom, transparent, #C62828 30%, #C62828 70%, transparent)" }} />
 
             {/* Dot grid */}
-            <div className="absolute right-5 top-5 opacity-15 pointer-events-none grid grid-cols-4 gap-1.5">
-              {Array.from({ length: 16 }).map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ background: "#DFF1F1" }} />
+            <div className="absolute left-8 md:left-14 top-3 md:top-5 opacity-10 pointer-events-none grid grid-cols-4 gap-1">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full" style={{ background: "#DFF1F1" }} />
               ))}
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pl-4">
+            <div className="pl-2 md:pl-4 relative z-10">
               {/* ZEN */}
-              <div>
+              <div className="block w-fit mb-1 md:mb-2">
                 <span
-                  className="font-black leading-none tracking-tighter select-none block"
+                  className="font-black leading-none select-none block"
                   style={{
-                    fontSize: "clamp(4.5rem,11vw,8rem)",
+                    fontSize: "clamp(1.9rem, 11vw, 8rem)",
                     background: "linear-gradient(135deg, #E53935 0%, #C62828 35%, #FF5252 65%, #E53935 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                     filter: "drop-shadow(0 0 28px rgba(229,57,53,0.45))",
+                    letterSpacing: "0.08em",
                   }}
                 >
                   ZEN
                 </span>
-                <div className="h-[3px] w-28 rounded-full mb-2"
+                <div className="h-[2px] md:h-[3px] rounded-full"
                   style={{ background: "linear-gradient(90deg, #C62828, #2E7D32, #1565C0)" }} />
-                <div className="font-black uppercase tracking-[.20em] leading-tight"
-                  style={{ fontSize: "clamp(1rem,2.6vw,1.65rem)", color: "#DFF1F1" }}>
+              </div>
+
+              {/* Laser Procto Care */}
+              <div className="inline-block mb-1.5 md:mb-3">
+                <div className="font-black uppercase tracking-[.20em] leading-none whitespace-nowrap"
+                  style={{ fontSize: "clamp(0.5rem, 3.2vw, 1.65rem)", color: "#DFF1F1" }}>
                   Laser Procto Care
                 </div>
+                <div className="h-[2px] md:h-[3px] rounded-full mt-1"
+                  style={{ background: "linear-gradient(90deg, #C62828, #2E7D32, #1565C0)" }} />
               </div>
 
               {/* Tagline */}
-              <div className="rounded-xl px-4 py-3"
-                style={{ background: "rgba(198,40,40,0.14)", border: "1px solid rgba(198,40,40,0.28)", maxWidth: 290 }}>
-                <p className="font-bold italic text-sm leading-snug" style={{ color: "#FFCDD2" }}>
-                  &ldquo;Number one clinic for your number two problems!&rdquo;
-                </p>
-              </div>
+              <p style={{
+                fontFamily: "Arial, Helvetica, sans-serif",
+                fontSize: "clamp(0.55rem, 2.5vw, 1.35rem)",
+                fontStyle: "italic",
+                fontWeight: 700,
+                color: "#FFCDD2",
+                textShadow: "0 2px 10px rgba(198,40,40,0.40), 0 1px 3px rgba(0,0,0,0.25)",
+                lineHeight: 1.4,
+                margin: 0,
+              }}>
+                &ldquo;Number one clinic for your number two problems!&rdquo;
+              </p>
             </div>
 
-            {/* Corner badge */}
-            <div className="absolute bottom-0 right-0 rounded-tl-2xl rounded-br-3xl px-3 py-1.5"
-              style={{ background: "rgba(0,137,123,0.18)", border: "1px solid rgba(0,137,123,0.22)" }}>
-              <span className="text-[9px] font-black uppercase tracking-widest" style={{ color: "#80CBC4" }}>
-                Advanced Laser Centre · Sitaram Hospital
-              </span>
+            {/* Anatomy illustration — all screens */}
+            <div className="absolute top-0 left-[55%] md:left-1/2 -translate-x-1/4 md:-translate-x-1/3 pointer-events-none select-none z-0">
+              <Image src="/img/img1/Buttiuck.png" alt="" width={400} height={270}
+                className="object-contain opacity-80 w-24 sm:w-32 md:w-[400px]" priority />
             </div>
+
+            {/* Right gradient — desktop only */}
+            <div className="absolute right-0 top-0 h-full w-72 pointer-events-none hidden md:block"
+              style={{ background: "linear-gradient(to right, transparent 0%, rgba(13,27,42,0.6) 50%, #0D1B2A 100%)" }} />
           </div>
-          {/* ════════════════════════ */}
 
-          {/* Description — plain */}
-          <p className="anim-up d2 text-sm md:text-base leading-relaxed max-w-xl" style={{ color: "#9CA3AF" }}>
+          {/* Description */}
+          <p className="anim-up d2 leading-relaxed max-w-xl text-[9px] md:text-base" style={{ color: "#9CA3AF" }}>
             Advanced Comprehensive Treatment for{" "}
             <strong style={{ color: "#E5E7EB" }}>Piles, Fissure &amp; Fistula.</strong>{" "}
             Painless, scarless, day-care procedures with modern laser technology.
           </p>
 
-          {/* Condition pills — plain */}
-          <div className="anim-up d2 flex flex-wrap gap-2">
+          {/* Condition pills */}
+          <div className="anim-up d2 flex flex-wrap gap-1 md:gap-2">
             {pills.map((p) => (
-              <span key={p.label} className="text-xs font-bold px-3 py-1 rounded-full border"
-                style={{ color: p.color, background: p.bg, borderColor: p.border }}>
+              <span key={p.label}
+                className="font-bold rounded-full border"
+                style={{
+                  color: p.color, background: p.bg, borderColor: p.border,
+                  fontSize: "clamp(0.45rem, 1.8vw, 0.75rem)",
+                  padding: "2px 8px",
+                }}>
                 {p.label}
               </span>
             ))}
           </div>
 
-          {/* Check list — plain inline */}
-          <ul className="anim-up d3 flex flex-wrap gap-x-5 gap-y-1.5">
+          {/* Check list */}
+          <ul className="anim-up d3 flex flex-wrap gap-x-3 md:gap-x-5 gap-y-1">
             {checks.map((c) => (
-              <li key={c.text} className="flex items-center gap-1.5">
-                <span className="text-sm">{c.icon}</span>
-                <span className="text-xs font-medium" style={{ color: "#D1D5DB" }}>{c.text}</span>
+              <li key={c.text} className="flex items-center gap-1">
+                <span className="text-[9px] md:text-sm">{c.icon}</span>
+                <span className="font-medium text-[7px] md:text-xs" style={{ color: "#D1D5DB" }}>{c.text}</span>
               </li>
             ))}
           </ul>
 
           {/* CTA buttons */}
-          <div className="anim-up d4 flex flex-wrap gap-3">
-            <a href="tel:9421279065" className="btn btn-red"><Phone size={14} /> Call Now</a>
-            <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital." target="_blank" rel="noopener noreferrer" className="btn btn-green">
-              <ArrowRight size={14} /> WhatsApp Us
+          <div className="anim-up d4 flex flex-wrap gap-1.5 md:gap-3">
+            <a href="tel:9421279065"
+              className="inline-flex items-center gap-1 font-bold rounded-lg bg-[#C62828] text-white"
+              style={{ fontSize: "clamp(0.5rem, 2.2vw, 0.875rem)", padding: "4px 10px" }}>
+              <Phone size={9} className="md:hidden" />
+              <Phone size={14} className="hidden md:block" />
+              Call Now
+            </a>
+            <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-bold rounded-lg bg-[#2E7D32] text-white"
+              style={{ fontSize: "clamp(0.5rem, 2.2vw, 0.875rem)", padding: "4px 10px" }}>
+              <ArrowRight size={9} className="md:hidden" />
+              <ArrowRight size={14} className="hidden md:block" />
+              WhatsApp Us
             </a>
           </div>
 
-          {/* Address — highlighted */}
-          <div className="anim-up d5 inline-flex items-start gap-3 rounded-2xl px-5 py-4"
+          {/* Address */}
+          <div className="anim-up d5 inline-flex items-start gap-2 rounded-xl px-2 py-2 md:px-5 md:py-4"
             style={{
               background: "linear-gradient(135deg, rgba(223,241,241,0.10) 0%, rgba(223,241,241,0.06) 100%)",
               border: "1.5px solid rgba(223,241,241,0.22)",
             }}>
-            <div className="mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
+            <div className="mt-0.5 w-5 h-5 md:w-8 md:h-8 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: "rgba(76,175,80,0.18)", border: "1px solid rgba(76,175,80,0.30)" }}>
-              <MapPin size={16} color="#4CAF50" />
+              <MapPin size={10} color="#4CAF50" className="md:hidden" />
+              <MapPin size={16} color="#4CAF50" className="hidden md:block" />
             </div>
             <div>
-              <div className="text-[10px] font-black uppercase tracking-widest mb-0.5" style={{ color: "#4CAF50" }}>
+              <div className="font-black uppercase tracking-widest mb-0.5 text-[7px] md:text-[10px]" style={{ color: "#4CAF50" }}>
                 Our Location
               </div>
-              <div className="font-bold text-sm leading-snug" style={{ color: "#F3F4F6" }}>
+              <div className="font-bold leading-snug text-[8px] md:text-sm" style={{ color: "#F3F4F6" }}>
                 Bhangya Maruti Chowk, Lane No. 6
               </div>
-              <div className="font-semibold text-sm" style={{ color: "#DFF1F1" }}>
+              <div className="font-semibold text-[8px] md:text-sm" style={{ color: "#DFF1F1" }}>
                 Dhule – 424001, Maharashtra
               </div>
             </div>
           </div>
 
-          {/* OPD hours — inline below address */}
-          <div className="anim-up d5 flex items-center gap-2 mt-1">
-            <Clock size={13} color="#EF5350" />
-            <span className="text-xs font-semibold" style={{ color: "#9CA3AF" }}>
+          {/* OPD hours */}
+          <div className="anim-up d5 flex items-center gap-1.5">
+            <Clock size={10} color="#EF5350" className="md:hidden" />
+            <Clock size={13} color="#EF5350" className="hidden md:block" />
+            <span className="font-semibold text-[7px] md:text-xs" style={{ color: "#9CA3AF" }}>
               OPD: Mon–Sat &nbsp;·&nbsp; 10AM–2PM &amp; 6PM–9PM
             </span>
           </div>
@@ -170,26 +200,38 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* ── Right-side illustration ── */}
+      <div className="absolute right-0 md:right-10 top-1/2 -translate-y-1/2 pointer-events-none select-none">
+        <Image
+          src="/img/img1/magnific_1shNlcwr4r.png"
+          alt=""
+          width={620}
+          height={740}
+          className="object-contain drop-shadow-2xl w-[43vw] sm:w-[42vw] md:w-[480px] lg:w-[620px]"
+          priority
+        />
+      </div>
+
       {/* ── Bottom quick-access bar ── */}
       <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(0,0,0,0.25)" }}>
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {[
-              { icon: "📞", label: "9421279065",        sub: "Call Us Now",             href: "tel:9421279065" },
-              { icon: "🩺", label: "Our Doctors",       sub: "2 Expert Proctologists",  href: "#doctors" },
-              { icon: "🔬", label: "Treatments",        sub: "8 Advanced Procedures",   href: "#treatments" },
-              { icon: "📍", label: "Find Us",           sub: "Dhule, Maharashtra",      href: "#contact" },
+              { icon: "📞", label: "9421279065",  sub: "Call Us Now",            href: "tel:9421279065" },
+              { icon: "🩺", label: "Our Doctors", sub: "2 Expert Proctologists", href: "#doctors" },
+              { icon: "🔬", label: "Treatments",  sub: "8 Advanced Procedures",  href: "#treatments" },
+              { icon: "📍", label: "Find Us",     sub: "Dhule, Maharashtra",     href: "#contact" },
             ].map((item, idx) => (
               <a key={item.label} href={item.href}
-                className="group flex items-center gap-3 px-4 py-3 transition-colors"
+                className="group flex items-center gap-2 md:gap-3 px-2 md:px-4 py-2 md:py-3 transition-colors"
                 style={{ borderRight: idx < 3 ? "1px solid rgba(255,255,255,0.07)" : "none" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "rgba(198,40,40,0.08)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
-                <span className="text-lg flex-shrink-0">{item.icon}</span>
+                <span className="text-sm md:text-lg flex-shrink-0">{item.icon}</span>
                 <div>
-                  <div className="text-xs md:text-sm font-bold leading-tight" style={{ color: "#E5E7EB" }}>{item.label}</div>
-                  <div className="text-[10px]" style={{ color: "#6B7280" }}>{item.sub}</div>
+                  <div className="text-[9px] md:text-sm font-bold leading-tight" style={{ color: "#E5E7EB" }}>{item.label}</div>
+                  <div className="text-[8px] md:text-[10px]" style={{ color: "#6B7280" }}>{item.sub}</div>
                 </div>
               </a>
             ))}

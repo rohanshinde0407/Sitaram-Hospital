@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CheckCircle2, Zap, Shield, Clock } from "lucide-react";
 
 const highlights = [
@@ -17,15 +16,16 @@ export default function ClinicOverview() {
 
           {/* LEFT — Image */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="/img/laser-treatment-overview.jpg"
-                alt="Advanced Laser Proctology Treatment at ZEN Laser Procto Care"
-                width={640}
-                height={480}
-                className="w-full h-auto object-cover"
-                priority
-              />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-80 md:h-96 flex flex-col items-center justify-center gap-3 bg-[#FFF5F5] border-2 border-dashed border-[#FECACA]">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-[#C62828]/10">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C62828" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-bold text-[#C62828]">ZEN Laser Procto Care</div>
+                <div className="text-xs text-[#C62828]/60 mt-0.5">Image coming soon</div>
+              </div>
               {/* Overlay badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                 <div className="flex items-center gap-3">

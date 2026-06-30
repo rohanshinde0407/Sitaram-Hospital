@@ -1,7 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Award, BookOpen, Stethoscope, Heart, Users, Globe } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, Stethoscope, Heart, Users, Globe, Star, MapPin } from "lucide-react";
+
+function SectionCard({
+  icon, title, color, bg, border, children,
+  span,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  color: string;
+  bg: string;
+  border: string;
+  children: React.ReactNode;
+  span?: string;
+}) {
+  return (
+    <div className={`rounded-2xl overflow-hidden border bg-white ${span ?? ""}`} style={{ borderColor: border }}>
+      <div className="flex items-center gap-3 px-5 py-4 border-b" style={{ background: bg, borderColor: border }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: color }}>
+          {icon}
+        </div>
+        <span className="text-sm font-black text-[#111827] uppercase tracking-wide">{title}</span>
+      </div>
+      <div className="p-5">{children}</div>
+    </div>
+  );
+}
+
+function Dot({ color }: { color: string }) {
+  return <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: color }} />;
+}
 
 export default function AboutPage() {
   return (
@@ -30,13 +60,13 @@ export default function AboutPage() {
             <p className="text-white/60 text-base max-w-2xl mx-auto">
               Nationally and internationally recognised leaders in surgery, coloproctology, and women's healthcare — serving Dhule and North Maharashtra for over four decades.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-10 mt-10 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-10 pt-8 border-t border-white/10">
               {[
                 { val: "40+", label: "Years of Experience" },
-                { val: "IMA", label: "National President" },
+                { val: "IMA", label: "National President 2018" },
                 { val: "WMA", label: "International Treasurer" },
-                { val: "2.5L+", label: "Girls Served via Mission Pink" },
+                { val: "2.5L+", label: "Girls via Mission Pink" },
+                { val: "SAARC", label: "Medical Association President" },
               ].map(s => (
                 <div key={s.label} className="text-center">
                   <div className="text-2xl md:text-3xl font-black text-white">{s.val}</div>
@@ -53,35 +83,45 @@ export default function AboutPage() {
         <section id="ravi" className="py-16 md:py-20 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
 
-            {/* Profile header */}
-            <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
+            {/* ── Profile header ── */}
+            <div className="flex flex-col md:flex-row items-start gap-8 mb-10">
 
-              {/* Avatar */}
+              {/* Passport photo */}
               <div className="flex-shrink-0 flex flex-col items-center gap-3">
-                <div className="w-36 h-36 rounded-3xl flex items-center justify-center text-white text-5xl font-black shadow-xl"
-                  style={{ background: "linear-gradient(135deg, #C62828 0%, #8E0000 100%)" }}>
-                  RW
+                <div className="relative rounded-3xl overflow-hidden shadow-xl"
+                  style={{ width: 160, height: 204, border: "3px solid #C62828" }}>
+                  <Image
+                    src="/img/img1/Dr.%20Ravindra.jpg"
+                    alt="Dr. Ravindra S. Wankhedkar"
+                    width={160}
+                    height={204}
+                    className="w-full h-full object-cover object-top"
+                    priority
+                  />
                 </div>
                 <div className="text-center">
                   <div className="text-xs font-black uppercase tracking-widest text-[#C62828]">Senior Surgeon</div>
                   <div className="text-xs text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
+                  <div className="text-[10px] text-[#9CA3AF] mt-0.5">Born: 21 September 1963</div>
                 </div>
               </div>
 
               {/* Name & intro */}
-              <div className="flex-1">
-                <div className="section-eyebrow mb-1">Laser Proctologist & Colorectal Surgeon</div>
+              <div className="flex-1 min-w-0">
+                <div className="section-eyebrow mb-1">General Surgeon · Laser Proctologist · Medical Leader</div>
                 <h2 className="text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
                   Dr. Ravindra S. Wankhedkar
                 </h2>
                 <p className="text-sm text-[#6B7280] italic mb-4">(Dr. Ravindra Sitaram Wankhedkar)</p>
 
-                {/* Leadership badges */}
+                {/* Key badges */}
                 <div className="flex flex-wrap gap-2 mb-5">
                   {[
-                    { text: "National President — IMA 2017–18", color: "#C62828", bg: "#FFF5F5" },
-                    { text: "Treasurer — World Medical Association", color: "#1565C0", bg: "#EFF6FF" },
-                    { text: "Professor of Surgery — SBH Govt. Medical College", color: "#2E7D32", bg: "#F0FDF4" },
+                    { text: "National President — IMA 2018", color: "#C62828", bg: "#FFF5F5" },
+                    { text: "Treasurer — World Medical Association 2019–21", color: "#1565C0", bg: "#EFF6FF" },
+                    { text: "President — SAARC Medical Association 2018–20", color: "#0E7490", bg: "#ECFEFF" },
+                    { text: "Hony. Prof. of Surgery — SBH Govt. Medical College", color: "#2E7D32", bg: "#F0FDF4" },
+                    { text: "National Chair — UNESCO Bioethics", color: "#7B1FA2", bg: "#FAF5FF" },
                   ].map(b => (
                     <span key={b.text} className="text-xs font-bold px-3 py-1.5 rounded-full border"
                       style={{ color: b.color, background: b.bg, borderColor: `${b.color}30` }}>
@@ -90,32 +130,26 @@ export default function AboutPage() {
                   ))}
                 </div>
 
-                <p className="text-[#374151] text-base leading-relaxed max-w-3xl">
-                  Dr. Ravindra Sitaram Wankhedkar is a prominent Indian surgeon and medical leader who has held top leadership positions both nationally and internationally. Based in Dhule, Maharashtra, he is highly respected for his medical practice, health policy advocacy, and extensive social work. He served as the <strong className="text-[#C62828]">National President of the Indian Medical Association (IMA) 2017–2018</strong> — India's largest organisation of allopathic doctors — and as <strong className="text-[#1565C0]">Treasurer of the World Medical Association (WMA)</strong>, representing India in international medical ethics frameworks.
+                <p className="text-[#374151] text-base leading-relaxed">
+                  Born on <strong>21 September 1963</strong> to Smt. Bhagirathibai Wankhedkar (school teacher & headmistress) and Late Shri Sitaram Wankhedkar (freedom fighter), Dr. Ravi Wankhedkar is a perfect example of a modern-day <strong className="text-[#C62828]">Polymath</strong> — a person whose expertise and knowledge spans varied subjects. He completed his schooling from <strong>Canossa Convent, Dhule</strong>, and went on to complete <strong>MBBS &amp; MS (General Surgery)</strong> from the renowned <strong>B.J. Medical College, Pune</strong>. Before even gaining admission, he had resolved that his area of work would be his hometown Dhule — having witnessed firsthand the poverty and related health problems of the region.
                 </p>
               </div>
             </div>
 
-            {/* Detail grid */}
+            {/* ── Detail cards grid ── */}
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
               {/* Education */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#FFF5F5" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#C62828" }}>
-                    <BookOpen size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Education</span>
-                </div>
-                <div className="p-5 space-y-3">
+              <SectionCard icon={<BookOpen size={14} color="white" />} title="Education"
+                color="#C62828" bg="#FFF5F5" border="#FECACA">
+                <div className="space-y-3">
                   {[
+                    { degree: "Schooling", inst: "Canossa Convent, Dhule" },
                     { degree: "M.B.B.S.", inst: "B.J. Medical College, Pune" },
                     { degree: "M.S. (General Surgery)", inst: "B.J. Medical College, Pune" },
                   ].map(e => (
                     <div key={e.degree} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#C62828" }} />
+                      <Dot color="#C62828" />
                       <div>
                         <div className="text-sm font-bold text-[#111827]">{e.degree}</div>
                         <div className="text-xs text-[#6B7280]">{e.inst}</div>
@@ -123,96 +157,129 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* Leadership */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#EFF6FF" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#1565C0" }}>
-                    <Globe size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Leadership Roles</span>
-                </div>
-                <div className="p-5 space-y-3">
+              {/* Academic Career */}
+              <SectionCard icon={<Star size={14} color="white" />} title="Academic Career & Awards"
+                color="#E65100" bg="#FFF8F4" border="#FED7AA">
+                <div className="space-y-3">
                   {[
-                    "National President, IMA (2017–2018)",
-                    "Treasurer, World Medical Association (WMA)",
-                    "Professor & Head of Colo-Proctology, SBH Govt. Medical College, Dhule",
-                    "Chair, IMA National Health Scheme",
-                  ].map(r => (
-                    <div key={r} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#1565C0" }} />
-                      <span className="text-sm text-[#374151]">{r}</span>
+                    { point: "Assistant Professor in Surgery — Shri Bhausaheb Hire Govt. Medical College, Dhule", note: "" },
+                    { point: "Teacher of the Decade Award — 1999", note: "Bestowed by students & staff of SBH Medical College" },
+                    { point: "Hony. Professor of Surgery — SBH Govt. Medical College, Dhule", note: "Continuing passion for teaching" },
+                    { point: "Member — Board of Exams, Maharashtra University of Health Sciences", note: "" },
+                    { point: "Member — Governing Council, NBE Delhi", note: "" },
+                    { point: "Board Member — NABH Delhi", note: "" },
+                  ].map(e => (
+                    <div key={e.point} className="flex items-start gap-3">
+                      <Dot color="#E65100" />
+                      <div>
+                        <div className="text-sm text-[#374151]">{e.point}</div>
+                        {e.note && <div className="text-[11px] text-[#9CA3AF] mt-0.5">{e.note}</div>}
+                      </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
               {/* Specialty & Training */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#F0FDF4" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#2E7D32" }}>
-                    <Stethoscope size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Specialty & Training</span>
-                </div>
-                <div className="p-5 space-y-2">
+              <SectionCard icon={<Stethoscope size={14} color="white" />} title="Specialty & Training"
+                color="#2E7D32" bg="#F0FDF4" border="#BBF7D0">
+                <div className="space-y-2">
                   {[
                     "Consulting General Surgeon & Coloproctologist",
                     "FIAMS (Coloproctology) — Hyderabad",
                     "FCGP (Proctology) — Chennai",
                     "FIIOPM — Australia",
+                    "Basic & Advanced Courses in Coloproctology, Mumbai",
                     "Advanced Laser Surgery Training — Germany",
-                    "Member, ACRS India",
-                    "Member, ASCRS USA",
+                    "Member, Association of Colon & Rectal Surgeons of India",
+                    "Member, American Society of Colon & Rectal Surgeons (ASCRS USA)",
                   ].map(t => (
                     <div key={t} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#2E7D32" }} />
+                      <Dot color="#2E7D32" />
                       <span className="text-sm text-[#374151]">{t}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
+
+              {/* IMA Leadership */}
+              <SectionCard icon={<Globe size={14} color="white" />} title="IMA & International Leadership"
+                color="#1565C0" bg="#EFF6FF" border="#BFDBFE" span="xl:col-span-2">
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { role: "National President, Indian Medical Association", year: "2018" },
+                    { role: "Treasurer, World Medical Association (WMA)", year: "2019–21" },
+                    { role: "President, SAARC Medical Association", year: "2018–20" },
+                    { role: "National Chair — UNESCO Bioethics", year: "Current" },
+                    { role: "IMA Presidential Candidate — chosen unopposed", year: "2017" },
+                    { role: "Proactive IMA participation since", year: "2003" },
+                    { role: "Chair, IMA National Health Scheme", year: "" },
+                    { role: "President, Dhule District Basketball Association", year: "Current" },
+                  ].map(r => (
+                    <div key={r.role} className="flex items-start gap-3 p-2.5 rounded-xl bg-blue-50/50">
+                      <Dot color="#1565C0" />
+                      <div>
+                        <div className="text-sm text-[#374151] font-medium">{r.role}</div>
+                        {r.year && <div className="text-[11px] text-[#1565C0] font-bold mt-0.5">{r.year}</div>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SectionCard>
+
+              {/* IMA Programs Organised */}
+              <SectionCard icon={<Users size={14} color="white" />} title="Major Programs Organised"
+                color="#7B1FA2" bg="#FAF5FF" border="#E9D5FF">
+                <div className="space-y-2">
+                  {[
+                    { prog: "WEZ AMSCON HOSPEX", desc: "State-level medical conference" },
+                    { prog: "EVECON", desc: "IMA initiative" },
+                    { prog: "Unmesh", desc: "National IMA programme" },
+                    { prog: "Yomedicon", desc: "Young Medicos' Convention" },
+                    { prog: "WIMALS", desc: "Women IMA Leaders Summit" },
+                    { prog: "SHABDANGAN", desc: "Medicos' Literary Festival" },
+                  ].map(p => (
+                    <div key={p.prog} className="flex items-start gap-3">
+                      <Dot color="#7B1FA2" />
+                      <div>
+                        <span className="text-sm font-bold text-[#111827]">{p.prog}</span>
+                        <span className="text-xs text-[#9CA3AF] ml-1.5">— {p.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SectionCard>
 
               {/* Social Initiatives */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden md:col-span-2">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#FAF5FF" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#7B1FA2" }}>
-                    <Heart size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Social Initiatives & Community Work</span>
-                </div>
-                <div className="p-5 grid sm:grid-cols-2 gap-4">
+              <SectionCard icon={<Heart size={14} color="white" />} title="Social Initiatives & Community Work"
+                color="#AD1457" bg="#FDF2F8" border="#F9A8D4" span="md:col-span-2 xl:col-span-2">
+                <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     {
                       title: "Mission Pink Health",
-                      desc: "Founder Coordinator of this large-scale community health project providing screenings, anaemia control, and health education to over 2,50,000 adolescent tribal girls.",
+                      desc: "Founder Coordinator of an ongoing community health project for Adolescent Tribal Girls — providing screenings, anaemia control, and health education. Over 2,50,000 girls have benefited to date.",
                       color: "#AD1457",
                     },
                     {
                       title: "Shet Shivar Davakhana",
-                      desc: "Established a free clinic at his farm specifically for poor farmers, agricultural labourers, and workers from the surrounding region.",
+                      desc: "A free clinic for farmers — established at his farm for poor farm workers and agricultural labourers from the surrounding region.",
                       color: "#2E7D32",
                     },
                     {
-                      title: "Healthcare Policy Advocacy",
-                      desc: "A vocal critic of 'mixopathy' and frequent advocate for increased public spending on primary healthcare infrastructure.",
-                      color: "#1565C0",
+                      title: "Medical Camps — Satpuda Tribal Region",
+                      desc: "Conducted numerous medical camps in remote tribal areas of Satpuda, bringing primary healthcare to underserved communities.",
+                      color: "#E65100",
                     },
                     {
-                      title: "Ravi Shrushti Farm & Personal Pursuits",
-                      desc: "Transformed barren land into a lush farm 'Ravi Shrushti'. Completed the Kailash-Mansarovar Yatra and is an avid adventure trekker.",
-                      color: "#E65100",
+                      title: "Disaster & Humanitarian Relief",
+                      desc: "Led IMA Dhule's proactive relief for Gujarat & Nepal Earthquakes, Kashmir Floods, and Martyr Families. Founded 'Ubhari Abhiyan' — a helping hand from IMA Dhule for drought & hailstorm-affected farmers.",
+                      color: "#1565C0",
                     },
                   ].map(s => (
                     <div key={s.title} className="flex items-start gap-3 p-3 rounded-xl bg-gray-50">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: s.color }} />
+                      <Dot color={s.color} />
                       <div>
                         <div className="text-sm font-bold text-[#111827] mb-0.5">{s.title}</div>
                         <p className="text-xs text-[#6B7280] leading-relaxed">{s.desc}</p>
@@ -220,19 +287,32 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* Professional Services */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#FFFBEB" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#B45309" }}>
-                    <Award size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Hospitals Served</span>
+              {/* Personal Life */}
+              <SectionCard icon={<MapPin size={14} color="white" />} title="Personal Life & Pursuits"
+                color="#047857" bg="#ECFDF5" border="#A7F3D0">
+                <div className="space-y-3">
+                  {[
+                    { item: "Ravi Shrushti Farm", desc: "Transformed a piece of barren land into a lush, colourful farm — now a destination for informal meetings & gatherings." },
+                    { item: "Adventure Mountaineering", desc: "Completed Basic Mountaineering Course at Manali. Successfully completed the Kailash-Mansarovar Yatra in 2011." },
+                    { item: "Social & Literary Associations", desc: "Associated with many social, medical, sports, and literary organisations across Maharashtra." },
+                  ].map(p => (
+                    <div key={p.item} className="flex items-start gap-3">
+                      <Dot color="#047857" />
+                      <div>
+                        <div className="text-sm font-bold text-[#111827]">{p.item}</div>
+                        <div className="text-xs text-[#6B7280] mt-0.5 leading-relaxed">{p.desc}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="p-5 space-y-2">
+              </SectionCard>
+
+              {/* Hospitals Served */}
+              <SectionCard icon={<Award size={14} color="white" />} title="Hospitals Served"
+                color="#B45309" bg="#FFFBEB" border="#FDE68A">
+                <div className="space-y-2">
                   {[
                     "Sassoon General Hospital, Pune",
                     "Civil Hospital, Dhule",
@@ -242,14 +322,16 @@ export default function AboutPage() {
                     "Sitaram Hospital, Dhule (Current)",
                   ].map(p => (
                     <div key={p} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#B45309" }} />
+                      <Dot color="#B45309" />
                       <span className="text-sm text-[#374151]">{p}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
+
 
             </div>
+
           </div>
         </section>
 
@@ -262,35 +344,42 @@ export default function AboutPage() {
             {/* Profile header */}
             <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
 
-              {/* Avatar */}
+              {/* Passport photo */}
               <div className="flex-shrink-0 flex flex-col items-center gap-3">
-                <div className="w-36 h-36 rounded-3xl flex items-center justify-center text-white text-5xl font-black shadow-xl"
-                  style={{ background: "linear-gradient(135deg, #AD1457 0%, #880E4F 100%)" }}>
-                  MW
+                <div className="relative rounded-3xl overflow-hidden shadow-xl"
+                  style={{ width: 160, height: 204, border: "3px solid #AD1457" }}>
+                  <Image
+                    src="/img/img1/Dr.%20Meena.jpg"
+                    alt="Dr. Meena R. Wankhedkar"
+                    width={160}
+                    height={204}
+                    className="w-full h-full object-cover object-top"
+                    priority
+                  />
                 </div>
                 <div className="text-center">
-                  <div className="text-xs font-black uppercase tracking-widest" style={{ color: "#AD1457" }}>Gynaecologist & Family Physician</div>
+                  <div className="text-xs font-black uppercase tracking-widest" style={{ color: "#AD1457" }}>
+                    Gynaecologist & Family Physician
+                  </div>
                   <div className="text-xs text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
                 </div>
               </div>
 
               {/* Name & intro */}
-              <div className="flex-1">
-                <div className="section-eyebrow mb-1" style={{ color: "#AD1457" }}>
-                  <span style={{ background: "#AD1457" }} className="inline-block w-5 h-[3px] rounded mr-2" />
-                  Obstetrician, Gynaecologist & IMA Leader
-                </div>
+              <div className="flex-1 min-w-0">
+                <div className="section-eyebrow mb-1">Family Physician · Obstetrician · Gynaecologist · IMA Leader</div>
                 <h2 className="text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
                   Dr. Meena R. Wankhedkar
                 </h2>
                 <p className="text-sm text-[#6B7280] italic mb-4">(Dr. Meenal R. Wankhedkar)</p>
 
-                {/* Leadership badges */}
                 <div className="flex flex-wrap gap-2 mb-5">
                   {[
                     { text: "National Chairperson — IMA Women Doctors Wing", color: "#AD1457", bg: "#FDF2F8" },
-                    { text: "President — IMA Dhule Branch", color: "#7B1FA2", bg: "#FAF5FF" },
-                    { text: "State Joint Secretary — IMA CGP Maharashtra", color: "#1565C0", bg: "#EFF6FF" },
+                    { text: "Past President — IMA Dhule Branch", color: "#7B1FA2", bg: "#FAF5FF" },
+                    { text: "Member — IMA Maharashtra State CWC", color: "#1565C0", bg: "#EFF6FF" },
+                    { text: "FCGP — Fellow, College of General Practitioners", color: "#2E7D32", bg: "#F0FDF4" },
+                    { text: "Past State Joint Secretary — IMA CGP Maharashtra", color: "#047857", bg: "#ECFDF5" },
                   ].map(b => (
                     <span key={b.text} className="text-xs font-bold px-3 py-1.5 rounded-full border"
                       style={{ color: b.color, background: b.bg, borderColor: `${b.color}30` }}>
@@ -300,7 +389,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-[#374151] text-base leading-relaxed max-w-3xl">
-                  Dr. Meena R. Wankhedkar is a prominent Indian medical professional, medical activist, and senior IMA leader. An experienced <strong className="text-[#AD1457]">family physician, obstetrician, and gynaecologist (OB/GYN)</strong>, she practices at Sitaram Hospital, Dhule. She served as the <strong className="text-[#AD1457]">National Chairperson of the IMA Women Doctors Wing (IMA-WDW)</strong> and has been the President of the IMA Dhule Branch, driving health initiatives for women physicians and the wider community.
+                  Dr. Meena R. Wankhedkar (also referred to as Dr. Meenal R. Wankhedkar) is a prominent Indian medical professional, medical activist, and senior leader within the Indian Medical Association (IMA). Based in Dhule, Maharashtra, she is an experienced <strong className="text-[#AD1457]">family physician, obstetrician, and gynaecologist (OB/GYN)</strong> practising at Sitaram Hospital. She holds an <strong>MBBS</strong> and is a <strong>Fellow of the College of General Practitioners (FCGP)</strong>. She served as the <strong className="text-[#AD1457]">National Chairperson of the IMA Women Doctors Wing (IMA-WDW)</strong> and as a member of the <strong>IMA Maharashtra State Central Working Committee</strong>, driving health initiatives for women physicians and the wider community.
                 </p>
               </div>
             </div>
@@ -308,24 +397,16 @@ export default function AboutPage() {
             {/* Detail grid */}
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-              {/* Education */}
-              <div className="rounded-2xl border border-pink-100 overflow-hidden bg-white">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-pink-100"
-                  style={{ background: "#FDF2F8" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#AD1457" }}>
-                    <BookOpen size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Education</span>
-                </div>
-                <div className="p-5 space-y-3">
+              <SectionCard icon={<BookOpen size={14} color="white" />} title="Education"
+                color="#AD1457" bg="#FDF2F8" border="#F9A8D4">
+                <div className="space-y-3">
                   {[
                     { degree: "M.B.B.S.", inst: "Lokmanya Tilak Municipal Medical College, Mumbai" },
                     { degree: "FCGP", inst: "Chennai" },
                     { degree: "FIAMS", inst: "Hyderabad" },
                   ].map(e => (
                     <div key={e.degree} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#AD1457" }} />
+                      <Dot color="#AD1457" />
                       <div>
                         <div className="text-sm font-bold text-[#111827]">{e.degree}</div>
                         <div className="text-xs text-[#6B7280]">{e.inst}</div>
@@ -333,45 +414,32 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* IMA Roles */}
-              <div className="rounded-2xl border border-purple-100 overflow-hidden bg-white">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-purple-100"
-                  style={{ background: "#FAF5FF" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#7B1FA2" }}>
-                    <Users size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Key IMA Roles</span>
-                </div>
-                <div className="p-5 space-y-3">
+              <SectionCard icon={<Users size={14} color="white" />} title="Key IMA Roles"
+                color="#7B1FA2" bg="#FAF5FF" border="#E9D5FF">
+                <div className="space-y-2">
                   {[
-                    "National Chairperson, IMA Women Doctors Wing (WDW)",
-                    "President, IMA Dhule Branch",
-                    "State Joint Secretary, IMA CGP Maharashtra",
-                    "Speaker — ICON 2015 Conference",
+                    "National Chairperson, IMA Women Doctors Wing (WDW) — IMA Headquarters",
+                    "Member, IMA Maharashtra State Central Working Committee (CWC)",
+                    "Past President, IMA Dhule Branch",
+                    "Past National Joint Secretary, IMA CGP",
+                    "Past State Joint Secretary, IMA CGP Maharashtra",
+                    "Past Election Commission Member, IMA MS",
                     "National Standing Committee Member, IMA",
+                    "Speaker — ICON 2015 Conference",
                   ].map(r => (
                     <div key={r} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#7B1FA2" }} />
+                      <Dot color="#7B1FA2" />
                       <span className="text-sm text-[#374151]">{r}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* Clinical Services */}
-              <div className="rounded-2xl border border-green-100 overflow-hidden bg-white">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-green-100"
-                  style={{ background: "#F0FDF4" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#2E7D32" }}>
-                    <Stethoscope size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Clinical Services</span>
-                </div>
-                <div className="p-5 space-y-2">
+              <SectionCard icon={<Stethoscope size={14} color="white" />} title="Clinical Services"
+                color="#2E7D32" bg="#F0FDF4" border="#BBF7D0">
+                <div className="space-y-2">
                   {[
                     "Obstetrics & Gynaecology (OB/GYN)",
                     "Well Women Clinic",
@@ -381,48 +449,40 @@ export default function AboutPage() {
                     "Acute & Chronic Illness Management",
                   ].map(s => (
                     <div key={s} className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: "#2E7D32" }} />
+                      <Dot color="#2E7D32" />
                       <span className="text-sm text-[#374151]">{s}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* Community Initiatives */}
-              <div className="rounded-2xl border border-pink-100 overflow-hidden bg-white md:col-span-2">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-pink-100"
-                  style={{ background: "#FDF2F8" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#AD1457" }}>
-                    <Heart size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Community Initiatives</span>
-                </div>
-                <div className="p-5 grid sm:grid-cols-2 gap-4">
+              <SectionCard icon={<Heart size={14} color="white" />} title="Advocacy, Community & IMA Contributions"
+                color="#AD1457" bg="#FDF2F8" border="#F9A8D4" span="md:col-span-2">
+                <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     {
                       title: "Mission Pink Health",
-                      desc: "Centrally involved in this large-scale health awareness project focused on anaemia control and health education for adolescent tribal girls across the Satpuda region.",
+                      desc: "Centrally involved in this large-scale community health project focused on anaemia control and health education for adolescent tribal girls across the Satpuda region, run alongside Dr. Ravi Wankhedkar.",
                       color: "#AD1457",
                     },
                     {
                       title: "Free Medical Outreach",
-                      desc: "Active in localised free medical camps for farm workers, tribal communities, and underprivileged populations in and around Dhule.",
+                      desc: "Active in free medical camps for farm workers, tribal communities, and underprivileged populations in and around Dhule and the Satpuda tribal region.",
                       color: "#2E7D32",
                     },
                     {
-                      title: "IMA Women's Welfare Programs",
-                      desc: "Led national standing committees and specialised welfare programs for women doctors under the IMA banner, including study tours, allergy guideline publications, and leadership development.",
+                      title: "IMA Women's Welfare & Leadership Programs",
+                      desc: "Led national standing committees and specialised welfare programs for women doctors under the IMA banner — including study tours, allergy booklets & guidelines, and dedicated leadership development initiatives.",
                       color: "#7B1FA2",
                     },
                     {
                       title: "White Papers & Medical Education",
-                      desc: "Contributed to white papers on women's issues in medicine and family doctor practices; recognised for contributions to medical education and women doctors' forums.",
+                      desc: "Contributed to white papers on women's issues in medicine and family doctor practices. Recognised for contributions to medical education, women doctors' forums, and IMA programmes.",
                       color: "#1565C0",
                     },
                   ].map(s => (
                     <div key={s.title} className="flex items-start gap-3 p-3 rounded-xl bg-gray-50">
-                      <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: s.color }} />
+                      <Dot color={s.color} />
                       <div>
                         <div className="text-sm font-bold text-[#111827] mb-0.5">{s.title}</div>
                         <p className="text-xs text-[#6B7280] leading-relaxed">{s.desc}</p>
@@ -430,19 +490,11 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
-              {/* Hospitals Served */}
-              <div className="rounded-2xl border border-gray-100 overflow-hidden bg-white">
-                <div className="flex items-center gap-3 px-5 py-4 border-b border-gray-100"
-                  style={{ background: "#FFFBEB" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ background: "#B45309" }}>
-                    <Award size={14} color="white" />
-                  </div>
-                  <span className="text-sm font-black text-[#111827] uppercase tracking-wide">Hospitals Served</span>
-                </div>
-                <div className="p-5 space-y-2">
+              <SectionCard icon={<Award size={14} color="white" />} title="Hospitals Served"
+                color="#B45309" bg="#FFFBEB" border="#FDE68A">
+                <div className="space-y-2">
                   {[
                     "JMF Hospital, Dhule",
                     "Bhagirath Clinic, Dhule",
@@ -450,12 +502,12 @@ export default function AboutPage() {
                     "Sitaram Hospital, Dhule (Current)",
                   ].map(p => (
                     <div key={p} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#B45309" }} />
+                      <Dot color="#B45309" />
                       <span className="text-sm text-[#374151]">{p}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </SectionCard>
 
             </div>
           </div>

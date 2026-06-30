@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 
 const conditions = [
@@ -93,14 +94,14 @@ export default function Footer() {
             {/* Brand column */}
             <div className="sm:col-span-2 lg:col-span-1 space-y-5">
               {/* Logo */}
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 bg-gradient-to-br from-[#C62828] to-[#8E0000] rounded-xl flex items-center justify-center font-black text-base shadow-md">
-                  Z
-                </div>
-                <div>
-                  <div className="text-[#EF5350] font-black text-xl leading-none tracking-tight">ZEN</div>
-                  <div className="text-white/60 text-[10px] font-bold uppercase tracking-[.2em]">Laser Procto Care</div>
-                </div>
+              <div>
+                <Image
+                  src="/img/img1/Sitaram%20Hospital%20Name%20with%20W%20Logo%2003.png"
+                  alt="Sitaram Hospital"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto object-contain"
+                />
               </div>
 
               <p className="text-white/50 text-sm leading-relaxed">

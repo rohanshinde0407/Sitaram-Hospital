@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const benefits = [
   { icon: "😌", title: "Minimal Pain", desc: "Significantly less painful than conventional surgery. Laser seals as it operates.", col: "#C62828" },
@@ -53,15 +52,17 @@ export default function LaserBenefits() {
 
           {/* Right side – image + summary card */}
           <div className="lg:col-span-2 space-y-5">
-            {/* Image */}
-            <div className="relative rounded-3xl overflow-hidden img-glow-blue">
-              <Image
-                src="/img/laseev-machine.jpg"
-                alt="LASEEV Laser Proctology Machine"
-                width={480}
-                height={360}
-                className="w-full h-auto object-cover"
-              />
+            {/* Image placeholder */}
+            <div className="relative rounded-3xl overflow-hidden h-72 flex flex-col items-center justify-center gap-3 bg-[#EFF6FF] border-2 border-dashed border-[#BFDBFE]">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-[#1565C0]/10">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div className="text-center">
+                <div className="text-sm font-bold text-[#1565C0]">Laser Benefits Hero Image</div>
+                <div className="text-xs text-[#1565C0]/60 mt-0.5">Image coming soon</div>
+              </div>
             </div>
 
             {/* Summary card */}
