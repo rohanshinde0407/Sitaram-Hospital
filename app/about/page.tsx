@@ -40,37 +40,38 @@ export default function AboutPage() {
       <main>
 
         {/* ── Hero banner ── */}
-        <div className="relative bg-gradient-to-br from-[#0D1B2A] via-[#111827] to-[#0F1923] py-14 md:py-20 overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-15 pointer-events-none"
+        <div className="relative bg-gradient-to-br from-[#0D1B2A] via-[#111827] to-[#0F1923] py-10 md:py-20 overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-15 pointer-events-none"
             style={{ background: "radial-gradient(circle, #C62828, transparent 70%)", transform: "translate(40%,-40%)" }} />
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 pointer-events-none"
+          <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-10 pointer-events-none"
             style={{ background: "radial-gradient(circle, #2E7D32, transparent 70%)", transform: "translate(-40%,40%)" }} />
 
           <div className="relative max-w-7xl mx-auto px-4 md:px-10 text-center">
-            <Link href="/" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm mb-6 transition-colors">
+            <Link href="/" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
               <ArrowLeft size={14} /> Back to Home
             </Link>
-            <div className="inline-block bg-white/10 text-white/80 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            <div className="inline-block bg-white/10 text-white/80 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Sitaram Hospital — Our Doctors
             </div>
-            <h1 className="text-white text-3xl md:text-5xl font-black mb-4 leading-tight">
+            <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-black mb-3 leading-tight">
               Meet the Specialists Behind<br />
               <span style={{ color: "#EF5350" }}>ZEN Laser Procto Care</span>
             </h1>
-            <p className="text-white/60 text-base max-w-2xl mx-auto">
+            <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto px-2">
               Nationally and internationally recognised leaders in surgery, coloproctology, and women's healthcare — serving Dhule and North Maharashtra for over four decades.
             </p>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-10 pt-8 border-t border-white/10">
+            {/* Stats grid — 2x2 on mobile, row on md */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-10 mt-8 pt-7 border-t border-white/10">
               {[
-                { val: "40+", label: "Years of Experience" },
-                { val: "IMA", label: "National President 2018" },
-                { val: "WMA", label: "International Treasurer" },
+                { val: "40+",   label: "Years of Experience" },
+                { val: "IMA",   label: "National President 2018" },
+                { val: "WMA",   label: "International Treasurer" },
                 { val: "2.5L+", label: "Girls via Mission Pink" },
-                { val: "SAARC", label: "Medical Association President" },
+                { val: "SAARC", label: "Medical Assoc. President" },
               ].map(s => (
                 <div key={s.label} className="text-center">
-                  <div className="text-2xl md:text-3xl font-black text-white">{s.val}</div>
-                  <div className="text-white/50 text-xs mt-1">{s.label}</div>
+                  <div className="text-xl md:text-3xl font-black text-white">{s.val}</div>
+                  <div className="text-white/50 text-[10px] md:text-xs mt-1 leading-snug">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -80,42 +81,42 @@ export default function AboutPage() {
         {/* ════════════════════════════════════════
             DR. RAVINDRA WANKHEDKAR
         ════════════════════════════════════════ */}
-        <section id="ravi" className="py-16 md:py-20 bg-white border-b border-gray-100">
+        <section id="ravi" className="py-10 md:py-20 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
 
             {/* ── Profile header ── */}
-            <div className="flex flex-col md:flex-row items-start gap-8 mb-10">
+            <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8 mb-8 md:mb-10">
 
-              {/* Passport photo */}
-              <div className="flex-shrink-0 flex flex-col items-center gap-3">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl"
-                  style={{ width: 160, height: 204, border: "3px solid #C62828" }}>
+              {/* Passport photo — centered on mobile */}
+              <div className="flex-shrink-0 flex flex-col items-center gap-2 w-full sm:w-auto">
+                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl"
+                  style={{ width: 130, height: 166, border: "3px solid #C62828" }}>
                   <Image
                     src="/img/img1/Dr.%20Ravindra.jpg"
                     alt="Dr. Ravindra S. Wankhedkar"
-                    width={160}
-                    height={204}
+                    width={130}
+                    height={166}
                     className="w-full h-full object-cover object-top"
                     priority
                   />
                 </div>
                 <div className="text-center">
-                  <div className="text-xs font-black uppercase tracking-widest text-[#C62828]">Senior Surgeon</div>
-                  <div className="text-xs text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
-                  <div className="text-[10px] text-[#9CA3AF] mt-0.5">Born: 21 September 1963</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-[#C62828]">Senior Surgeon</div>
+                  <div className="text-[10px] text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
+                  <div className="text-[9px] text-[#9CA3AF] mt-0.5">Born: 21 September 1963</div>
                 </div>
               </div>
 
               {/* Name & intro */}
               <div className="flex-1 min-w-0">
-                <div className="section-eyebrow mb-1">General Surgeon · Laser Proctologist · Medical Leader</div>
-                <h2 className="text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
+                <div className="section-eyebrow mb-1 text-[10px] md:text-xs">General Surgeon · Laser Proctologist · Medical Leader</div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
                   Dr. Ravindra S. Wankhedkar
                 </h2>
-                <p className="text-sm text-[#6B7280] italic mb-4">(Dr. Ravindra Sitaram Wankhedkar)</p>
+                <p className="text-xs text-[#6B7280] italic mb-3">(Dr. Ravindra Sitaram Wankhedkar)</p>
 
                 {/* Key badges */}
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {[
                     { text: "National President — IMA 2018", color: "#C62828", bg: "#FFF5F5" },
                     { text: "Treasurer — World Medical Association 2019–21", color: "#1565C0", bg: "#EFF6FF" },
@@ -123,14 +124,14 @@ export default function AboutPage() {
                     { text: "Hony. Prof. of Surgery — SBH Govt. Medical College", color: "#2E7D32", bg: "#F0FDF4" },
                     { text: "National Chair — UNESCO Bioethics", color: "#7B1FA2", bg: "#FAF5FF" },
                   ].map(b => (
-                    <span key={b.text} className="text-xs font-bold px-3 py-1.5 rounded-full border"
+                    <span key={b.text} className="text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full border"
                       style={{ color: b.color, background: b.bg, borderColor: `${b.color}30` }}>
                       {b.text}
                     </span>
                   ))}
                 </div>
 
-                <p className="text-[#374151] text-base leading-relaxed">
+                <p className="text-[#374151] text-sm md:text-base leading-relaxed">
                   Born on <strong>21 September 1963</strong> to Smt. Bhagirathibai Wankhedkar (school teacher & headmistress) and Late Shri Sitaram Wankhedkar (freedom fighter), Dr. Ravi Wankhedkar is a perfect example of a modern-day <strong className="text-[#C62828]">Polymath</strong> — a person whose expertise and knowledge spans varied subjects. He completed his schooling from <strong>Canossa Convent, Dhule</strong>, and went on to complete <strong>MBBS &amp; MS (General Surgery)</strong> from the renowned <strong>B.J. Medical College, Pune</strong>. Before even gaining admission, he had resolved that his area of work would be his hometown Dhule — having witnessed firsthand the poverty and related health problems of the region.
                 </p>
               </div>
@@ -385,41 +386,41 @@ export default function AboutPage() {
         {/* ════════════════════════════════════════
             DR. MEENA WANKHEDKAR
         ════════════════════════════════════════ */}
-        <section id="meena" className="py-16 md:py-20 bg-[#F8FAFB]">
+        <section id="meena" className="py-10 md:py-20 bg-[#F8FAFB]">
           <div className="max-w-7xl mx-auto px-4 md:px-10">
 
             {/* Profile header */}
-            <div className="flex flex-col md:flex-row items-start gap-8 mb-12">
+            <div className="flex flex-col sm:flex-row items-start gap-6 md:gap-8 mb-8 md:mb-12">
 
-              {/* Passport photo */}
-              <div className="flex-shrink-0 flex flex-col items-center gap-3">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl"
-                  style={{ width: 160, height: 204, border: "3px solid #AD1457" }}>
+              {/* Passport photo — centered on mobile */}
+              <div className="flex-shrink-0 flex flex-col items-center gap-2 w-full sm:w-auto">
+                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl"
+                  style={{ width: 130, height: 166, border: "3px solid #AD1457" }}>
                   <Image
                     src="/img/img1/Dr.%20Meena.jpg"
                     alt="Dr. Meena R. Wankhedkar"
-                    width={160}
-                    height={204}
+                    width={130}
+                    height={166}
                     className="w-full h-full object-cover object-top"
                     priority
                   />
                 </div>
                 <div className="text-center">
-                  <div className="text-xs font-black uppercase tracking-widest" style={{ color: "#AD1457" }}>
-                    Gynaecologist & Family Physician
+                  <div className="text-[10px] font-black uppercase tracking-widest" style={{ color: "#AD1457" }}>
+                    Family Physician
                   </div>
-                  <div className="text-xs text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
+                  <div className="text-[10px] text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
                 </div>
               </div>
 
               {/* Name & intro */}
               <div className="flex-1 min-w-0">
-                <div className="section-eyebrow mb-1">Family Physician · Obstetrician · Gynaecologist · IMA Leader</div>
-                <h2 className="text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
+                <div className="section-eyebrow mb-1 text-[10px] md:text-xs">Family Physician · Obstetrician · IMA Leader</div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-3">
                   Dr. Meena R. Wankhedkar
                 </h2>
 
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {[
                     { text: "National Chairperson — IMA Women Doctors Wing", color: "#AD1457", bg: "#FDF2F8" },
                     { text: "Past President — IMA Dhule Branch", color: "#7B1FA2", bg: "#FAF5FF" },
@@ -427,7 +428,7 @@ export default function AboutPage() {
                     { text: "FCGP — Fellow, College of General Practitioners", color: "#2E7D32", bg: "#F0FDF4" },
                     { text: "Past State Joint Secretary — IMA CGP Maharashtra", color: "#047857", bg: "#ECFDF5" },
                   ].map(b => (
-                    <span key={b.text} className="text-xs font-bold px-3 py-1.5 rounded-full border"
+                    <span key={b.text} className="text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full border"
                       style={{ color: b.color, background: b.bg, borderColor: `${b.color}30` }}>
                       {b.text}
                     </span>
@@ -558,22 +559,24 @@ export default function AboutPage() {
         </section>
 
         {/* ── Contact strip ── */}
-        <div className="bg-[#111827] py-12">
+        <div className="bg-[#111827] py-10 md:py-14">
           <div className="max-w-7xl mx-auto px-4 md:px-10 text-center">
-            <h3 className="text-white text-2xl font-black mb-2">Consult Our Specialists</h3>
-            <p className="text-white/60 text-sm mb-6">Sitaram Hospital, Bhangya Maruti Chowk, Lane No. 6, Dhule – 424001</p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <h3 className="text-white text-xl md:text-2xl font-black mb-2">Consult Our Specialists</h3>
+            <p className="text-white/60 text-xs md:text-sm mb-6 px-2">
+              Sitaram Hospital, Bhangya Maruti Chowk, Lane No. 6, Dhule – 424001
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-3 max-w-md sm:max-w-none mx-auto">
               <a href="tel:9421279065"
-                className="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm">
+                className="inline-flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm">
                 📞 Call: 9421279065
               </a>
               <a href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20consult%20at%20Sitaram%20Hospital."
                 target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm">
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm">
                 💬 WhatsApp Us
               </a>
               <Link href="/"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm border border-white/20">
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm border border-white/20">
                 ← Back to Home
               </Link>
             </div>
