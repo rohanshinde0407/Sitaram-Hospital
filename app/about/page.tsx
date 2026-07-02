@@ -333,7 +333,7 @@ export default function AboutPage() {
               </SectionCard>
 
               {/* IMA National Events */}
-              <SectionCard icon={<CalendarDays size={14} color="white" />} title="Organised IMA National Events"
+              <SectionCard icon={<CalendarDays size={14} color="white" />} title="Participated in IMA National Events"
                 color="#0E7490" bg="#ECFEFF" border="#A5F3FC">
                 <div className="space-y-3">
                   {[
@@ -474,6 +474,7 @@ export default function AboutPage() {
                     "Past Election Commission Member, IMA MS",
                     "National Standing Committee Member, IMA",
                     "Speaker — ICON 2015 Conference",
+                    "Advisor — Socio-Medical Affairs Committee, World Medical Association",
                   ].map(r => (
                     <div key={r} className="flex items-start gap-3">
                       <Dot color="#7B1FA2" />
