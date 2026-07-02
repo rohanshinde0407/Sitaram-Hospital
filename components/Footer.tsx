@@ -198,32 +198,16 @@ export default function Footer() {
               <div>
                 <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4 flex items-center gap-2">
                   <span className="w-4 h-0.5 bg-[#60a5fa] rounded-full" />
-                  Contact Doctors
+                  Contact Us
                 </h4>
                 <div className="space-y-4">
                   <div className="bg-white/5 rounded-xl p-3.5 border border-white/8">
-                    <div className="text-[#EF5350] text-xs font-bold mb-1">Dr. Ravindra Wankhedkar</div>
-                    <div className="text-[9px] text-white/40 mb-1.5">Senior Laser Proctologist</div>
-                    <a href="tel:9422296495" className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors">
-                      <Phone size={12} className="text-[#EF5350]" />
-                      94222 96495
-                    </a>
-                  </div>
-                  <div className="bg-white/5 rounded-xl p-3.5 border border-white/8">
-                    <div className="text-[#4ade80] text-xs font-bold mb-1">Dr. Meena Wankhedkar</div>
-                    <div className="text-[9px] text-white/40 mb-1.5">Proctologist &amp; Ano-Rectal Specialist</div>
-                    <a href="tel:8275008768" className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors">
-                      <Phone size={12} className="text-[#4ade80]" />
-                      82750 08768
-                    </a>
-                  </div>
-                  <div className="bg-white/5 rounded-xl p-3.5 border border-white/8">
-                    <div className="text-white/50 text-xs font-bold mb-1.5">Hospital Helplines</div>
+                    <div className="text-white/50 text-xs font-bold mb-2">Hospital Helplines</div>
                     <a href="tel:02562235795" className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors">
                       <Phone size={12} className="text-[#60a5fa]" />
                       02562 – 235795 / 297695
                     </a>
-                    <a href="tel:9421279065" className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors mt-1">
+                    <a href="tel:9421279065" className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors mt-1.5">
                       <Phone size={12} className="text-[#60a5fa]" />
                       94212 79065
                     </a>

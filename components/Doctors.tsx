@@ -10,7 +10,7 @@ const doctors = [
     gradFrom: "#C62828",
     gradTo: "#8E0000",
     badge: "MS · Laser Proctologist",
-    role: "Senior Laser Proctologist & Colorectal Surgeon",
+    role: "Senior Surgeon and Laser Proctologist",
     qualifications: [
       "M.B.B.S. – B.J. Medical College, Pune",
       "M.S. (General Surgery) – B.J. Medical College, Pune",
@@ -42,7 +42,7 @@ const doctors = [
     gradFrom: "#2E7D32",
     gradTo: "#1B5E20",
     badge: "MBBS · Ano-Rectal Specialist",
-    role: "Proctologist & Ano-Rectal Specialist",
+    role: "Family Medicine Obstetrician & Laser Specialist",
     qualifications: [
       "M.B.B.S. – Lokmanya Tilak Municipal Medical College, Mumbai",
     ],
@@ -67,9 +67,9 @@ export default function Doctors() {
         <div className="text-center mb-12">
           <div className="section-eyebrow justify-center">Our Medical Team</div>
           <div className="rule rule-center" />
-          <h2 className="section-title mb-4">Expert Laser Proctologists</h2>
+          <h2 className="section-title mb-4">Expert Doctors</h2>
           <p className="section-lead mx-auto text-center">
-            Nationally and internationally trained specialists — bringing decades of experience in laser proctology and ano-rectal surgery.
+            Nationally and Internationally trained specialists with decades of experience.
           </p>
         </div>
 
@@ -103,12 +103,6 @@ export default function Doctors() {
 
                 {/* Name + role */}
                 <div className="min-w-0">
-                  <span
-                    className="inline-block text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full mb-2"
-                    style={{ background: `${doc.color}15`, color: doc.color }}
-                  >
-                    {doc.badge}
-                  </span>
                   <h3 className="font-black text-[#111827] text-lg leading-tight">{doc.name}</h3>
                   <p className="text-sm font-medium mt-1 leading-snug" style={{ color: doc.color }}>{doc.role}</p>
                 </div>

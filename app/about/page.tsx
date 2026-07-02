@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Award, BookOpen, Stethoscope, Heart, Users, Globe, Star, MapPin } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, Stethoscope, Heart, Users, Globe, Star, MapPin, Trophy, CalendarDays } from "lucide-react";
 
 function SectionCard({
   icon, title, color, bg, border, children,
@@ -217,6 +217,9 @@ export default function AboutPage() {
                     { role: "Proactive IMA participation since", year: "2003" },
                     { role: "Chair, IMA National Health Scheme", year: "" },
                     { role: "President, Dhule District Basketball Association", year: "Current" },
+                    { role: "National Chairman, IMA Academy of Medical Specialties", year: "" },
+                    { role: "National Secretary, IMA Hospital Board of India", year: "" },
+                    { role: "Chief Election Commissioner, National IMA", year: "" },
                   ].map(r => (
                     <div key={r.role} className="flex items-start gap-3 p-2.5 rounded-xl bg-blue-50/50">
                       <Dot color="#1565C0" />
@@ -329,6 +332,50 @@ export default function AboutPage() {
                 </div>
               </SectionCard>
 
+              {/* IMA National Events */}
+              <SectionCard icon={<CalendarDays size={14} color="white" />} title="IMA National Events Participated"
+                color="#0E7490" bg="#ECFEFF" border="#A5F3FC">
+                <div className="space-y-3">
+                  {[
+                    { event: "IMA National Sports Event", desc: "Represented IMA at national-level sports activities." },
+                    { event: "IMA National Cultural and Literary Festival", desc: "Active participant in the national cultural and literary celebration of the medical fraternity." },
+                    { event: "IMA Bharat Yatra", desc: "Part of the nationwide IMA journey across India." },
+                    { event: "IMA Mahapanchayat", desc: "Participated in the historic gathering of 25,000 doctors at Delhi." },
+                  ].map(e => (
+                    <div key={e.event} className="flex items-start gap-3">
+                      <Dot color="#0E7490" />
+                      <div>
+                        <div className="text-sm font-bold text-[#111827]">{e.event}</div>
+                        <div className="text-xs text-[#6B7280] mt-0.5 leading-relaxed">{e.desc}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SectionCard>
+
+              {/* Awards & Recognition */}
+              <SectionCard icon={<Trophy size={14} color="white" />} title="Awards & Recognition"
+                color="#5B21B6" bg="#F5F3FF" border="#DDD6FE" span="md:col-span-2">
+                <div className="grid sm:grid-cols-2 gap-2">
+                  {[
+                    "Green Doctor Award — for planting 10,000 trees",
+                    "Covid Warrior Award",
+                    "Dr. B.C. Roy Oration Memorial Award",
+                    "Dr. R.K. Menda Award",
+                    "Dr. A.K. Sinha Award",
+                    "Medical Education and Research Award",
+                    "Dr. V.V.R. Oration Award",
+                    "Dr. V.C. Pillai Oration Award",
+                    "Dr. Kishore Taori Oration Award",
+                    "Dr. Ketan Desai Oration Award",
+                  ].map(a => (
+                    <div key={a} className="flex items-start gap-3 bg-[#F5F3FF] border border-[#DDD6FE] rounded-xl px-3 py-2.5">
+                      <Dot color="#5B21B6" />
+                      <span className="text-sm text-[#374151]">{a}</span>
+                    </div>
+                  ))}
+                </div>
+              </SectionCard>
 
             </div>
 
@@ -371,7 +418,6 @@ export default function AboutPage() {
                 <h2 className="text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-1">
                   Dr. Meena R. Wankhedkar
                 </h2>
-                <p className="text-sm text-[#6B7280] italic mb-4">(Dr. Meenal R. Wankhedkar)</p>
 
                 <div className="flex flex-wrap gap-2 mb-5">
                   {[
@@ -389,7 +435,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-[#374151] text-base leading-relaxed max-w-3xl">
-                  Dr. Meena R. Wankhedkar (also referred to as Dr. Meenal R. Wankhedkar) is a prominent Indian medical professional, medical activist, and senior leader within the Indian Medical Association (IMA). Based in Dhule, Maharashtra, she is an experienced <strong className="text-[#AD1457]">family physician, obstetrician, and gynaecologist (OB/GYN)</strong> practising at Sitaram Hospital. She holds an <strong>MBBS</strong> and is a <strong>Fellow of the College of General Practitioners (FCGP)</strong>. She served as the <strong className="text-[#AD1457]">National Chairperson of the IMA Women Doctors Wing (IMA-WDW)</strong> and as a member of the <strong>IMA Maharashtra State Central Working Committee</strong>, driving health initiatives for women physicians and the wider community.
+                  Dr. Meena R. Wankhedkar is a prominent Indian medical professional, medical activist, and senior leader within the Indian Medical Association (IMA). Based in Dhule, Maharashtra, she is an experienced <strong className="text-[#AD1457]">Family Physician and Family Medicine Obstetrician</strong> practising at Sitaram Hospital. She holds an <strong>MBBS</strong> and is a <strong>Fellow of the College of General Practitioners (FCGP)</strong>. She served as the <strong className="text-[#AD1457]">National Chairperson of the IMA Women Doctors Wing (IMA-WDW)</strong> and as a member of the <strong>IMA Maharashtra State Central Working Committee</strong>, driving health initiatives for women physicians and the wider community.
                 </p>
               </div>
             </div>
@@ -441,10 +487,8 @@ export default function AboutPage() {
                 color="#2E7D32" bg="#F0FDF4" border="#BBF7D0">
                 <div className="space-y-2">
                   {[
-                    "Obstetrics & Gynaecology (OB/GYN)",
                     "Well Women Clinic",
                     "Antenatal Care & Maternity",
-                    "Gynaecological Surgery",
                     "Family Medicine & General Practice",
                     "Acute & Chronic Illness Management",
                   ].map(s => (

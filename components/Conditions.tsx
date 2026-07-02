@@ -9,10 +9,8 @@ const conditions = [
     color: "#C62828",
     bg: "#FFF5F5",
     border: "#FECACA",
-    img: "/img/hemorrhoid-anatomy.jpg",
-    imgAlt: "Haemorrhoid anatomy diagram",
-    desc: "Swollen blood vessels inside and around the rectum and anus. Both internal and external types treated with laser.",
-    symptoms: ["Bleeding during bowel movements", "Pain or discomfort near anus", "Swelling or lump", "Itching or mucus discharge"],
+    desc: "Swollen blood vessels inside and around the rectum and anus. Both internal and external types treated with advanced laser.",
+    symptoms: ["Bleeding during bowel movements", "Pain or discomfort near anus", "Swelling or lump near anus", "Itching or mucus discharge"],
     treatment: "Laser Hemorrhoidoplasty · DGHAL-RAR · RFA · Sclerotherapy",
   },
   {
@@ -21,10 +19,8 @@ const conditions = [
     color: "#E65100",
     bg: "#FFF8F4",
     border: "#FED7AA",
-    img: "/img/piles-illustration.jpg",
-    imgAlt: "Anal fissure awareness illustration",
-    desc: "A small tear or cut in the lining of the anal canal causing severe pain during and after bowel movements.",
-    symptoms: ["Severe burning pain during stool", "Bright red blood on tissue", "Muscle spasm near anus", "Visible crack or tear"],
+    desc: "A small tear in the lining of the anal canal causing severe pain during and after bowel movements.",
+    symptoms: ["Severe burning pain on passing stool", "Bright red blood on tissue", "Muscle spasm near anus", "Visible crack or tear"],
     treatment: "Laser Fissurectomy · Anal Sphincterometry · Lateral Sphincterotomy",
   },
   {
@@ -33,10 +29,8 @@ const conditions = [
     color: "#2E7D32",
     bg: "#F0FDF4",
     border: "#BBF7D0",
-    img: "/img/fistula-anatomy.jpg",
-    imgAlt: "Fistula anatomy diagram showing A B C D tracts",
     desc: "An abnormal tunnel connecting the anal canal to the skin outside, with persistent pus discharge.",
-    symptoms: ["Pus or blood discharge", "Pain and swelling around anus", "Recurrent abscesses", "Foul-smelling drainage"],
+    symptoms: ["Pus or blood discharge", "Pain and swelling around anus", "Recurrent abscesses", "Foul smelling discharge"],
     treatment: "VAAFT · FiLaC · Laser Fistulotomy",
   },
   {
@@ -45,10 +39,8 @@ const conditions = [
     color: "#1565C0",
     bg: "#EFF6FF",
     border: "#BFDBFE",
-    img: "/img/laser-treatment-overview.jpg",
-    imgAlt: "Laser treatment for pilonidal sinus",
-    desc: "A small cyst or abscess near the tailbone (coccyx) at the top of the buttocks cleft, often containing hair and skin debris, causing recurrent infection and discharge.",
-    symptoms: ["Pain and swelling near tailbone", "Pus or blood discharge", "Foul odour from the sinus", "Recurrent infection & abscess"],
+    desc: "A small cyst near the tailbone containing hair and skin debris, causing recurrent infection and discharge.",
+    symptoms: ["Pain and swelling near tailbone", "Pus or blood discharge", "Foul odour from sinus", "Recurrent infection & abscess"],
     treatment: "Laser Pilonidal Sinus Excision · Pit Picking · Sinusectomy",
   },
   {
@@ -57,9 +49,7 @@ const conditions = [
     color: "#7B1FA2",
     bg: "#FAF5FF",
     border: "#E9D5FF",
-    img: "/img/piles-illustration.jpg",
-    imgAlt: "Perineal region anatomy",
-    desc: "A tear in the perineum — the tissue between the vaginal opening and the anus — most commonly occurring after childbirth or due to trauma, causing pain and functional difficulty.",
+    desc: "A tear in the perineum — tissue between the vaginal opening and the anus — commonly occurring after childbirth.",
     symptoms: ["Perineal pain and tenderness", "Difficulty sitting or walking", "Bleeding or wound discharge", "Bowel or urinary incontinence"],
     treatment: "Perineal Repair · Sphincter Reconstruction · Laser-Assisted Wound Healing",
   },
@@ -69,10 +59,8 @@ const conditions = [
     color: "#00695C",
     bg: "#F0FDFA",
     border: "#99F6E4",
-    img: "/img/fistula-anatomy.jpg",
-    imgAlt: "Recto-vaginal fistula diagram",
-    desc: "An abnormal opening or tunnel between the rectum and the vagina, allowing gas and faecal matter to pass through the vagina, causing significant distress and hygiene concerns.",
-    symptoms: ["Passage of gas or stool through vagina", "Foul-smelling vaginal discharge", "Recurrent vaginal infections", "Pain and discomfort in pelvic area"],
+    desc: "An abnormal opening between the rectum and vagina, allowing gas and faecal matter to pass through the vagina.",
+    symptoms: ["Passage of gas or stool through vagina", "Foul-smelling vaginal discharge", "Recurrent vaginal infections", "Pain in pelvic area"],
     treatment: "Fistula Flap Repair · Sphincteroplasty · Laser-Assisted Fistula Closure",
   },
   {
@@ -81,23 +69,9 @@ const conditions = [
     color: "#B45309",
     bg: "#FFFBEB",
     border: "#FDE68A",
-    img: "/img/hemorrhoid-anatomy.jpg",
-    imgAlt: "Anal canal anatomy",
-    desc: "Abnormal narrowing of the anal canal that makes passing stools difficult and painful. Can result from prior surgery, chronic inflammation, or scarring.",
-    symptoms: ["Difficulty passing stools", "Severe pain during defecation", "Narrow or ribbon-like stool", "Bleeding and straining"],
+    desc: "Abnormal narrowing of the anal canal that makes passing stools difficult and painful, resulting from prior surgery or scarring.",
+    symptoms: ["Difficulty in passing stools", "Severe pain during defecation", "Narrow or ribbon-like stool", "Bleeding and straining"],
     treatment: "Anal Dilation · Anoplasty · Laser Anal Sphincteroplasty",
-  },
-  {
-    id: "genito-urinary-surgery",
-    label: "Genito Urinary Surgery",
-    color: "#0E7490",
-    bg: "#ECFEFF",
-    border: "#A5F3FC",
-    img: "/img/laser-treatment-overview.jpg",
-    imgAlt: "Genito-urinary surgical care",
-    desc: "Surgical management of conditions affecting the urinary tract and genital organs, including bladder, kidney, ureter, urethra and related structures using advanced minimally invasive techniques.",
-    symptoms: ["Urinary difficulty or retention", "Recurrent urinary tract infections", "Blood in urine (haematuria)", "Pelvic or lower abdominal pain"],
-    treatment: "Minimally Invasive Urological Surgery · Laparoscopic Procedures · Laser-Assisted Techniques",
   },
 ];
 
@@ -109,7 +83,7 @@ export default function Conditions() {
     <section id="conditions" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* Header */}
+        {/* ── Header ── */}
         <div className="text-center mb-10">
           <div className="section-eyebrow justify-center">Conditions We Treat</div>
           <div className="rule rule-center" />
@@ -119,16 +93,23 @@ export default function Conditions() {
           </p>
         </div>
 
-        {/* Tabs */}
+        {/* ── Tab pills ── */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {conditions.map((cond, i) => (
             <button
               key={cond.id}
+              onMouseEnter={() => setActive(i)}
               onClick={() => setActive(i)}
-              className="py-2 px-4 rounded-full text-xs font-bold transition-all duration-200 border"
+              className="py-2 px-4 rounded-full text-xs font-bold border transition-all duration-200"
               style={
                 active === i
-                  ? { color: cond.color, background: cond.bg, borderColor: cond.border, boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }
+                  ? {
+                      color: cond.color,
+                      background: cond.bg,
+                      borderColor: cond.color,
+                      boxShadow: `0 0 0 3px ${cond.color}18, 0 2px 8px rgba(0,0,0,0.08)`,
+                      transform: "translateY(-1px)",
+                    }
                   : { color: "#6B7280", background: "#F9FAFB", borderColor: "#E5E7EB" }
               }
             >
@@ -137,91 +118,139 @@ export default function Conditions() {
           ))}
         </div>
 
-        {/* Active condition detail */}
+        {/* ── Detail panel ── */}
         <div className="grid lg:grid-cols-2 gap-10 items-center">
 
-          {/* Image */}
+          {/* LEFT — Image placeholder */}
           <div className="relative order-2 lg:order-1">
+
+            {/* Glow */}
             <div
-              className="absolute inset-0 rounded-3xl blur-2xl opacity-30 transition-all duration-500"
-              style={{ background: c.color }}
+              className="absolute -inset-3 rounded-3xl blur-2xl opacity-20"
+              style={{ background: c.color, transition: "background 0.4s ease" }}
             />
-            <div className="relative rounded-3xl overflow-hidden border-2 transition-all duration-300 h-72 md:h-96 flex flex-col items-center justify-center gap-3"
-              style={{ borderColor: c.border, background: c.bg }}>
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: `${c.color}18` }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={c.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div className="text-center px-6">
-                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: c.color }}>{c.label}</div>
-                <div className="text-[11px]" style={{ color: `${c.color}99` }}>Image coming soon</div>
-              </div>
-              {/* Bottom label */}
+
+            {/* Placeholder card */}
+            <div
+              className="relative rounded-3xl overflow-hidden border-2 flex flex-col items-center justify-center gap-3"
+              style={{
+                borderColor: c.border,
+                background: c.bg,
+                height: 380,
+                transition: "border-color 0.4s ease, background 0.4s ease",
+              }}
+            >
+              {/* Decorative rings */}
+              <div className="absolute w-64 h-64 rounded-full border-2 opacity-10"
+                style={{ borderColor: c.color, transition: "border-color 0.4s ease" }} />
+              <div className="absolute w-40 h-40 rounded-full border opacity-10"
+                style={{ borderColor: c.color, transition: "border-color 0.4s ease" }} />
+
+              {/* Condition name — large, centred */}
               <div
-                className="absolute bottom-0 left-0 right-0 px-5 py-3"
-                style={{ background: `linear-gradient(to top, ${c.color}ee, transparent)` }}
+                className="relative z-10 font-black text-2xl md:text-3xl text-center px-8 leading-snug"
+                style={{ color: c.color, transition: "color 0.4s ease" }}
               >
-                <div className="text-white font-bold text-sm">{c.label}</div>
+                {c.label}
               </div>
+
+              <div className="relative z-10 text-xs text-[#9CA3AF] tracking-widest uppercase">
+                Speciality · Ano-Rectal Care
+              </div>
+
+              {/* Bottom accent bar */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-1.5"
+                style={{ background: c.color, transition: "background 0.4s ease" }}
+              />
             </div>
           </div>
 
-          {/* Content */}
+          {/* RIGHT — Content */}
           <div className="order-1 lg:order-2">
+
+            {/* Badge */}
             <div
               className="inline-block text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4"
-              style={{ color: c.color, background: c.bg, border: `1px solid ${c.border}` }}
+              style={{
+                color: c.color,
+                background: c.bg,
+                border: `1px solid ${c.border}`,
+                transition: "all 0.3s ease",
+              }}
             >
               {c.label}
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-3">{c.label}</h3>
+
+            <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-3">
+              {c.label}
+            </h3>
             <p className="text-[#374151] leading-relaxed mb-5">{c.desc}</p>
 
+            {/* Symptoms */}
             <div className="mb-5">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-2.5">Common Symptoms</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-2.5">
+                Common Symptoms
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {c.symptoms.map((s) => (
                   <div
                     key={s}
-                    className="flex items-center gap-2 text-sm px-3 py-2.5 rounded-xl"
-                    style={{ background: c.bg, color: c.color }}
+                    className="flex items-center gap-2.5 text-sm px-3 py-2.5 rounded-xl border"
+                    style={{
+                      background: c.bg,
+                      borderColor: c.border,
+                      transition: "all 0.3s ease",
+                    }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: c.color }} />
+                    <span className="w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ background: c.color }} />
                     <span className="text-[#374151]">{s}</span>
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* Treatment */}
             <div
               className="rounded-2xl px-4 py-3 text-sm font-semibold mb-6"
-              style={{ background: c.bg, color: c.color, border: `1px solid ${c.border}` }}
+              style={{
+                background: c.bg,
+                color: c.color,
+                border: `1px solid ${c.border}`,
+                transition: "all 0.3s ease",
+              }}
             >
-              💊 <strong>Our Treatments:</strong> {c.treatment}
+              <strong>Our Treatments:</strong> {c.treatment}
             </div>
 
-            <a href="#appointment" className="btn btn-red inline-flex">
+            <a
+              href="#appointment"
+              className="inline-flex items-center gap-2 text-white font-bold text-sm px-6 py-3 rounded-xl hover:opacity-90 shadow-md"
+              style={{ background: c.color, transition: "background 0.3s ease" }}
+            >
               Book Consultation for {c.label.split(" ")[0]} →
             </a>
           </div>
         </div>
 
-        {/* Bottom full-width CTA */}
+        {/* ── Bottom CTA ── */}
         <div
           className="mt-14 rounded-3xl p-8 md:p-10 text-center text-white"
           style={{ background: "linear-gradient(135deg, #C62828, #8E0000)" }}
         >
-          <div className="text-3xl mb-3">🚨</div>
-          <h3 className="text-xl md:text-2xl font-bold mb-2">Don't Delay Treatment Out of Fear or Shame</h3>
+          <h3 className="text-xl md:text-2xl font-bold mb-2">
+            Don&rsquo;t Delay Treatment Out of Fear or Shame
+          </h3>
           <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto mb-5">
-            All consultations are 100% confidential. Our compassionate team treats thousands of patients
-            every year with complete discretion and dignity.
+            All consultations are 100% confidential. Our compassionate team treats thousands of
+            patients every year with complete discretion and dignity.
           </p>
           <a href="#appointment" className="btn btn-white inline-flex">
             Consult Our Expert Today →
           </a>
         </div>
+
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HospitalInfo from "@/components/HospitalInfo";
 import DepartmentsSection from "@/components/DepartmentsSection";
 import ClinicOverview from "@/components/ClinicOverview";
 import About from "@/components/About";
@@ -16,10 +15,9 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <HospitalInfo />
         <DepartmentsSection />
-        <ClinicOverview />
         <About />
+        <ClinicOverview />
         <Conditions />
         <Treatments />
         <LaserBenefits />

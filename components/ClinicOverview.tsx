@@ -1,7 +1,7 @@
 import { CheckCircle2, Zap, Shield, Clock } from "lucide-react";
 
 const highlights = [
-  { icon: Zap, label: "Advanced Laser Technology", desc: "Sabrina Laser & LASEEV — EU-certified systems for pinpoint precision", color: "#C62828" },
+  { icon: Zap, label: "Advanced Laser Technology", desc: "Sabrina Laser, LASEEV, EUFOTON LASER & Neo V Laser — EU-certified systems for pinpoint precision", color: "#C62828" },
   { icon: Shield, label: "No Cuts. No Stitches.", desc: "Sutureless, scar-free procedures with minimal blood loss", color: "#2E7D32" },
   { icon: Clock, label: "Day Care — Home Same Day", desc: "Procedures completed in hours; no overnight hospital stay", color: "#1565C0" },
 ];
@@ -61,7 +61,7 @@ export default function ClinicOverview() {
                 <span className="text-[#C62828]">Precision Laser Technology</span>
               </h2>
               <p className="text-[#374151] text-base leading-relaxed">
-                At ZEN Laser Procto Care, we use internationally certified laser systems — LASEEV and Sabrina Laser — to treat proctological conditions with zero cuts, minimal pain, and rapid recovery. Patients go home the same day.
+                At ZEN Laser Procto Care, we use internationally certified laser systems — Sabrina Laser, LASEEV, EUFOTON LASER and Neo V Laser — to treat proctological conditions with zero cuts, minimal pain, and rapid recovery. Patients go home the same day.
               </p>
             </div>
 
