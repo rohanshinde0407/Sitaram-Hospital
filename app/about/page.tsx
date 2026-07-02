@@ -165,7 +165,6 @@ export default function AboutPage() {
                 color="#E65100" bg="#FFF8F4" border="#FED7AA">
                 <div className="space-y-3">
                   {[
-                    { point: "Assistant Professor in Surgery — Shri Bhausaheb Hire Govt. Medical College, Dhule", note: "" },
                     { point: "Teacher of the Decade Award — 1999", note: "Bestowed by students & staff of SBH Medical College" },
                     { point: "Hony. Professor of Surgery — SBH Govt. Medical College, Dhule", note: "Continuing passion for teaching" },
                     { point: "Member — Board of Exams, Maharashtra University of Health Sciences", note: "" },
@@ -334,7 +333,7 @@ export default function AboutPage() {
               </SectionCard>
 
               {/* IMA National Events */}
-              <SectionCard icon={<CalendarDays size={14} color="white" />} title="IMA National Events Participated"
+              <SectionCard icon={<CalendarDays size={14} color="white" />} title="Organised IMA National Events"
                 color="#0E7490" bg="#ECFEFF" border="#A5F3FC">
                 <div className="space-y-3">
                   {[
