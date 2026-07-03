@@ -333,14 +333,14 @@ export default function AboutPage() {
               </SectionCard>
 
               {/* IMA National Events */}
-              <SectionCard icon={<CalendarDays size={14} color="white" />} title="Participated in IMA National Events"
+              <SectionCard icon={<CalendarDays size={14} color="white" />} title="Organised IMA National Events"
                 color="#0E7490" bg="#ECFEFF" border="#A5F3FC">
                 <div className="space-y-3">
                   {[
-                    { event: "IMA National Sports Event", desc: "Represented IMA at national-level sports activities." },
-                    { event: "IMA National Cultural and Literary Festival", desc: "Active participant in the national cultural and literary celebration of the medical fraternity." },
-                    { event: "IMA Bharat Yatra", desc: "Part of the nationwide IMA journey across India." },
-                    { event: "IMA Mahapanchayat", desc: "Participated in the historic gathering of 25,000 doctors at Delhi." },
+                    { event: "IMA National Sports Event", desc: "Organised IMA national-level sports activities." },
+                    { event: "IMA National Cultural and Literary Festival", desc: "Organised the national cultural and literary celebration of the medical fraternity." },
+                    { event: "IMA Bharat Yatra", desc: "Organised the nationwide IMA journey across India." },
+                    { event: "IMA Mahapanchayat", desc: "Organised the historic gathering of 25,000 doctors at Delhi." },
                   ].map(e => (
                     <div key={e.event} className="flex items-start gap-3">
                       <Dot color="#0E7490" />
