@@ -94,7 +94,7 @@ export default function DepartmentsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-10 py-10 space-y-10">
 
         {/* ══ SURGERY DEPARTMENT ══ */}
-        <div id="dept-surgery" className="rounded-3xl overflow-hidden border border-blue-100 shadow-sm">
+        <div id="dept-surgery" className="rounded-3xl overflow-hidden border border-blue-100 shadow-sm" style={{ scrollMarginTop: "7rem" }}>
 
           {/* Header bar */}
           <div className="px-7 py-5 flex items-center gap-4"
@@ -132,7 +132,7 @@ export default function DepartmentsSection() {
         </div>
 
         {/* ══ WOMEN'S DEPARTMENT ══ */}
-        <div id="dept-women" className="rounded-3xl overflow-hidden border border-pink-100 shadow-sm">
+        <div id="dept-women" className="rounded-3xl overflow-hidden border border-pink-100 shadow-sm" style={{ scrollMarginTop: "7rem" }}>
 
           {/* Header bar */}
           <div className="px-7 py-5 flex items-center gap-4"
@@ -170,7 +170,7 @@ export default function DepartmentsSection() {
         </div>
 
         {/* ══ PROCTOLOGY DEPARTMENT ══ */}
-        <div id="dept-proctology" className="rounded-3xl overflow-hidden border border-red-100 shadow-sm">
+        <div id="dept-proctology" className="rounded-3xl overflow-hidden border border-red-100 shadow-sm" style={{ scrollMarginTop: "7rem" }}>
 
           {/* Header bar */}
           <div className="px-7 py-5 flex items-center gap-4"
@@ -208,7 +208,7 @@ export default function DepartmentsSection() {
         </div>
 
         {/* ══ FAMILY PHYSICIAN DEPARTMENT ══ */}
-        <div id="dept-family" className="rounded-3xl overflow-hidden border border-green-100 shadow-sm">
+        <div id="dept-family" className="rounded-3xl overflow-hidden border border-green-100 shadow-sm" style={{ scrollMarginTop: "7rem" }}>
 
           {/* Header bar */}
           <div className="px-7 py-5 flex items-center gap-4"
@@ -265,12 +265,6 @@ export default function DepartmentsSection() {
             <p className="text-[#374151] text-base leading-relaxed mb-7">
               Get expert care with safe, effective, and timely treatment.
             </p>
-            <a
-              href="#appointment"
-              className="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm px-6 py-3 rounded-xl transition-colors duration-200 shadow-md"
-            >
-              Book a Consultation →
-            </a>
           </div>
 
           {/* Right – image */}

@@ -20,6 +20,7 @@ const navLinks = [
   { label: "Our Technology", href: "/our-technology", dropdown: null },
   { label: "Proctology",     href: "/proctology",  dropdown: null },
   { label: "Our Doctors",    href: "/our-doctors", dropdown: null },
+  { label: "Gallery",        href: "/gallery",    dropdown: null },
   { label: "Contact Us",     href: "/contact",   dropdown: null },
 ];
 

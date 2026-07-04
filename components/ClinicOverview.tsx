@@ -35,7 +35,7 @@ export default function ClinicOverview() {
                   style={{ height: "clamp(300px, 38vw, 500px)" }}
                 >
                   <Image
-                    src="/img/Machine%2001.jpg"
+                    src="/img/Machine 01.jpg"
                     alt="EUFOTON Laser Machine — ZEN Laser Procto Care"
                     fill
                     className="object-contain p-4"

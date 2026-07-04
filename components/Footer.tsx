@@ -32,12 +32,13 @@ export default function Footer() {
               <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Quick Links</h4>
               <ul className="space-y-2.5">
                 {[
-                  { label: "Home",         href: "/" },
-                  { label: "About Us",     href: "/about" },
-                  { label: "Services",     href: "/services" },
-                  { label: "Our Doctors",  href: "/our-doctors" },
-                  { label: "Contact Us",   href: "/contact" },
-                  { label: "Gallery",      href: "/gallery" },
+                  { label: "Home",           href: "/" },
+                  { label: "About Us",       href: "/about" },
+                  { label: "Services",       href: "/services" },
+                  { label: "Our Technology", href: "/our-technology" },
+                  { label: "Proctology",     href: "/proctology" },
+                  { label: "Our Doctors",    href: "/our-doctors" },
+                  { label: "Contact Us",     href: "/contact" },
                 ].map((l) => (
                   <li key={l.label}>
                     <Link href={l.href} className="text-white/50 hover:text-white text-sm transition-colors">
@@ -53,16 +54,16 @@ export default function Footer() {
               <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Conditions Treated</h4>
               <ul className="space-y-2.5">
                 {[
-                  "Piles (Haemorrhoids)",
-                  "Fissure in Ano",
-                  "Fistula in Ano",
-                  "Pilonidal Sinus",
-                  "Perineal Tear / RVF",
-                  "Anal Stenosis",
+                  { label: "Piles (Haemorrhoids)", href: "/proctology#piles" },
+                  { label: "Fissure in Ano",       href: "/proctology#fissure" },
+                  { label: "Fistula in Ano",       href: "/proctology#fistula" },
+                  { label: "Pilonidal Sinus",      href: "/proctology#pilonidal-sinus" },
+                  { label: "Perineal Tear / RVF",  href: "/proctology#perineal-tear" },
+                  { label: "Anal Stenosis",         href: "/proctology#anal-stenosis" },
                 ].map((c) => (
-                  <li key={c}>
-                    <Link href="/#conditions" className="text-white/50 hover:text-white text-sm transition-colors">
-                      {c}
+                  <li key={c.label}>
+                    <Link href={c.href} className="text-white/50 hover:text-white text-sm transition-colors">
+                      {c.label}
                     </Link>
                   </li>
                 ))}

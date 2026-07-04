@@ -122,6 +122,7 @@ export default function ProctologyPage() {
             {conditions.map((c, i) => (
               <div
                 key={c.id}
+                id={c.id}
                 className={`flex flex-col md:flex-row gap-8 md:gap-14 items-center${
                   i % 2 === 1 ? " md:flex-row-reverse" : ""
                 }`}

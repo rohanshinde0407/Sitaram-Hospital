@@ -415,7 +415,7 @@ export default function OurDoctorsPage() {
                     { degree: "FIAMS", inst: "Hyderabad" },
                     { degree: "FCGP", inst: "Chennai" },
                     { degree: "M.B.B.S.", inst: "Lokmanya Tilak Municipal Medical College, Mumbai" },
-                    { degree: "Schooling", inst: "Dhule" },
+                    { degree: "Schooling", inst: "Udayachal School, Mumbai" },
                   ].map(e => (
                     <div key={e.degree} className="flex items-start gap-3">
                       <Dot color="#AD1457" />

@@ -1,29 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 interface GalleryImage {
   src: string;
   alt: string;
   cat: string;
   label: string;
+  desc?: string;
 }
 
 const catColors: Record<string, string> = {
   Equipment:  "#1565C0",
-  Anatomy:    "#2E7D32",
   Conditions: "#C62828",
 };
 
 const catBg: Record<string, string> = {
   Equipment:  "#EFF6FF",
-  Anatomy:    "#F0FDF4",
   Conditions: "#FFF5F5",
 };
 
 const catBorder: Record<string, string> = {
   Equipment:  "#BFDBFE",
-  Anatomy:    "#BBF7D0",
   Conditions: "#FECACA",
 };
 
@@ -58,13 +57,8 @@ export default function GalleryGrid({ images, cats }: { images: GalleryImage[]; 
           ))}
         </div>
 
-        {/* Count */}
-        <p className="text-center text-[#9CA3AF] text-sm mb-8">
-          Showing <strong className="text-[#374151]">{filtered.length}</strong> images
-        </p>
-
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
           {filtered.map((img, i) => {
             const color  = catColors[img.cat]  || "#6B7280";
             const bg     = catBg[img.cat]      || "#F9FAFB";
@@ -73,44 +67,43 @@ export default function GalleryGrid({ images, cats }: { images: GalleryImage[]; 
             return (
               <div
                 key={img.src + i}
-                className="rounded-2xl overflow-hidden border-2 bg-white shadow-sm"
+                className="rounded-2xl overflow-hidden border bg-white shadow-sm hover:shadow-md transition-shadow"
                 style={{ borderColor: border }}
               >
-                {/* Placeholder square */}
+                {/* Image */}
                 <div
-                  className="aspect-square flex flex-col items-center justify-center gap-2 border-b-2"
-                  style={{ background: bg, borderColor: border }}
+                  className="relative w-full"
+                  style={{ aspectRatio: "4/3", background: bg }}
                 >
-                  <svg
-                    width="28" height="28" viewBox="0 0 24 24"
-                    fill="none" stroke={color} strokeWidth="1.5"
-                    strokeLinecap="round" strokeLinejoin="round"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="3" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span className="text-[9px] font-bold uppercase tracking-widest" style={{ color: `${color}99` }}>
-                    Coming soon
-                  </span>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-contain p-4"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
                 </div>
 
                 {/* Label */}
-                <div className="p-2.5">
+                <div className="px-3 py-3 border-t" style={{ borderColor: border }}>
                   <div
-                    className="text-[9px] font-bold uppercase tracking-widest mb-0.5"
+                    className="text-[9px] font-black uppercase tracking-widest mb-0.5"
                     style={{ color }}
                   >
                     {img.cat}
                   </div>
-                  <div className="text-[11px] font-semibold text-[#374151] leading-tight line-clamp-2">
+                  <div className="text-xs font-bold text-[#111827] leading-tight mb-0.5">
                     {img.label}
                   </div>
+                  {img.desc && (
+                    <div className="text-[10px] text-[#9CA3AF] leading-snug">{img.desc}</div>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );
