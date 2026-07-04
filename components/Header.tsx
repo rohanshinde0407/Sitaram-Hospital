@@ -3,25 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const services = [
-  { label: "Surgery Department",         href: "/#dept-surgery",    color: "#1565C0", bg: "#EFF6FF" },
-  { label: "OBs / Gyn",                  href: "/#dept-women",      color: "#AD1457", bg: "#FDF2F8" },
-  { label: "Proctology",                 href: "/#dept-proctology", color: "#C62828", bg: "#FFF5F5" },
-  { label: "Family Physician",           href: "/#about",           color: "#2E7D32", bg: "#F0FDF4" },
-  { label: "State-of-the-Art Equipment", href: "/#equipment",       color: "#7C3AED", bg: "#F5F3FF" },
+  { label: "Surgery Department",         href: "/services#dept-surgery",    color: "#1565C0", bg: "#EFF6FF" },
+  { label: "OBs / Gyn",                  href: "/services#dept-women",      color: "#AD1457", bg: "#FDF2F8" },
+  { label: "Proctology",                 href: "/services#dept-proctology", color: "#C62828", bg: "#FFF5F5" },
+  { label: "Family Physician",           href: "/services#dept-family",     color: "#2E7D32", bg: "#F0FDF4" },
 ];
 
 const navLinks = [
-  { label: "Home",           href: "/",             dropdown: null },
-  { label: "About",          href: "/about",        dropdown: null },
-  { label: "Services",       href: "/#departments", dropdown: services },
-  { label: "Our Technology", href: "/#equipment",   dropdown: null },
-  { label: "Proctology",     href: "/#conditions",  dropdown: null },
-  { label: "Our Doctors",    href: "/#doctors",     dropdown: null },
-  { label: "Contact Us",     href: "/contact",      dropdown: null },
+  { label: "Home",           href: "/",          dropdown: null },
+  { label: "About",          href: "/about",     dropdown: null },
+  { label: "Services",       href: "/services",  dropdown: services },
+  { label: "Our Technology", href: "/our-technology", dropdown: null },
+  { label: "Proctology",     href: "/proctology",  dropdown: null },
+  { label: "Our Doctors",    href: "/our-doctors", dropdown: null },
+  { label: "Contact Us",     href: "/contact",   dropdown: null },
 ];
 
 const HEADER_BG = "rgb(15,109,109)";
@@ -166,19 +165,8 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Call CTA + hamburger */}
+            {/* Hamburger */}
             <div className="flex items-center gap-2 flex-shrink-0">
-              <a
-                href="tel:9421279065"
-                className="flex items-center gap-1.5 font-bold text-xs sm:text-sm px-3 sm:px-4 md:px-5 py-2 md:py-2.5 rounded-xl transition-colors shadow-sm"
-                style={{ background: "rgba(255,255,255,0.18)", color: "white", border: "1px solid rgba(255,255,255,0.30)" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.28)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.18)")}
-              >
-                <Phone size={13} />
-                <span>Call Now</span>
-              </a>
-
               <button
                 onClick={() => setMenuOpen(o => !o)}
                 className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl transition-colors"
@@ -274,16 +262,6 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Call CTA */}
-            <div className="px-4 pb-4 pt-1">
-              <a
-                href="tel:9421279065"
-                className="flex items-center justify-center gap-2 w-full text-white font-bold text-sm py-3 rounded-xl transition-colors"
-                style={{ background: HEADER_BG }}
-              >
-                <Phone size={14} /> Call Now
-              </a>
-            </div>
 
           </div>
         </div>

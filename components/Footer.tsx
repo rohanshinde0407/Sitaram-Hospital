@@ -34,8 +34,8 @@ export default function Footer() {
                 {[
                   { label: "Home",         href: "/" },
                   { label: "About Us",     href: "/about" },
-                  { label: "Services",     href: "/#departments" },
-                  { label: "Our Doctors",  href: "/#doctors" },
+                  { label: "Services",     href: "/services" },
+                  { label: "Our Doctors",  href: "/our-doctors" },
                   { label: "Contact Us",   href: "/contact" },
                   { label: "Gallery",      href: "/gallery" },
                 ].map((l) => (
@@ -80,10 +80,6 @@ export default function Footer() {
               <a href="tel:02562235795" className="flex items-center gap-2.5 text-white/60 hover:text-white text-sm transition-colors">
                 <Phone size={13} className="text-white/40 flex-shrink-0" />
                 02562 – 235795 / 297695
-              </a>
-              <a href="mailto:cearsdhule@gmail.com" className="flex items-center gap-2.5 text-white/60 hover:text-white text-sm transition-colors">
-                <Mail size={13} className="text-white/40 flex-shrink-0" />
-                cearsdhule@gmail.com
               </a>
               <div className="flex items-start gap-2.5 text-white/60 text-sm">
                 <MapPin size={13} className="text-white/40 flex-shrink-0 mt-0.5" />

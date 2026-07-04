@@ -26,6 +26,21 @@ const proctologyServices = [
   { title: "Anal Sphinctometry",      desc: "Manometric measurement of anal sphincter pressure for functional diagnosis and pre-op assessment." },
 ];
 
+const familyServices = [
+  { title: "Diagnose & Treat Common Illnesses",       desc: "Assessment and treatment of everyday ailments — fever, infections, cough, cold and more." },
+  { title: "Routine Health Checkups",                 desc: "Scheduled health assessments to monitor overall wellbeing and detect early warning signs." },
+  { title: "Preventive Healthcare & Vaccinations",    desc: "Tailored preventive plans and vaccination schedules for children and adults." },
+  { title: "Chronic Disease Management",              desc: "Ongoing monitoring and care for Diabetes, Hypertension and other long-term conditions." },
+  { title: "Minor Injuries & Infections",             desc: "Prompt treatment of cuts, wounds, minor burns and localized infections." },
+  { title: "Specialist Referrals",                    desc: "Timely referrals to the right specialist when advanced or focused care is required." },
+  { title: "Maternal & Child Healthcare",             desc: "Comprehensive care for mothers and children from pregnancy through early childhood." },
+  { title: "Mental Health Assessment & Counseling",   desc: "Supportive assessment, guidance and referral for anxiety, stress and mental wellness." },
+  { title: "Healthy Lifestyle Education",             desc: "Practical advice on nutrition, exercise, sleep and preventive health habits." },
+  { title: "Follow-up & Continuity of Care",          desc: "Regular follow-up consultations to track progress and adjust treatment as needed." },
+  { title: "Minor Medical Procedures",                desc: "In-clinic procedures including dressings, suturing and basic diagnostic tests." },
+  { title: "Coordinated Patient Care",                desc: "Seamless coordination with other specialists and departments for holistic treatment." },
+];
+
 const womenServices = [
   { title: "Well Women Clinic",      desc: "Preventive health screenings, cervical smear, breast examination and general wellness check-ups for women of all ages." },
   { title: "Antenatal Care",         desc: "Complete pregnancy monitoring — routine check-ups, nutritional guidance and birth planning from conception to delivery." },
@@ -88,9 +103,6 @@ export default function DepartmentsSection() {
               🏨
             </div>
             <div>
-              <div className="text-white/70 text-[10px] font-black uppercase tracking-widest">
-                Department
-              </div>
               <h3 className="text-white text-xl md:text-2xl font-black leading-tight">
                 Surgery Department
               </h3>
@@ -129,9 +141,6 @@ export default function DepartmentsSection() {
               🌸
             </div>
             <div>
-              <div className="text-white/70 text-[10px] font-black uppercase tracking-widest">
-                Department
-              </div>
               <h3 className="text-white text-xl md:text-2xl font-black leading-tight">
                 Women&rsquo;s Department
               </h3>
@@ -170,9 +179,6 @@ export default function DepartmentsSection() {
               ⚡
             </div>
             <div>
-              <div className="text-white/70 text-[10px] font-black uppercase tracking-widest">
-                Department
-              </div>
               <h3 className="text-white text-xl md:text-2xl font-black leading-tight">
                 Proctology Department
               </h3>
@@ -201,6 +207,44 @@ export default function DepartmentsSection() {
           </div>
         </div>
 
+        {/* ══ FAMILY PHYSICIAN DEPARTMENT ══ */}
+        <div id="dept-family" className="rounded-3xl overflow-hidden border border-green-100 shadow-sm">
+
+          {/* Header bar */}
+          <div className="px-7 py-5 flex items-center gap-4"
+            style={{ background: "linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%)" }}>
+            <div className="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center text-2xl flex-shrink-0">
+              🩺
+            </div>
+            <div>
+              <h3 className="text-white text-xl md:text-2xl font-black leading-tight">
+                Family Physician
+              </h3>
+            </div>
+            <div className="ml-auto hidden md:flex items-center gap-2 bg-white/12 rounded-xl px-4 py-2 border border-white/20">
+              <span className="text-white/80 text-xs font-bold">Primary Care &amp; Wellness</span>
+            </div>
+          </div>
+
+          {/* Services grid */}
+          <div className="bg-white p-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {familyServices.map((s) => (
+                <div key={s.title}
+                  className="group flex gap-3 p-4 rounded-2xl border border-gray-100 hover:border-green-100 hover:bg-green-50/40 transition-all duration-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#2E7D32] flex-shrink-0 mt-2" />
+                  <div>
+                    <div className="text-sm font-bold text-[#111827] group-hover:text-[#2E7D32] transition-colors leading-tight mb-1">
+                      {s.title}
+                    </div>
+                    <p className="text-[11px] text-[#9CA3AF] leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
 
       {/* ── Proctology CTA Banner ── */}
@@ -216,7 +260,7 @@ export default function DepartmentsSection() {
               Piles, Fissure &amp; Fistula
             </h3>
             <p className="text-lg md:text-xl font-bold text-[#C62828] mb-3">
-              Don&rsquo;t Be Embarrassed. Don&rsquo;t Suffer.
+              Don&rsquo;t hesitate. Don&rsquo;t suffer.
             </p>
             <p className="text-[#374151] text-base leading-relaxed mb-7">
               Get expert care with safe, effective, and timely treatment.

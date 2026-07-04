@@ -21,12 +21,6 @@ const MapPinIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
-const MailIcon = ({ size = 16 }: { size?: number }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width={size} height={size}>
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-
 const ClockIcon = ({ size = 16 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width={size} height={size}>
     <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
@@ -193,14 +187,6 @@ export default function FloatingActions() {
                   <div className="text-[#C62828] text-xs font-semibold mt-0.5">Sunday — Closed</div>
                 </div>
               </div>
-              <div className="border-t border-gray-100" />
-              <a href="mailto:cearsdhule@gmail.com" className="flex items-center gap-3 hover:text-[#1565C0] transition-colors group" onClick={() => setOpen(null)}>
-                <MailIcon size={16} />
-                <div>
-                  <div className="font-bold text-[#111827] text-xs group-hover:text-[#1565C0] transition-colors">Email</div>
-                  <div className="text-[#374151] text-xs">cearsdhule@gmail.com</div>
-                </div>
-              </a>
               <div className="border-t border-gray-100 pt-1">
                 <a href="tel:9421279065"
                   className="w-full flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm py-2.5 rounded-xl transition-colors"

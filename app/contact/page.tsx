@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { ArrowLeft, Phone, Mail, MapPin, Clock, MessageCircle, Navigation } from "lucide-react";
+import { ArrowLeft, Phone, MapPin, Clock, Navigation } from "lucide-react";
 
 const doctors = [
   {
@@ -173,13 +173,6 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2 pt-2 border-t border-gray-50">
                 <a
-                  href="mailto:cearsdhule@gmail.com"
-                  className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#C62828] transition-colors"
-                >
-                  <Mail size={12} className="text-[#C62828] flex-shrink-0" />
-                  cearsdhule@gmail.com
-                </a>
-                <a
                   href="http://www.sita-ramhospital.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -213,38 +206,6 @@ export default function ContactPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* CTA banner */}
-          <div className="bg-gradient-to-br from-[#C62828] to-[#8E0000] rounded-2xl p-6 md:p-10 text-white text-center">
-            <h2 className="text-lg md:text-2xl font-black mb-2">Book an Appointment</h2>
-            <p className="text-white/70 text-sm mb-6 max-w-md mx-auto">
-              Call or WhatsApp us to schedule your consultation. All discussions are strictly confidential.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="tel:9421279065"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#C62828] font-bold px-6 py-3 rounded-xl hover:bg-red-50 transition-colors text-sm"
-              >
-                <Phone size={15} /> Call 94212 79065
-              </a>
-              <a
-                href="https://wa.me/919421279065?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Sitaram%20Hospital."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/15 border border-white/30 hover:bg-white/25 text-white font-bold px-6 py-3 rounded-xl text-sm transition-colors"
-              >
-                <MessageCircle size={15} /> WhatsApp Us
-              </a>
-              <a
-                href="https://maps.app.goo.gl/z2cjxo26zs38XatXA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/15 border border-white/30 hover:bg-white/25 text-white font-bold px-6 py-3 rounded-xl text-sm transition-colors"
-              >
-                <Navigation size={15} /> Get Directions
-              </a>
             </div>
           </div>
 

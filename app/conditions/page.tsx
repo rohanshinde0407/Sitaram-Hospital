@@ -162,13 +162,6 @@ export default function ConditionsPage() {
                       </h2>
                     </div>
                   </div>
-                  <a
-                    href="#appointment"
-                    className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-white px-4 py-2 rounded-xl flex-shrink-0 hover:opacity-90 transition-opacity"
-                    style={{ background: c.color }}
-                  >
-                    Book Consultation →
-                  </a>
                 </div>
 
                 {/* Card body */}
@@ -239,16 +232,6 @@ export default function ConditionsPage() {
                   </div>
                 </div>
 
-                {/* Mobile CTA */}
-                <div className="sm:hidden px-6 pb-6">
-                  <a
-                    href="#appointment"
-                    className="flex items-center justify-center gap-2 text-sm font-bold text-white w-full py-3 rounded-xl hover:opacity-90 transition-opacity"
-                    style={{ background: c.color }}
-                  >
-                    Book Consultation for {c.label.split(" ")[0]} →
-                  </a>
-                </div>
               </div>
             ))}
           </div>

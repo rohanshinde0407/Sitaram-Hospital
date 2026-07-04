@@ -22,7 +22,7 @@ export default function ClinicOverview() {
             <div className="relative pt-4 pr-4">
 
               {/* Floating tag — outside the clipped area */}
-              <div className="absolute top-0 right-0 z-20 bg-[#C62828] text-white text-xs font-bold px-4 py-2 rounded-2xl shadow-lg rotate-3 whitespace-nowrap">
+              <div className="absolute top-0 right-0 z-20 bg-[#C62828] text-white text-xs font-bold px-4 py-2 rounded-2xl shadow-lg whitespace-nowrap">
                 Advanced Laser Centre
               </div>
 
@@ -40,6 +40,7 @@ export default function ClinicOverview() {
                     fill
                     className="object-contain p-4"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ transform: "scaleX(-1)" }}
                     priority
                   />
                 </div>
@@ -105,8 +106,6 @@ export default function ClinicOverview() {
           {/* RIGHT — Content */}
           <div className="space-y-6">
             <div>
-              <div className="section-eyebrow">Advanced Laser Proctology Treatment</div>
-              <div className="rule" />
               <h2 className="section-title mb-4">
                 Conditions We Treat with<br />
                 <span className="text-[#C62828]">Precision Laser Technology</span>
@@ -141,10 +140,6 @@ export default function ClinicOverview() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a href="/#appointment" className="btn btn-red">Book Consultation</a>
-              <a href="/#treatments" className="btn btn-outline-red">View Treatments</a>
-            </div>
           </div>
         </div>
       </div>

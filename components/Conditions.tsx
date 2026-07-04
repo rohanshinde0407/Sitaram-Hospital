@@ -240,23 +240,6 @@ export default function Conditions() {
           </div>
         </div>
 
-        {/* ── Bottom CTA ── */}
-        <div
-          className="mt-12 md:mt-14 rounded-3xl p-7 md:p-10 text-center text-white"
-          style={{ background: "linear-gradient(135deg, #C62828, #8E0000)" }}
-        >
-          <h3 className="text-lg md:text-2xl font-bold mb-2">
-            Don&rsquo;t Delay Treatment Out of Fear or Shame
-          </h3>
-          <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto mb-5">
-            All consultations are 100% confidential. Our compassionate team treats thousands of
-            patients every year with complete discretion and dignity.
-          </p>
-          <a href="#appointment" className="btn btn-white inline-flex">
-            Consult Our Expert Today →
-          </a>
-        </div>
-
       </div>
     </section>
   );
