@@ -77,8 +77,7 @@ export default function Appointment() {
             {/* Contact links */}
             <div id="contact" className="space-y-2">
               {[
-                { Icon: Phone, label: "Dr. Ravindra Wankhedkar", val: "94222 96495", href: "tel:9422296495", col: "#C62828" },
-                { Icon: Phone, label: "Dr. Meena Wankhedkar", val: "82750 08768", href: "tel:8275008768", col: "#2E7D32" },
+                { Icon: Phone, label: "Hospital Helpline", val: "9421279065", href: "tel:9421279065", col: "#C62828" },
                 { Icon: Phone, label: "Hospital Landline", val: "02562 – 235795 / 297695", href: "tel:02562235795", col: "#1565C0" },
                 { Icon: Mail, label: "Email", val: "cearsdhule@gmail.com", href: "mailto:cearsdhule@gmail.com", col: "#7C3AED" },
                 { Icon: MapPin, label: "Address", val: "Bhangya Maruti Chowk, Lane No. 6, Dhule", href: "#", col: "#B45309" },

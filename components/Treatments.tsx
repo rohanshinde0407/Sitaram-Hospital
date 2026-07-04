@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const treatments = [
   {
     name: "Advanced Laser Procedures",
@@ -71,11 +75,9 @@ const treatments = [
     bg: "#ECFDF5",
     border: "#6EE7B7",
   },
-];
-
-const extras = [
   {
     name: "FILAC – Fistula Laser Closure",
+    short: "FILAC",
     desc: "Sutureless, sphincter-preserving fistula treatment using laser energy to seal the fistula tract from within. Preserves continence and ensures fast recovery.",
     uses: ["Fistula in Ano"],
     color: "#C62828",
@@ -84,6 +86,7 @@ const extras = [
   },
   {
     name: "Sclerotherapy",
+    short: "Sclero",
     desc: "Injection of a sclerosing agent directly into haemorrhoidal tissue to shrink and obliterate them. Safe, effective outpatient procedure for Grade I–II piles.",
     uses: ["Grade I–II Piles"],
     color: "#047857",
@@ -93,12 +96,15 @@ const extras = [
 ];
 
 export default function Treatments() {
+  const [active, setActive] = useState(0);
+  const t = treatments[active];
+
   return (
     <section id="treatments" className="py-16 md:py-24 bg-[#F8FAFB]">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <div id="equipment" className="text-center mb-10">
           <div className="section-eyebrow justify-center">Our Technology</div>
           <div className="rule rule-center" />
           <h2 className="section-title mb-4">State-of-the-Art Treatment Equipment</h2>
@@ -108,105 +114,114 @@ export default function Treatments() {
           </p>
         </div>
 
-        {/* Equipment grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {treatments.map((t) => (
-            <div
-              key={t.name}
-              className="group rounded-2xl overflow-hidden border bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              style={{ borderColor: t.border }}
-            >
-              {/* Image space — no icon */}
-              <div
-                className="relative h-44 flex flex-col items-center justify-center overflow-hidden"
-                style={{ background: t.bg }}
+        {/* ── Pill tabs — scroll on mobile, wrap on md+ ── */}
+        <div className="mb-8">
+          {/* Mobile: horizontal scroll */}
+          <div className="flex md:hidden gap-2 overflow-x-auto pb-2 px-1"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+            {treatments.map((item, i) => (
+              <button
+                key={item.name}
+                onClick={() => setActive(i)}
+                className="flex-shrink-0 py-2 px-4 rounded-full text-sm font-semibold border transition-all duration-200"
+                style={
+                  active === i
+                    ? { color: item.color, background: item.bg, borderColor: item.color,
+                        boxShadow: `0 0 0 3px ${item.color}18` }
+                    : { color: "#6B7280", background: "#FFFFFF", borderColor: "#E5E7EB" }
+                }
               >
-                {/* Decorative rings */}
-                <div
-                  className="absolute w-36 h-36 rounded-full border-2 opacity-10 group-hover:opacity-25 transition-opacity duration-300"
-                  style={{ borderColor: t.color }}
-                />
-                <div
-                  className="absolute w-20 h-20 rounded-full border opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                  style={{ borderColor: t.color }}
-                />
+                {item.name}
+              </button>
+            ))}
+          </div>
+          {/* Desktop: wrap centered */}
+          <div className="hidden md:flex flex-wrap justify-center gap-2">
+            {treatments.map((item, i) => (
+              <button
+                key={item.name}
+                onMouseEnter={() => setActive(i)}
+                onClick={() => setActive(i)}
+                className="py-2 px-4 rounded-full text-sm font-semibold border transition-all duration-200"
+                style={
+                  active === i
+                    ? { color: item.color, background: item.bg, borderColor: item.color,
+                        boxShadow: `0 0 0 3px ${item.color}18, 0 2px 8px rgba(0,0,0,0.08)`,
+                        transform: "translateY(-1px)" }
+                    : { color: "#6B7280", background: "#FFFFFF", borderColor: "#E5E7EB" }
+                }
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
 
-                {/* Treatment short name — centred */}
+        {/* ── Detail panel ── */}
+        <div
+          className="rounded-3xl border-2 bg-white shadow-sm overflow-hidden transition-all duration-300"
+          style={{ borderColor: t.border }}
+        >
+          {/* Top colour stripe — mobile only */}
+          <div className="h-1.5 md:hidden w-full" style={{ background: t.color }} />
+
+          <div className="grid md:grid-cols-[6px_1fr] items-stretch">
+
+            {/* Left colour stripe — desktop only */}
+            <div className="hidden md:block" style={{ background: t.color }} />
+
+            <div className="p-5 md:p-10">
+
+              {/* Badge + title + desc */}
+              <div className="mb-4">
                 <div
-                  className="relative z-10 font-black text-xl tracking-wide"
-                  style={{ color: t.color }}
+                  className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3"
+                  style={{ color: t.color, background: t.bg, border: `1px solid ${t.border}` }}
                 >
                   {t.short}
                 </div>
-                <div className="relative z-10 text-[10px] text-[#9CA3AF] uppercase tracking-widest mt-1">
-                  Procedure
-                </div>
+                <h3 className="text-lg md:text-2xl font-bold text-[#111827] mb-2 leading-snug">
+                  {t.name}
+                </h3>
+                <p className="text-[#374151] text-sm md:text-base leading-relaxed">
+                  {t.desc}
+                </p>
+              </div>
 
-                {/* Uses badge — top right */}
-                <div
-                  className="absolute top-3 right-3 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider"
-                  style={{ background: t.color }}
+              {/* Treats — full width below on mobile, inline on md */}
+              <div className="border-t border-gray-100 pt-4">
+                <div className="text-[10px] font-bold uppercase tracking-widest text-[#9CA3AF] mb-2">
+                  Treats
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {t.uses.map((u) => (
+                    <span
+                      key={u}
+                      className="text-xs font-bold px-3 py-1.5 rounded-full border"
+                      style={{ color: t.color, background: t.bg, borderColor: t.border }}
+                    >
+                      {u}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom hint */}
+              <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2">
+                <span className="text-[11px] text-[#9CA3AF]">
+                  <span className="md:hidden">Tap</span>
+                  <span className="hidden md:inline">Hover or tap</span>
+                  {" "}any pill above to explore our equipment
+                </span>
+                <span
+                  className="ml-auto text-xs font-bold px-3 py-1 rounded-full"
+                  style={{ color: t.color, background: t.bg }}
                 >
-                  {t.uses[0]}
-                </div>
-
-                {/* Bottom accent bar */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-1"
-                  style={{ background: t.color }}
-                />
-              </div>
-
-              {/* Text body */}
-              <div className="p-5">
-                <h3 className="font-bold text-[#111827] text-sm leading-snug mb-2">{t.name}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed mb-3">{t.desc}</p>
-                <div className="flex flex-wrap gap-1">
-                  {t.uses.map((u) => (
-                    <span
-                      key={u}
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                      style={{ color: t.color, background: t.bg, border: `1px solid ${t.border}` }}
-                    >
-                      {u}
-                    </span>
-                  ))}
-                </div>
+                  {active + 1} / {treatments.length}
+                </span>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* FILAC & Sclerotherapy */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
-          {extras.map((t) => (
-            <div
-              key={t.name}
-              className="group rounded-2xl border bg-white shadow-sm hover:shadow-xl p-6 flex gap-5 items-start transition-all duration-300 hover:-translate-y-1"
-              style={{ borderColor: t.border }}
-            >
-              {/* Coloured left accent block */}
-              <div
-                className="w-1.5 self-stretch rounded-full flex-shrink-0"
-                style={{ background: t.color }}
-              />
-              <div>
-                <h3 className="font-bold text-[#111827] text-sm mb-1.5">{t.name}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed mb-2">{t.desc}</p>
-                <div className="flex flex-wrap gap-1">
-                  {t.uses.map((u) => (
-                    <span
-                      key={u}
-                      className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                      style={{ color: t.color, background: t.bg, border: `1px solid ${t.border}` }}
-                    >
-                      {u}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
+          </div>
         </div>
 
       </div>

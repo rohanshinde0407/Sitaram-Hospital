@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const conditions = [
   {
     id: "piles",
     label: "Piles (Haemorrhoids)",
+    image: "/img/Piles%20(Haemorrhoids).png",
     color: "#C62828",
     bg: "#FFF5F5",
     border: "#FECACA",
@@ -16,6 +18,7 @@ const conditions = [
   {
     id: "fissure",
     label: "Fissure in Ano",
+    image: "/img/Fissure%20in%20Ano.png",
     color: "#E65100",
     bg: "#FFF8F4",
     border: "#FED7AA",
@@ -26,6 +29,7 @@ const conditions = [
   {
     id: "fistula",
     label: "Fistula in Ano",
+    image: "/img/Fistula%20in%20Ano.png",
     color: "#2E7D32",
     bg: "#F0FDF4",
     border: "#BBF7D0",
@@ -36,6 +40,7 @@ const conditions = [
   {
     id: "pilonidal-sinus",
     label: "Pilonidal Sinus",
+    image: "/img/Pilonidal%20Sinus.png",
     color: "#1565C0",
     bg: "#EFF6FF",
     border: "#BFDBFE",
@@ -46,6 +51,7 @@ const conditions = [
   {
     id: "perineal-tear",
     label: "Perineal Tear",
+    image: "/img/Perineal%20Tear%2000.png",
     color: "#7B1FA2",
     bg: "#FAF5FF",
     border: "#E9D5FF",
@@ -56,6 +62,7 @@ const conditions = [
   {
     id: "recto-vaginal-fistula",
     label: "Recto-Vaginal Fistula",
+    image: "/img/Recto-Vaginal%20Fistula.png",
     color: "#00695C",
     bg: "#F0FDFA",
     border: "#99F6E4",
@@ -66,6 +73,7 @@ const conditions = [
   {
     id: "anal-stenosis",
     label: "Anal Stenosis",
+    image: "/img/Anal%20Stenosis.png",
     color: "#B45309",
     bg: "#FFFBEB",
     border: "#FDE68A",
@@ -80,11 +88,11 @@ export default function Conditions() {
   const c = conditions[active];
 
   return (
-    <section id="conditions" className="py-16 md:py-24 bg-white">
+    <section id="conditions" className="py-14 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* ── Header ── */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 md:mb-10">
           <div className="section-eyebrow justify-center">Conditions We Treat</div>
           <div className="rule rule-center" />
           <h2 className="section-title mb-4">Ano-Rectal Conditions We Specialize In</h2>
@@ -93,127 +101,131 @@ export default function Conditions() {
           </p>
         </div>
 
-        {/* ── Tab pills ── */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {conditions.map((cond, i) => (
-            <button
-              key={cond.id}
-              onMouseEnter={() => setActive(i)}
-              onClick={() => setActive(i)}
-              className="py-2 px-4 rounded-full text-xs font-bold border transition-all duration-200"
-              style={
-                active === i
-                  ? {
-                      color: cond.color,
-                      background: cond.bg,
-                      borderColor: cond.color,
-                      boxShadow: `0 0 0 3px ${cond.color}18, 0 2px 8px rgba(0,0,0,0.08)`,
-                      transform: "translateY(-1px)",
-                    }
-                  : { color: "#6B7280", background: "#F9FAFB", borderColor: "#E5E7EB" }
-              }
-            >
-              {cond.label}
-            </button>
-          ))}
+        {/* ── Pills — mobile: horizontal scroll | desktop: wrap centered ── */}
+        <div className="mb-8">
+          {/* Mobile */}
+          <div
+            className="flex md:hidden gap-2 overflow-x-auto pb-2 -mx-4 px-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {conditions.map((cond, i) => (
+              <button
+                key={cond.id}
+                onClick={() => setActive(i)}
+                className="flex-shrink-0 py-2 px-4 rounded-full text-sm font-semibold border transition-all duration-200"
+                style={
+                  active === i
+                    ? {
+                        color: cond.color,
+                        background: cond.bg,
+                        borderColor: cond.color,
+                        boxShadow: `0 0 0 3px ${cond.color}20`,
+                      }
+                    : { color: "#374151", background: "#FFFFFF", borderColor: "#E5E7EB" }
+                }
+              >
+                {cond.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:flex flex-wrap justify-center gap-2">
+            {conditions.map((cond, i) => (
+              <button
+                key={cond.id}
+                onMouseEnter={() => setActive(i)}
+                onClick={() => setActive(i)}
+                className="py-2 px-5 rounded-full text-sm font-semibold border transition-all duration-200"
+                style={
+                  active === i
+                    ? {
+                        color: cond.color,
+                        background: cond.bg,
+                        borderColor: cond.color,
+                        boxShadow: `0 0 0 3px ${cond.color}18, 0 2px 8px rgba(0,0,0,0.08)`,
+                        transform: "translateY(-1px)",
+                      }
+                    : { color: "#374151", background: "#FFFFFF", borderColor: "#E5E7EB" }
+                }
+              >
+                {cond.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ── Detail panel ── */}
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-start">
 
-          {/* LEFT — Image placeholder */}
-          <div className="relative order-2 lg:order-1">
-
-            {/* Glow */}
+          {/* LEFT — Image card */}
+          <div>
             <div
-              className="absolute -inset-3 rounded-3xl blur-2xl opacity-20"
-              style={{ background: c.color, transition: "background 0.4s ease" }}
-            />
-
-            {/* Placeholder card */}
-            <div
-              className="relative rounded-3xl overflow-hidden border-2 flex flex-col items-center justify-center gap-3"
-              style={{
-                borderColor: c.border,
-                background: c.bg,
-                height: 380,
-                transition: "border-color 0.4s ease, background 0.4s ease",
-              }}
+              className="rounded-2xl overflow-hidden border-2 shadow-lg bg-white transition-all duration-300"
+              style={{ borderColor: c.border }}
             >
-              {/* Decorative rings */}
-              <div className="absolute w-64 h-64 rounded-full border-2 opacity-10"
-                style={{ borderColor: c.color, transition: "border-color 0.4s ease" }} />
-              <div className="absolute w-40 h-40 rounded-full border opacity-10"
-                style={{ borderColor: c.color, transition: "border-color 0.4s ease" }} />
-
-              {/* Condition name — large, centred */}
+              {/* Image container — fixed aspect ratio so image always fits */}
               <div
-                className="relative z-10 font-black text-2xl md:text-3xl text-center px-8 leading-snug"
-                style={{ color: c.color, transition: "color 0.4s ease" }}
+                className="relative w-full bg-[#F8FAFB]"
+                style={{ aspectRatio: "4/3" }}
               >
-                {c.label}
+                <Image
+                  key={c.id}
+                  src={c.image}
+                  alt={c.label}
+                  fill
+                  style={{ objectFit: "contain", padding: "24px" }}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
               </div>
 
-              <div className="relative z-10 text-xs text-[#9CA3AF] tracking-widest uppercase">
-                Speciality · Ano-Rectal Care
-              </div>
-
-              {/* Bottom accent bar */}
+              {/* Label bar */}
               <div
-                className="absolute bottom-0 left-0 right-0 h-1.5"
-                style={{ background: c.color, transition: "background 0.4s ease" }}
-              />
+                className="flex items-center justify-between px-4 py-3 transition-colors duration-300"
+                style={{ background: c.color }}
+              >
+                <div className="min-w-0 mr-3">
+                  <div className="text-white font-bold text-sm leading-tight truncate">{c.label}</div>
+                  <div className="text-white/70 text-[11px]">Ano-Rectal Care · Laser Treatment</div>
+                </div>
+                <div className="flex-shrink-0 bg-white/20 text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                  Laser ✓
+                </div>
+              </div>
             </div>
           </div>
 
           {/* RIGHT — Content */}
-          <div className="order-1 lg:order-2">
+          <div className="flex flex-col">
 
-            {/* Badge */}
-            <div
-              className="inline-block text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4"
-              style={{
-                color: c.color,
-                background: c.bg,
-                border: `1px solid ${c.border}`,
-                transition: "all 0.3s ease",
-              }}
-            >
-              {c.label}
-            </div>
-
-            <h3 className="text-2xl md:text-3xl font-bold text-[#111827] mb-3">
+            {/* Condition title */}
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#111827] mb-3 leading-snug">
               {c.label}
             </h3>
-            <p className="text-[#374151] leading-relaxed mb-5">{c.desc}</p>
+            <p className="text-[#374151] text-sm md:text-base leading-relaxed mb-5">{c.desc}</p>
 
             {/* Symptoms */}
             <div className="mb-5">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-2.5">
+              <div className="text-[10px] font-black uppercase tracking-wider text-[#6B7280] mb-3">
                 Common Symptoms
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
                 {c.symptoms.map((s) => (
-                  <div
-                    key={s}
-                    className="flex items-center gap-2.5 text-sm px-3 py-2.5 rounded-xl border"
-                    style={{
-                      background: c.bg,
-                      borderColor: c.border,
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    <span className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ background: c.color }} />
+                  <div key={s} className="flex items-start gap-2.5 text-sm">
+                    <span
+                      className="mt-1.5 w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ background: c.color }}
+                    />
                     <span className="text-[#374151]">{s}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Treatment */}
+            {/* Treatment box */}
             <div
-              className="rounded-2xl px-4 py-3 text-sm font-semibold mb-6"
+              className="rounded-xl px-4 py-3 text-sm mb-6"
               style={{
                 background: c.bg,
                 color: c.color,
@@ -221,25 +233,19 @@ export default function Conditions() {
                 transition: "all 0.3s ease",
               }}
             >
-              <strong>Our Treatments:</strong> {c.treatment}
+              <span className="font-bold">Our Treatments: </span>
+              <span className="font-medium">{c.treatment}</span>
             </div>
 
-            <a
-              href="#appointment"
-              className="inline-flex items-center gap-2 text-white font-bold text-sm px-6 py-3 rounded-xl hover:opacity-90 shadow-md"
-              style={{ background: c.color, transition: "background 0.3s ease" }}
-            >
-              Book Consultation for {c.label.split(" ")[0]} →
-            </a>
           </div>
         </div>
 
         {/* ── Bottom CTA ── */}
         <div
-          className="mt-14 rounded-3xl p-8 md:p-10 text-center text-white"
+          className="mt-12 md:mt-14 rounded-3xl p-7 md:p-10 text-center text-white"
           style={{ background: "linear-gradient(135deg, #C62828, #8E0000)" }}
         >
-          <h3 className="text-xl md:text-2xl font-bold mb-2">
+          <h3 className="text-lg md:text-2xl font-bold mb-2">
             Don&rsquo;t Delay Treatment Out of Fear or Shame
           </h3>
           <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto mb-5">

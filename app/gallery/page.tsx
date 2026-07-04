@@ -120,6 +120,7 @@ export default function GalleryPage() {
   return (
     <>
       <Header />
+      <div className="h-14 md:h-24" />
       <main>
         {/* Hero */}
         <div className="bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] py-14 md:py-20">

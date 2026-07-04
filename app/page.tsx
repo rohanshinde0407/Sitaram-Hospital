@@ -13,10 +13,20 @@ export default function HomePage() {
   return (
     <>
       <Header />
+      {/* Spacer for fixed header: mobile h-14 (56px), desktop helpline+nav ≈ h-24 (96px) */}
+      <div className="h-14 md:h-24" />
+
+      {/* ── Trust bar ── */}
+      <div className="bg-gradient-to-r from-[#FFF5F5] via-white to-[#FFF5F5] border-b border-red-100 py-1.5 text-center">
+        <span className="text-[10px] md:text-xs font-bold tracking-wider" style={{ color: "#C62828" }}>
+          40 Years of Trusted Care &nbsp;·&nbsp; Comprehensive Care &nbsp;·&nbsp; All Under One Roof
+        </span>
+      </div>
+
       <main>
         <Hero />
-        <DepartmentsSection />
         <About />
+        <DepartmentsSection />
         <ClinicOverview />
         <Conditions />
         <Treatments />

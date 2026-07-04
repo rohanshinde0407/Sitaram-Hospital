@@ -37,6 +37,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
+      <div className="h-14 md:h-24" />
       <main>
 
         {/* ── Hero banner ── */}
@@ -46,7 +47,7 @@ export default function AboutPage() {
           <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-10 pointer-events-none"
             style={{ background: "radial-gradient(circle, #2E7D32, transparent 70%)", transform: "translate(-40%,40%)" }} />
 
-          <div className="relative max-w-7xl mx-auto px-4 md:px-10 text-center">
+          <div className="relative max-w-3xl mx-auto px-4 md:px-10 text-center">
             <Link href="/" className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors">
               <ArrowLeft size={14} /> Back to Home
             </Link>
@@ -79,6 +80,39 @@ export default function AboutPage() {
         </div>
 
         {/* ════════════════════════════════════════
+            ABOUT THE FOUNDERS
+        ════════════════════════════════════════ */}
+        <section className="py-10 md:py-16 bg-white border-b-4 border-[#C62828]">
+          <div className="max-w-4xl mx-auto px-4 md:px-10">
+            <div className="inline-block bg-[#C62828] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Our Story
+            </div>
+            <h2 className="text-2xl md:text-3xl font-black text-[#111827] mb-6">About the Founders</h2>
+
+            <div className="space-y-4 text-[#374151] text-sm md:text-base leading-relaxed">
+              <p>
+                Dr. Ravi Wankhedkar and Dr. Meena Wankhedkar, after completing their medical education in Pune and Mumbai respectively, chose to return to their roots in Dhule — a small mofussil town — with a vision to provide quality healthcare to the people of the region.
+              </p>
+              <p>
+                Their journey began in <strong>1986</strong> with the establishment of the modest <strong>Bhagirath Clinic</strong>. This was followed by <strong>Devki Nursing Home</strong>, and eventually evolved into <strong>Sitaram Hospital</strong>, a modern multi-specialty healthcare institution. Throughout this journey, their commitment to delivering compassionate, ethical, and affordable medical care has remained unwavering.
+              </p>
+              <p>
+                Sitaram Hospital was inaugurated by renowned social reformer <strong>Shri Anna Hazare</strong> in the august presence of <strong>Dr. S. B. Mujumdar</strong>, Founder and President of Symbiosis, along with several distinguished dignitaries — an occasion that marked an important milestone in the hospital's journey.
+              </p>
+              <p>
+                In addition to their private practice, both doctors have served in various capacities at public hospitals, contributing significantly to community healthcare. Beyond clinical practice, they have played active leadership roles within the medical fraternity, advocating for professional excellence and the welfare of healthcare professionals.
+              </p>
+              <p>
+                Their dedication to society extends well beyond the hospital through numerous community health initiatives, awareness programs, and medical camps aimed at improving public health and reaching underserved populations.
+              </p>
+              <p>
+                Outside their professional commitments, Dr. Ravi and Dr. Meena Wankhedkar enjoy <strong>farming, travelling, sports, and mountaineering</strong> — interests that reflect their spirit of adventure, resilience, and lifelong learning.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ════════════════════════════════════════
             DR. RAVINDRA WANKHEDKAR
         ════════════════════════════════════════ */}
         <section id="ravi" className="py-10 md:py-20 bg-white border-b border-gray-100">
@@ -90,9 +124,9 @@ export default function AboutPage() {
               {/* Passport photo — centered on mobile */}
               <div className="flex-shrink-0 flex flex-col items-center gap-2 w-full sm:w-auto">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl"
-                  style={{ width: 130, height: 166, border: "3px solid #C62828" }}>
+                  style={{ width: 130, height: 166 }}>
                   <Image
-                    src="/img/img1/Dr.%20Ravindra.jpg"
+                    src="/img/img1/Dr%20Ravi%20Wankhedkar.png"
                     alt="Dr. Ravindra S. Wankhedkar"
                     width={130}
                     height={166}
@@ -103,7 +137,6 @@ export default function AboutPage() {
                 <div className="text-center">
                   <div className="text-[10px] font-black uppercase tracking-widest text-[#C62828]">Senior Surgeon</div>
                   <div className="text-[10px] text-[#6B7280] mt-0.5">Sitaram Hospital, Dhule</div>
-                  <div className="text-[9px] text-[#9CA3AF] mt-0.5">Born: 21 September 1963</div>
                 </div>
               </div>
 
@@ -118,7 +151,7 @@ export default function AboutPage() {
                 {/* Key badges */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {[
-                    { text: "National President — IMA 2018", color: "#C62828", bg: "#FFF5F5" },
+                    { text: "National President — Indian Medical Association, 2018", color: "#C62828", bg: "#FFF5F5" },
                     { text: "Treasurer — World Medical Association 2019–21", color: "#1565C0", bg: "#EFF6FF" },
                     { text: "President — SAARC Medical Association 2018–20", color: "#0E7490", bg: "#ECFEFF" },
                     { text: "Hony. Prof. of Surgery — SBH Govt. Medical College", color: "#2E7D32", bg: "#F0FDF4" },
@@ -132,7 +165,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-[#374151] text-sm md:text-base leading-relaxed">
-                  Born on <strong>21 September 1963</strong> to Smt. Bhagirathibai Wankhedkar (school teacher & headmistress) and Late Shri Sitaram Wankhedkar (freedom fighter), Dr. Ravi Wankhedkar is a perfect example of a modern-day <strong className="text-[#C62828]">Polymath</strong> — a person whose expertise and knowledge spans varied subjects. He completed his schooling from <strong>Canossa Convent, Dhule</strong>, and went on to complete <strong>MBBS &amp; MS (General Surgery)</strong> from the renowned <strong>B.J. Medical College, Pune</strong>. Before even gaining admission, he had resolved that his area of work would be his hometown Dhule — having witnessed firsthand the poverty and related health problems of the region.
+                  Son of Smt. Bhagirathibai Wankhedkar (school teacher &amp; headmistress) and Late Shri Sitaram Wankhedkar (freedom fighter), Dr. Ravi Wankhedkar is a perfect example of a modern-day <strong className="text-[#C62828]">Polymath</strong> — a person whose expertise and knowledge spans varied subjects. He completed his schooling from <strong>Canossa Convent, Dhule</strong>, and went on to complete <strong>MBBS &amp; MS (General Surgery)</strong> from the renowned <strong>B.J. Medical College, Pune</strong>. Before even gaining admission, he had resolved that his area of work would be his hometown Dhule — having witnessed firsthand the poverty and related health problems of the region.
                 </p>
               </div>
             </div>
@@ -145,9 +178,9 @@ export default function AboutPage() {
                 color="#C62828" bg="#FFF5F5" border="#FECACA">
                 <div className="space-y-3">
                   {[
-                    { degree: "Schooling", inst: "Canossa Convent, Dhule" },
-                    { degree: "M.B.B.S.", inst: "B.J. Medical College, Pune" },
                     { degree: "M.S. (General Surgery)", inst: "B.J. Medical College, Pune" },
+                    { degree: "M.B.B.S.", inst: "B.J. Medical College, Pune" },
+                    { degree: "Schooling", inst: "Canossa Convent, Dhule" },
                   ].map(e => (
                     <div key={e.degree} className="flex items-start gap-3">
                       <Dot color="#C62828" />
@@ -205,7 +238,7 @@ export default function AboutPage() {
               </SectionCard>
 
               {/* IMA Leadership */}
-              <SectionCard icon={<Globe size={14} color="white" />} title="IMA & International Leadership"
+              <SectionCard icon={<Globe size={14} color="white" />} title="Indian Medical Association & International Leadership"
                 color="#1565C0" bg="#EFF6FF" border="#BFDBFE" span="xl:col-span-2">
                 <div className="grid sm:grid-cols-2 gap-3">
                   {[
@@ -394,9 +427,9 @@ export default function AboutPage() {
               {/* Passport photo — centered on mobile */}
               <div className="flex-shrink-0 flex flex-col items-center gap-2 w-full sm:w-auto">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-xl"
-                  style={{ width: 130, height: 166, border: "3px solid #AD1457" }}>
+                  style={{ width: 130, height: 166 }}>
                   <Image
-                    src="/img/img1/Dr.%20Meena.jpg"
+                    src="/img/img1/Dr%20Mrs%20Meena%20Wankhedkar.png"
                     alt="Dr. Meena R. Wankhedkar"
                     width={130}
                     height={166}
@@ -414,7 +447,7 @@ export default function AboutPage() {
 
               {/* Name & intro */}
               <div className="flex-1 min-w-0">
-                <div className="section-eyebrow mb-1 text-[10px] md:text-xs">Family Physician · Obstetrician · IMA Leader</div>
+                <div className="section-eyebrow mb-1 text-[10px] md:text-xs">Family Physician · Obstetrician · Indian Medical Association Leader</div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#111827] leading-tight mb-3">
                   Dr. Meena R. Wankhedkar
                 </h2>
@@ -447,9 +480,10 @@ export default function AboutPage() {
                 color="#AD1457" bg="#FDF2F8" border="#F9A8D4">
                 <div className="space-y-3">
                   {[
-                    { degree: "M.B.B.S.", inst: "Lokmanya Tilak Municipal Medical College, Mumbai" },
-                    { degree: "FCGP", inst: "Chennai" },
                     { degree: "FIAMS", inst: "Hyderabad" },
+                    { degree: "FCGP", inst: "Chennai" },
+                    { degree: "M.B.B.S.", inst: "Lokmanya Tilak Municipal Medical College, Mumbai" },
+                    { degree: "Schooling", inst: "Dhule" },
                   ].map(e => (
                     <div key={e.degree} className="flex items-start gap-3">
                       <Dot color="#AD1457" />
@@ -462,7 +496,7 @@ export default function AboutPage() {
                 </div>
               </SectionCard>
 
-              <SectionCard icon={<Users size={14} color="white" />} title="Key IMA Roles"
+              <SectionCard icon={<Users size={14} color="white" />} title="Key Indian Medical Association Roles"
                 color="#7B1FA2" bg="#FAF5FF" border="#E9D5FF">
                 <div className="space-y-2">
                   {[
@@ -557,6 +591,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
 
         {/* ── Contact strip ── */}
         <div className="bg-[#111827] py-10 md:py-14">

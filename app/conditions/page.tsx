@@ -94,6 +94,7 @@ export default function ConditionsPage() {
   return (
     <>
       <Header />
+      <div className="h-14 md:h-24" />
       <main>
 
         {/* ── Hero ── */}

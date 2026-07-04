@@ -7,8 +7,6 @@ const doctors = [
   {
     name: "Dr. Ravindra Wankhedkar",
     role: "Senior Surgeon and Laser Proctologist",
-    phone: "9422296495",
-    display: "94222 96495",
     color: "#C62828",
     bg: "#FFF5F5",
     border: "#FECACA",
@@ -16,8 +14,6 @@ const doctors = [
   {
     name: "Dr. Meena Wankhedkar",
     role: "Family Medicine Obstetrician & Laser Specialist",
-    phone: "8275008768",
-    display: "82750 08768",
     color: "#AD1457",
     bg: "#FFF0F6",
     border: "#F9A8D4",
@@ -40,17 +36,12 @@ export default function ContactPage() {
   return (
     <>
       <Header />
+      <div className="h-14 md:h-24" />
       <main className="bg-[#F8FAFB] min-h-screen">
 
         {/* ── Hero ── */}
         <div className="bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] py-10 md:py-16">
           <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 text-sm mb-5 transition-colors"
-            >
-              <ArrowLeft size={14} /> Back to Home
-            </Link>
             <div className="inline-block bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Get In Touch
             </div>
@@ -120,34 +111,23 @@ export default function ContactPage() {
               {doctors.map((d) => (
                 <div
                   key={d.name}
-                  className="bg-white rounded-2xl border p-5 md:p-6 shadow-sm"
+                  className="bg-white rounded-2xl border p-5 md:p-6 shadow-sm flex items-center gap-4"
                   style={{ borderColor: d.border }}
                 >
-                  <div className="mb-4">
+                  <div
+                    className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center font-black text-base text-white"
+                    style={{ background: d.color }}
+                  >
+                    {d.name.split(" ")[1][0]}
+                  </div>
+                  <div>
+                    <div className="font-black text-[#111827] text-base md:text-lg leading-tight">{d.name}</div>
                     <div
-                      className="text-[10px] font-black uppercase tracking-widest mb-1"
+                      className="text-[11px] font-semibold mt-0.5"
                       style={{ color: d.color }}
                     >
                       {d.role}
                     </div>
-                    <div className="font-black text-[#111827] text-base md:text-lg">{d.name}</div>
-                  </div>
-                  <div className="flex gap-2">
-                    <a
-                      href={`tel:${d.phone}`}
-                      className="flex items-center justify-center gap-1.5 text-xs md:text-sm font-bold rounded-xl px-3 md:px-4 py-2.5 md:py-3 transition-opacity hover:opacity-80 flex-1"
-                      style={{ background: d.bg, color: d.color, border: `1px solid ${d.border}` }}
-                    >
-                      <Phone size={13} /> {d.display}
-                    </a>
-                    <a
-                      href={`https://wa.me/91${d.phone}?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 text-xs md:text-sm font-bold rounded-xl px-3 md:px-4 py-2.5 md:py-3 bg-[#F0FDF4] text-[#16A34A] border border-[#BBF7D0] hover:opacity-80 transition-opacity"
-                    >
-                      <MessageCircle size={13} /> WhatsApp
-                    </a>
                   </div>
                 </div>
               ))}
@@ -200,13 +180,13 @@ export default function ContactPage() {
                   cearsdhule@gmail.com
                 </a>
                 <a
-                  href="http://www.sitaramhospital.com"
+                  href="http://www.sita-ramhospital.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#C62828] transition-colors"
                 >
                   <span className="text-[10px] font-bold text-[#C62828]">🌐</span>
-                  www.sitaramhospital.com
+                  www.sita-ramhospital.com
                 </a>
               </div>
             </div>

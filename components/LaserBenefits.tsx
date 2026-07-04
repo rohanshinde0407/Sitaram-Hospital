@@ -1,26 +1,34 @@
-
 const benefits = [
-  { icon: "😌", title: "Minimal Pain", desc: "Significantly less painful than conventional surgery. Laser seals as it operates.", col: "#C62828" },
-  { icon: "🏠", title: "Day Care Procedure", desc: "Discharge within a few hours. No prolonged hospital admission needed.", col: "#2E7D32" },
-  { icon: "✂️", title: "No Cuts or Stitches", desc: "Sutureless treatment. Laser closes tissue instantly as it works.", col: "#1565C0" },
-  { icon: "🩸", title: "Minimal Bleeding", desc: "Laser instantly seals blood vessels, resulting in virtually bloodless procedures.", col: "#E65100" },
-  { icon: "⚡", title: "Faster Recovery", desc: "Resume normal activities in just 3–5 days. No extended bed rest.", col: "#7C3AED" },
-  { icon: "🛡️", title: "Lower Infection Risk", desc: "Laser simultaneously sterilizes the treated area, drastically reducing infection.", col: "#0E7490" },
-  { icon: "🎯", title: "High Precision", desc: "Protects sphincter muscles and surrounding healthy tissue with pin-point accuracy.", col: "#B45309" },
-  { icon: "🔄", title: "Low Recurrence Rate", desc: "Excellent long-term results — significantly less chance of recurrence.", col: "#047857" },
+  { icon: "😌", title: "Minimal Pain",        desc: "Significantly less painful than conventional surgery. Laser seals as it operates.",                       col: "#C62828" },
+  { icon: "🏠", title: "Day Care Procedure",  desc: "Discharge within a few hours. No prolonged hospital admission needed.",                                   col: "#2E7D32" },
+  { icon: "✂️", title: "No Cuts or Stitches", desc: "Sutureless treatment. Laser closes tissue instantly as it works.",                                        col: "#1565C0" },
+  { icon: "🩸", title: "Minimal Bleeding",    desc: "Laser instantly seals blood vessels, resulting in virtually bloodless procedures.",                        col: "#E65100" },
+  { icon: "⚡", title: "Faster Recovery",     desc: "Resume normal activities in just 3–5 days. No extended bed rest.",                                        col: "#7C3AED" },
+  { icon: "🛡️", title: "Lower Infection Risk",desc: "Laser simultaneously sterilizes the treated area, drastically reducing infection.",                       col: "#0E7490" },
+  { icon: "🎯", title: "High Precision",      desc: "Protects sphincter muscles and surrounding healthy tissue with pin-point accuracy.",                      col: "#B45309" },
+  { icon: "🔄", title: "Low Recurrence Rate", desc: "Excellent long-term results — significantly less chance of recurrence.",                                  col: "#047857" },
+];
+
+const stats = [
+  { v: "3–5 days", l: "Recovery Time"    },
+  { v: "Day Care", l: "Same-Day Home"    },
+  { v: "Zero",     l: "Stitches Needed"  },
+  { v: "95%+",     l: "Success Rate"     },
 ];
 
 export default function LaserBenefits() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-[#F8FAFB]">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* Header */}
+        {/* ── Header (matches screenshot) ── */}
         <div className="text-center mb-12">
           <div className="section-eyebrow justify-center">Why Laser?</div>
           <div className="rule rule-center" />
           <h2 className="section-title mb-4">Benefits of Laser Proctology</h2>
-          <div className="flex flex-wrap justify-center gap-3 mb-4">
+
+          {/* Pill tags */}
+          <div className="flex flex-wrap justify-center gap-3 mb-5">
             {["Painless", "Scarless", "Quick Recovery"].map((tag) => (
               <span
                 key={tag}
@@ -30,69 +38,78 @@ export default function LaserBenefits() {
               </span>
             ))}
           </div>
+
+          {/* Description paragraph */}
+          <p className="text-[#111827] font-semibold text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+            Dr. Ravindra Wankhedkar has acquired advanced expertise through specialized training in
+            Coloproctology and Laser treatment in India and abroad — including advanced training in
+            Laser Surgery for Proctology, Germany.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-10 items-start">
-
-          {/* Benefits grid – 4 cols on left side */}
-          <div className="lg:col-span-3 grid grid-cols-2 gap-4">
-            {benefits.map((b) => (
-              <div key={b.title} className="card p-5 group">
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-3 transition-transform group-hover:scale-110 duration-300"
-                  style={{ background: `${b.col}12` }}
-                >
-                  {b.icon}
-                </div>
-                <h3 className="font-bold text-[#111827] text-sm mb-1.5">{b.title}</h3>
-                <p className="text-xs text-[#6B7280] leading-relaxed">{b.desc}</p>
+        {/* ── Benefits grid — 4 cols, full width, no empty space ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {benefits.map((b) => (
+            <div
+              key={b.title}
+              className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg p-5 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center text-xl mb-3 transition-transform group-hover:scale-110 duration-300"
+                style={{ background: `${b.col}14` }}
+              >
+                {b.icon}
               </div>
-            ))}
-          </div>
-
-          {/* Right side – image + summary card */}
-          <div className="lg:col-span-2 space-y-5">
-            {/* Image placeholder */}
-            <div className="relative rounded-3xl overflow-hidden h-72 flex flex-col items-center justify-center gap-3 bg-[#EFF6FF] border-2 border-dashed border-[#BFDBFE]">
-              <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-[#1565C0]/10">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1565C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div className="text-center">
-                <div className="text-sm font-bold text-[#1565C0]">Laser Benefits Hero Image</div>
-                <div className="text-xs text-[#1565C0]/60 mt-0.5">Image coming soon</div>
-              </div>
+              <h3 className="font-bold text-[#111827] text-sm mb-1.5">{b.title}</h3>
+              <p className="text-xs text-[#6B7280] leading-relaxed">{b.desc}</p>
             </div>
+          ))}
+        </div>
 
-            {/* Summary card */}
-            <div className="bg-gradient-to-br from-[#1B5E20] to-[#2E7D32] rounded-3xl p-6 text-white">
-              <div className="text-2xl mb-2">🏆</div>
-              <h3 className="font-bold text-lg mb-2">Why Patients Choose Laser</h3>
-              <p className="text-white/80 text-sm leading-relaxed mb-4">
-                Dr. Ravindra Wankhedkar has acquired advanced expertise through specialized training in
-                Coloproctology and Laser treatment in India and abroad — including advanced training
-                in Laser Surgery for Proctology, Germany.
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { v: "3–5 days", l: "Recovery" },
-                  { v: "Day Care", l: "Same-day home" },
-                  { v: "Zero", l: "Stitches needed" },
-                  { v: "95%+", l: "Success rate" },
-                ].map((s) => (
-                  <div key={s.l} className="bg-white/10 rounded-xl p-3 text-center">
-                    <div className="font-black text-lg">{s.v}</div>
-                    <div className="text-white/65 text-xs">{s.l}</div>
-                  </div>
-                ))}
+        {/* ── Why Patients Choose Laser — full-width banner ── */}
+        <div className="rounded-3xl overflow-hidden shadow-sm" style={{ background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)" }}>
+          <div className="grid md:grid-cols-2 gap-0">
+
+            {/* Left: white card — no red */}
+            <div className="bg-white m-4 md:m-6 rounded-2xl p-6 md:p-8">
+              <div className="inline-flex items-center gap-2 bg-[#F1F5F9] border border-[#E2E8F0] rounded-full px-4 py-1.5 mb-4">
+                <span className="text-lg">🏆</span>
+                <span className="text-[#374151] font-bold text-xs uppercase tracking-widest">Why Patients Choose Laser</span>
               </div>
-              <a href="#appointment" className="btn btn-white w-full justify-center mt-4">
+              <h3 className="text-[#111827] font-bold text-xl md:text-2xl leading-snug mb-3">
+                Advanced Laser Training —<br className="hidden md:block" /> Internationally Certified
+              </h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
+                Trained in Coloproctology and Laser Surgery in India and Germany, Dr. Ravindra
+                Wankhedkar brings world-class precision to every procedure — ensuring the safest,
+                least invasive treatment for every patient.
+              </p>
+              <a
+                href="#appointment"
+                className="inline-flex items-center gap-2 bg-[#111827] text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-[#1F2937] transition-colors shadow"
+              >
                 Book Laser Treatment →
               </a>
             </div>
+
+            {/* Right: stats grid */}
+            <div className="flex items-center p-8 md:p-10">
+              <div className="grid grid-cols-2 gap-3 w-full">
+                {stats.map((s) => (
+                  <div
+                    key={s.l}
+                    className="bg-white rounded-2xl p-5 text-center shadow-sm"
+                  >
+                    <div className="font-black text-2xl md:text-3xl leading-none mb-1" style={{ color: "#C62828" }}>{s.v}</div>
+                    <div className="text-[#6B7280] text-xs font-medium">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

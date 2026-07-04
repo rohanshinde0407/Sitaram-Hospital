@@ -114,6 +114,7 @@ export default function TreatmentsPage() {
   return (
     <>
       <Header />
+      <div className="h-14 md:h-24" />
       <main>
 
         {/* ── Hero ── */}
