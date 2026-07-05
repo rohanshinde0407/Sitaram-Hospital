@@ -74,13 +74,21 @@ export default function Header() {
           <div className="flex items-center justify-between h-14 md:h-[68px] gap-3">
 
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
+            <Link href="/" className="flex-shrink-0 flex items-center gap-2">
               <Image
-                src="/img/img1/Sitaram%20Hospital%20Name%20with%20W%20Logo%2002.png"
+                src="/img/img1/fav.png"
+                alt="Sitaram Hospital Icon"
+                width={40}
+                height={40}
+                className="h-9 sm:h-10 md:h-11 w-auto object-contain flex-shrink-0"
+                priority
+              />
+              <Image
+                src="/img/img1/Name Sitaram Hospital.png"
                 alt="Sitaram Hospital"
                 width={200}
-                height={48}
-                className="h-8 sm:h-9 md:h-11 w-auto object-contain"
+                height={40}
+                className="h-5 sm:h-6 md:h-7 w-auto object-contain"
                 priority
               />
             </Link>

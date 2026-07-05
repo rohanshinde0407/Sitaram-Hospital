@@ -12,13 +12,22 @@ export default function Footer() {
 
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-1 space-y-4">
-              <Image
-                src="/img/img1/Sitaram%20Hospital%20Name%20with%20W%20Logo%2002.png"
-                alt="Sitaram Hospital"
-                width={180}
-                height={55}
-                className="h-11 w-auto object-contain"
-              />
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/img/img1/fav.png"
+                  alt="Sitaram Hospital Icon"
+                  width={40}
+                  height={40}
+                  className="h-11 w-auto object-contain flex-shrink-0"
+                />
+                <Image
+                  src="/img/img1/Name Sitaram Hospital.png"
+                  alt="Sitaram Hospital"
+                  width={200}
+                  height={40}
+                  className="h-6 w-auto object-contain"
+                />
+              </div>
               <p className="text-white/50 text-sm leading-relaxed">
                 Advanced Laser Treatment for Piles, Fissure &amp; Fistula — Day Care Procedures, Home Same Day.
               </p>

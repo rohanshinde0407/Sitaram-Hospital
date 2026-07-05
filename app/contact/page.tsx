@@ -40,7 +40,7 @@ export default function ContactPage() {
       <main className="bg-[#F8FAFB] min-h-screen">
 
         {/* ── Hero ── */}
-        <div className="bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] py-10 md:py-16">
+        <div className="bg-gradient-to-r from-[#0f6d6d] to-[#0a5252] py-10 md:py-16">
           <div className="max-w-3xl mx-auto px-4 md:px-8 text-center">
             <div className="inline-block bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
               Get In Touch

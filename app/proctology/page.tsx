@@ -96,16 +96,50 @@ export default function ProctologyPage() {
       <div className="h-14 md:h-24" />
       <main>
 
-        {/* ── Page hero ── */}
-        <div className="w-full">
+        {/* ── Procto hero image ── */}
+        <div className="bg-[#FFF5F0] w-full flex items-center justify-center overflow-hidden">
           <Image
-            src="/img/hero copy.png"
-            alt="ZEN Laser Procto Care — Sitaram Hospital, Dhule"
-            width={1600}
+            src="/img/procto-care.png"
+            alt="ZEN Laser Procto Care — Number one clinic for your number two problems"
+            width={1200}
             height={500}
-            className="w-full h-auto object-cover"
+            className="w-full max-w-4xl h-auto object-contain"
             priority
           />
+        </div>
+
+        {/* ── Piles Fissure Fistula CTA ── */}
+        <div className="max-w-7xl mx-auto px-4 md:px-10 py-10">
+          <div className="rounded-3xl overflow-hidden border border-red-100 shadow-sm bg-white flex flex-col md:flex-row items-center">
+
+            {/* Left – content */}
+            <div className="flex-1 px-8 py-10 md:px-12 md:py-12">
+              <div className="inline-block text-[10px] font-black uppercase tracking-widest text-[#C62828] bg-[#FFF5F5] border border-red-200 px-3.5 py-1.5 rounded-full mb-5">
+                ZEN Laser Procto Care
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-[#111827] leading-tight mb-3">
+                Piles, Fissure &amp; Fistula
+              </h3>
+              <p className="text-lg md:text-xl font-bold text-[#C62828] mb-3">
+                Don&rsquo;t hesitate. Don&rsquo;t suffer.
+              </p>
+              <p className="text-[#374151] text-base leading-relaxed">
+                Get expert care with safe, effective, and timely treatment.
+              </p>
+            </div>
+
+            {/* Right – image */}
+            <div className="w-full md:w-auto md:flex-shrink-0 flex justify-center md:justify-end">
+              <Image
+                src="/img/img1/Comod.png"
+                alt="Piles Fissure Fistula Treatment"
+                width={420}
+                height={380}
+                className="w-64 md:w-80 lg:w-[380px] h-auto object-contain"
+              />
+            </div>
+
+          </div>
         </div>
 
         {/* ── Conditions heading ── */}

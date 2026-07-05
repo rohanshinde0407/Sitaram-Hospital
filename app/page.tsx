@@ -25,9 +25,10 @@ export default function HomePage() {
         <div className="bg-white py-10 md:py-14 border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-8 leading-tight" style={{ color: "#C62828" }}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight" style={{ color: "#C62828" }}>
               Sitaram Hospital
             </h2>
+            <p className="text-sm font-bold text-[#6B7280] mt-1 mb-8 uppercase tracking-widest">Dhule</p>
 
             <p className="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-8">
               Forty years of Trusted, Comprehensive &amp; Advanced Care with Human Touch
