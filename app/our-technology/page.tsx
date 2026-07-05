@@ -103,10 +103,12 @@ const treatments = [
 ];
 
 const equipmentImages = [
-  { src: "/img/machine-img/machine1.png", label: "Laser System",                desc: "Advanced diode laser — EU certified" },
-  { src: "/img/machine-img/machine2.png", label: "Diagnostic Equipment",        desc: "Precision diagnostic technology" },
-  { src: "/img/machine-img/machine3.png", label: "Surgical Equipment",          desc: "State-of-the-art surgical tools" },
-  { src: "/img/machine-img/machine4.png", label: "Treatment Equipment",         desc: "Advanced treatment technology" },
+  { src: "/img/machine-img/Computerised VDO Anoscopy.png", label: "Computerised VDO Anoscopy",  desc: "Full HD video-guided ano-rectal examination system" },
+  { src: "/img/machine-img/Hal Rar Doppler.png",           label: "HAL-RAR Doppler",            desc: "Doppler-guided haemorrhoidal artery ligation device" },
+  { src: "/img/machine-img/Radio Frequency Ablator.jpg",   label: "Radio Frequency Ablator",    desc: "RF electrosurgical device — Dr.Oppel ST-501" },
+  { src: "/img/machine-img/Rectocam.png",                  label: "Rectocam Full HD",           desc: "High-definition rectoscopy imaging system" },
+  { src: "/img/machine-img/VAAFT.png",                     label: "VAAFT Scope",                desc: "Video-assisted anal fistula treatment scope" },
+  { src: "/img/machine-img/WhatsApp Image 2026-07-05 at 16.35.00.png", label: "Laser System",   desc: "Advanced laser system for proctological procedures" },
 ];
 
 export default function OurTechnologyPage() {
@@ -199,7 +201,7 @@ export default function OurTechnologyPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
               {equipmentImages.map((img, i) => (
                 <div
                   key={i}
