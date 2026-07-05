@@ -30,7 +30,7 @@ export default function HomePage() {
             </h2>
 
             <p className="text-xs font-bold uppercase tracking-widest text-[#6B7280] mb-8">
-              Comprehensive Care · All Under One Roof
+              Forty years of Trusted, Comprehensive &amp; Advanced Care with Human Touch
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

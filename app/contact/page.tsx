@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </p>
               </div>
               <a
-                href="https://maps.app.goo.gl/z2cjxo26zs38XatXA"
+                href="https://maps.app.goo.gl/5QVF217ZRecwuvMcA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#8E0000] text-white font-bold text-sm px-5 py-2.5 rounded-xl transition-colors shadow-sm w-full sm:w-auto"
@@ -86,7 +86,7 @@ export default function ContactPage() {
               style={{ height: "clamp(220px, 40vw, 400px)" }}
             >
               <iframe
-                src="https://maps.google.com/maps?q=Bhangya+Maruti+Chowk+Lane+No+6+Dhule+Maharashtra+424001&output=embed&z=16"
+                src="https://maps.google.com/maps?q=Sitaram+Hospital+Bhangya+Maruti+Chowk+Lane+No+6+Dhule+Maharashtra+424001+India&output=embed&z=17&hl=en"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block" }}
