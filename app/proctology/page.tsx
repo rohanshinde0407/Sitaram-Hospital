@@ -13,7 +13,7 @@ const conditions = [
   {
     id: "piles",
     label: "Piles (Haemorrhoids)",
-    image: "/img/Piles%20(Haemorrhoids).png",
+    image: "/img/Piles (Haemorrhoids).png",
     color: "#C62828",
     bg: "#FFF5F5",
     border: "#FECACA",
@@ -24,7 +24,7 @@ const conditions = [
   {
     id: "fissure",
     label: "Fissure in Ano",
-    image: "/img/Fissure%20in%20Ano.png",
+    image: "/img/Fissure in Ano.png",
     color: "#E65100",
     bg: "#FFF8F4",
     border: "#FED7AA",
@@ -35,7 +35,7 @@ const conditions = [
   {
     id: "fistula",
     label: "Fistula in Ano",
-    image: "/img/Fistula%20in%20Ano.png",
+    image: "/img/Fistula in Ano.png",
     color: "#2E7D32",
     bg: "#F0FDF4",
     border: "#BBF7D0",
@@ -46,7 +46,7 @@ const conditions = [
   {
     id: "pilonidal-sinus",
     label: "Pilonidal Sinus",
-    image: "/img/Pilonidal%20Sinus.png",
+    image: "/img/Pilonidal Sinus.png",
     color: "#1565C0",
     bg: "#EFF6FF",
     border: "#BFDBFE",
@@ -57,7 +57,7 @@ const conditions = [
   {
     id: "perineal-tear",
     label: "Perineal Tear",
-    image: "/img/Perineal%20Tear%2000.png",
+    image: "/img/Perineal Tear 00.png",
     color: "#7B1FA2",
     bg: "#FAF5FF",
     border: "#E9D5FF",
@@ -68,7 +68,7 @@ const conditions = [
   {
     id: "recto-vaginal-fistula",
     label: "Recto-Vaginal Fistula",
-    image: "/img/Recto-Vaginal%20Fistula.png",
+    image: "/img/Recto-Vaginal Fistula.png",
     color: "#00695C",
     bg: "#F0FDFA",
     border: "#99F6E4",
@@ -79,7 +79,7 @@ const conditions = [
   {
     id: "anal-stenosis",
     label: "Anal Stenosis",
-    image: "/img/Anal%20Stenosis.png",
+    image: "/img/Anal Stenosis.png",
     color: "#B45309",
     bg: "#FFFBEB",
     border: "#FDE68A",
@@ -97,11 +97,15 @@ export default function ProctologyPage() {
       <main>
 
         {/* ── Page hero ── */}
-        <div className="bg-gradient-to-r from-[#0f6d6d] to-[#0a5252] py-8 md:py-10 text-white text-center">
-          <div className="max-w-3xl mx-auto px-4">
-            <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-2">ZEN Laser Procto Care · Sitaram Hospital</p>
-            <h1 className="text-3xl md:text-5xl font-black leading-tight">Proctology</h1>
-          </div>
+        <div className="w-full">
+          <Image
+            src="/img/hero copy.png"
+            alt="ZEN Laser Procto Care — Sitaram Hospital, Dhule"
+            width={1600}
+            height={500}
+            className="w-full h-auto object-cover"
+            priority
+          />
         </div>
 
         {/* ── Conditions heading ── */}
