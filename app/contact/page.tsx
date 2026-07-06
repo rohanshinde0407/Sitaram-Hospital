@@ -29,7 +29,7 @@ const helplines = [
 const opd = [
   { slot: "Morning OPD", day: "Monday – Saturday", time: "10:00 AM – 2:00 PM", open: true  },
   { slot: "Evening OPD", day: "Monday – Saturday", time: "6:00 PM – 9:00 PM",  open: true  },
-  { slot: "Sunday",      day: "Sunday",            time: "Closed",              open: false },
+  { slot: "Sunday",      day: "Weekly Off",         time: "Closed",              open: false },
 ];
 
 export default function ContactPage() {

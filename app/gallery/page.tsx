@@ -54,10 +54,10 @@ const galleryImages = [
   },
   {
     src: "/img/machine-img/WhatsApp Image 2026-07-05 at 16.35.00.png",
-    alt: "Laser System",
+    alt: "Anal Sphinctometer",
     cat: "Equipment",
-    label: "Laser System",
-    desc: "Advanced laser system for proctological procedures",
+    label: "Anal Sphinctometer",
+    desc: "To assess anal sphincter tone",
   },
 
   /* ── Conditions ── */

@@ -18,7 +18,7 @@ const proctologyServices = [
   { title: "Laser Piles Treatment",   desc: "Advanced laser ablation for Grade I–IV haemorrhoids — painless, scarless, day care." },
   { title: "Laser Fissure Treatment", desc: "Precision laser healing of chronic anal fissures with rapid, comfortable recovery." },
   { title: "Laser Fistula Treatment", desc: "FILAC & VAAFT laser closure of fistula-in-ano — sphincter-preserving techniques." },
-  { title: "Pilonidal Sinus Surgery", desc: "Minimally invasive excision of pilonidal cysts with low recurrence and fast healing." },
+  { title: "Pilonidal Sinus Surgery", desc: "Minimally invasive excision of Pilonidal Sinus with low recurrence and fast healing." },
   { title: "HAL-RAR Procedure",       desc: "Doppler-guided haemorrhoidal artery ligation with recto-anal repair — no cuts." },
   { title: "Video Rectoscopy",        desc: "Full-HD video-guided anoscopy and rectoscopy for precise diagnosis of ano-rectal conditions." },
   { title: "OPD Consultations",       desc: "Dedicated proctology OPD for assessment, diagnosis and personalised treatment planning." },
@@ -123,7 +123,7 @@ export default function DepartmentsSection() {
                     <div className="text-sm font-bold text-[#111827] group-hover:text-[#1565C0] transition-colors leading-tight mb-1">
                       {s.title}
                     </div>
-                    <p className="text-[11px] text-[#9CA3AF] leading-relaxed">{s.desc}</p>
+                    <p className="text-[11px] text-[#4B5563] leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -161,7 +161,7 @@ export default function DepartmentsSection() {
                     <div className="text-sm font-bold text-[#111827] group-hover:text-[#AD1457] transition-colors leading-tight mb-1">
                       {s.title}
                     </div>
-                    <p className="text-[11px] text-[#9CA3AF] leading-relaxed">{s.desc}</p>
+                    <p className="text-[11px] text-[#4B5563] leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -199,7 +199,7 @@ export default function DepartmentsSection() {
                     <div className="text-sm font-bold text-[#111827] group-hover:text-[#C62828] transition-colors leading-tight mb-1">
                       {s.title}
                     </div>
-                    <p className="text-[11px] text-[#9CA3AF] leading-relaxed">{s.desc}</p>
+                    <p className="text-[11px] text-[#4B5563] leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -237,7 +237,7 @@ export default function DepartmentsSection() {
                     <div className="text-sm font-bold text-[#111827] group-hover:text-[#2E7D32] transition-colors leading-tight mb-1">
                       {s.title}
                     </div>
-                    <p className="text-[11px] text-[#9CA3AF] leading-relaxed">{s.desc}</p>
+                    <p className="text-[11px] text-[#4B5563] leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}

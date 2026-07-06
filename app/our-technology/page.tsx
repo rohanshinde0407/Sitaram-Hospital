@@ -108,7 +108,7 @@ const equipmentImages = [
   { src: "/img/machine-img/Radio Frequency Ablator.jpg",   label: "Radio Frequency Ablator",    desc: "RF electrosurgical device — Dr.Oppel ST-501" },
   { src: "/img/machine-img/Rectocam.png",                  label: "Rectocam Full HD",           desc: "High-definition rectoscopy imaging system" },
   { src: "/img/machine-img/VAAFT.png",                     label: "VAAFT Scope",                desc: "Video-assisted anal fistula treatment scope" },
-  { src: "/img/machine-img/WhatsApp Image 2026-07-05 at 16.35.00.png", label: "Laser System",   desc: "Advanced laser system for proctological procedures" },
+  { src: "/img/machine-img/WhatsApp Image 2026-07-05 at 16.35.00.png", label: "Anal Sphinctometer", desc: "To assess anal sphincter tone" },
 ];
 
 export default function OurTechnologyPage() {
