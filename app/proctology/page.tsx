@@ -41,7 +41,7 @@ const conditions = [
     border: "#BBF7D0",
     desc: "An abnormal tunnel connecting the anal canal to the skin outside, with persistent pus discharge.",
     symptoms: ["Pus or blood discharge", "Pain and swelling around anus", "Recurrent abscesses", "Foul smelling discharge"],
-    treatment: "VAAFT · FiLaC · Laser Fistulotomy",
+    treatment: "VAAFT · FiLaC · Laser Fistulotomy · Fixcision · LIFT",
   },
   {
     id: "pilonidal-sinus",
@@ -52,7 +52,7 @@ const conditions = [
     border: "#BFDBFE",
     desc: "A small cyst near the tailbone containing hair and skin debris, causing recurrent infection and discharge.",
     symptoms: ["Pain and swelling near tailbone", "Pus or blood discharge", "Foul odour from sinus", "Recurrent infection & abscess"],
-    treatment: "Laser Pilonidal Sinus Excision · Pit Picking · Sinusectomy",
+    treatment: "Laser Pilonidal Sinus Excision · Pit Picking · Sinusectomy · Flap Reconstruction",
   },
   {
     id: "perineal-tear",
