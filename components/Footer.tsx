@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
+import { useTranslation } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const t = useTranslation();
+  const f = t.footer;
+
   return (
     <footer>
-      {/* ── Main footer ── */}
       <div className="bg-[#111827] text-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -28,28 +33,16 @@ export default function Footer() {
                   className="h-6 w-auto object-contain"
                 />
               </div>
-              <p className="text-white/50 text-sm leading-relaxed">
-                Advanced Laser Treatment for Piles, Fissure &amp; Fistula — Day Care Procedures, Home Same Day.
-              </p>
-              <p className="text-white/40 text-xs italic border-l-2 border-white/20 pl-3">
-                &ldquo;Number one clinic for your number two problems!&rdquo;
-              </p>
+              <p className="text-white/50 text-sm leading-relaxed">{f.tagline}</p>
+              <p className="text-white/40 text-xs italic border-l-2 border-white/20 pl-3">{f.quote}</p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Quick Links</h4>
+              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">{f.quickLinks}</h4>
               <ul className="space-y-2.5">
-                {[
-                  { label: "Home",           href: "/" },
-                  { label: "About Us",       href: "/about" },
-                  { label: "Services",       href: "/services" },
-                  { label: "Our Technology", href: "/our-technology" },
-                  { label: "Proctology",     href: "/proctology" },
-                  { label: "Our Doctors",    href: "/our-doctors" },
-                  { label: "Contact Us",     href: "/contact" },
-                ].map((l) => (
-                  <li key={l.label}>
+                {f.quickList.map((l) => (
+                  <li key={l.href}>
                     <Link href={l.href} className="text-white/50 hover:text-white text-sm transition-colors">
                       {l.label}
                     </Link>
@@ -60,17 +53,10 @@ export default function Footer() {
 
             {/* Conditions */}
             <div>
-              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Conditions Treated</h4>
+              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">{f.conditions}</h4>
               <ul className="space-y-2.5">
-                {[
-                  { label: "Piles (Haemorrhoids)", href: "/proctology#piles" },
-                  { label: "Fissure in Ano",       href: "/proctology#fissure" },
-                  { label: "Fistula in Ano",       href: "/proctology#fistula" },
-                  { label: "Pilonidal Sinus",      href: "/proctology#pilonidal-sinus" },
-                  { label: "Perineal Tear / RVF",  href: "/proctology#perineal-tear" },
-                  { label: "Anal Stenosis",         href: "/proctology#anal-stenosis" },
-                ].map((c) => (
-                  <li key={c.label}>
+                {f.conditionLinks.map((c) => (
+                  <li key={c.href}>
                     <Link href={c.href} className="text-white/50 hover:text-white text-sm transition-colors">
                       {c.label}
                     </Link>
@@ -81,8 +67,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="space-y-4">
-              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">Contact Us</h4>
-
+              <h4 className="font-bold text-white text-xs uppercase tracking-widest mb-4">{f.contactUs}</h4>
               <a href="tel:9421279065" className="flex items-center gap-2.5 text-white/60 hover:text-white text-sm transition-colors">
                 <Phone size={13} className="text-white/40 flex-shrink-0" />
                 94212 79065
@@ -110,7 +95,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/30 text-xs">
-            <span>© 2025 ZEN Laser Procto Care · Sitaram Hospital, Dhule. All rights reserved.</span>
+            <span>{f.rights}</span>
             <span>www.sita-ramhospital.com</span>
           </div>
         </div>

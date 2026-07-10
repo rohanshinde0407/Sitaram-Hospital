@@ -1,57 +1,47 @@
-const stats = [
-  { value: "40+",   label: "Years of Service",      color: "#C62828" },
-  { value: "1000s", label: "Patients Treated",       color: "#2E7D32" },
-  { value: "8+",    label: "Advanced Procedures",    color: "#1565C0" },
-  { value: "100%",  label: "Day Care",               color: "#E65100" },
-];
+"use client";
 
+import { useTranslation } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const t = useTranslation();
+  const a = t.about;
+
+  const stats = [
+    { value: a.stats.years,      label: a.stats.yearsLabel,      color: "#C62828" },
+    { value: a.stats.patients,   label: a.stats.patientsLabel,   color: "#2E7D32" },
+    { value: a.stats.procedures, label: a.stats.proceduresLabel, color: "#1565C0" },
+    { value: a.stats.dayCare,    label: a.stats.dayCareLabel,    color: "#E65100" },
+  ];
+
   return (
     <section id="about" className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="max-w-3xl mb-12">
           <h2 className="section-title mb-5">
-            A One-Stop Centre for<br />
-            <span style={{ color: "#C62828" }}>Ano-Rectal Disease</span> Treatment
+            {a.sectionTitle.split("Ano-Rectal Disease").map((part, i, arr) =>
+              i < arr.length - 1
+                ? <span key={i}>{part}<span style={{ color: "#C62828" }}>Ano-Rectal Disease</span></span>
+                : <span key={i}>{part}</span>
+            )}
           </h2>
         </div>
 
-        {/* ── Body ── */}
+        {/* Body */}
         <div className="space-y-6 text-[#374151] text-base leading-relaxed mb-12">
-
           <div>
-            <h3 className="text-lg md:text-xl font-black text-[#111827] mb-2">
-              Compassion. Expertise. Trusted for Over 40 Years.
-            </h3>
-            <p>
-              For more than four decades, Sitaram Hospital has been delivering trusted healthcare with excellence
-              in General Surgery, Maternity, Proctology, and Family Medicine through advanced medical expertise
-              and compassionate care.
-            </p>
+            <h3 className="text-lg md:text-xl font-black text-[#111827] mb-2">{a.heading1}</h3>
+            <p>{a.para1}</p>
           </div>
-
           <div>
-            <h3 className="text-lg md:text-xl font-black text-[#C62828] mb-2">
-              ZEN Laser Procto Care
-            </h3>
-            <p>
-              As lifestyle-related ano-rectal conditions continue to rise, ZEN Laser Procto Care offers advanced,
-              minimally invasive laser treatment for Piles, Fissure, and Fistula. Our state-of-the-art day-care
-              centre provides precise treatment, minimal discomfort, faster recovery, and a seamless patient
-              experience — all backed by experienced specialists and modern technology.
-            </p>
+            <h3 className="text-lg md:text-xl font-black text-[#C62828] mb-2">{a.zenTitle}</h3>
+            <p>{a.para2}</p>
           </div>
-
-          <p className="font-bold text-[#111827]">
-            Advanced Care. Faster Recovery. Trusted Excellence.
-          </p>
-
+          <p className="font-bold text-[#111827]">{a.closing}</p>
         </div>
 
-        {/* ── Stats row ── */}
+        {/* Stats row */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-gray-100 pt-10">
           {stats.map((s) => (
             <div key={s.label}
@@ -65,7 +55,6 @@ export default function About() {
         </div>
 
       </div>
-
     </section>
   );
 }

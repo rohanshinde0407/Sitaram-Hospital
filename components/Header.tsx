@@ -5,32 +5,25 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-
-const services = [
-  { label: "Surgery Department",         href: "/services#dept-surgery",    color: "#1565C0", bg: "#EFF6FF" },
-  { label: "OBs / Gyn",                  href: "/services#dept-women",      color: "#AD1457", bg: "#FDF2F8" },
-  { label: "Proctology",                 href: "/services#dept-proctology", color: "#C62828", bg: "#FFF5F5" },
-  { label: "Family Physician",           href: "/services#dept-family",     color: "#2E7D32", bg: "#F0FDF4" },
-];
-
-const navLinks = [
-  { label: "Home",           href: "/",          dropdown: null },
-  { label: "About",          href: "/about",     dropdown: null },
-  { label: "Services",       href: "/services",  dropdown: services },
-  { label: "Our Technology", href: "/our-technology", dropdown: null },
-  { label: "Proctology",     href: "/proctology",  dropdown: null },
-  { label: "Our Doctors",    href: "/our-doctors", dropdown: null },
-  { label: "Gallery",        href: "/gallery",    dropdown: null },
-  { label: "Contact Us",     href: "/contact",   dropdown: null },
-];
+import { useTranslation } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const HEADER_BG = "rgb(15,109,109)";
 
+const serviceColors = [
+  { color: "#1565C0", bg: "#EFF6FF", href: "/services#dept-surgery" },
+  { color: "#AD1457", bg: "#FDF2F8", href: "/services#dept-women" },
+  { color: "#C62828", bg: "#FFF5F5", href: "/services#dept-proctology" },
+  { color: "#2E7D32", bg: "#F0FDF4", href: "/services#dept-family" },
+];
+
 export default function Header() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen]               = useState(false);
-  const [scrolled, setScrolled]               = useState(false);
-  const [openDropdown, setOpenDropdown]       = useState<string | null>(null);
+  const t = useTranslation();
+
+  const [menuOpen, setMenuOpen]                   = useState(false);
+  const [scrolled, setScrolled]                   = useState(false);
+  const [openDropdown, setOpenDropdown]           = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -49,6 +42,25 @@ export default function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href.split("#")[0] && !href.includes("#");
 
+  const dropdownLabel = t.nav.servicesDropdown;
+  const services = [
+    { label: dropdownLabel.surgery,    ...serviceColors[0] },
+    { label: dropdownLabel.womens,     ...serviceColors[1] },
+    { label: dropdownLabel.proctology, ...serviceColors[2] },
+    { label: dropdownLabel.family,     ...serviceColors[3] },
+  ];
+
+  const navLinks = [
+    { label: t.nav.home,          href: "/",              dropdown: null },
+    { label: t.nav.about,         href: "/about",         dropdown: null },
+    { label: t.nav.services,      href: "/services",      dropdown: services },
+    { label: t.nav.ourTechnology, href: "/our-technology", dropdown: null },
+    { label: t.nav.proctology,    href: "/proctology",    dropdown: null },
+    { label: t.nav.ourDoctors,    href: "/our-doctors",   dropdown: null },
+    { label: t.nav.gallery,       href: "/gallery",       dropdown: null },
+    { label: t.nav.contact,       href: "/contact",       dropdown: null },
+  ];
+
   return (
     <>
       <header
@@ -61,11 +73,7 @@ export default function Header() {
         {/* Helpline strip — desktop */}
         <div className="hidden md:block border-b" style={{ background: "rgba(0,0,0,0.15)", borderColor: "rgba(255,255,255,0.12)" }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-1.5 flex justify-center items-center">
-            <span className="text-white/70 text-xs">
-              OPD: Mon–Sat &nbsp;·&nbsp; 10 AM–2 PM &amp; 6 PM–9 PM
-              &nbsp;&nbsp;|&nbsp;&nbsp;
-              📍 Bhangya Maruti Chowk, Lane No. 6, Dhule
-            </span>
+            <span className="text-white/70 text-xs">{t.opd.strip} &nbsp;&nbsp;|&nbsp;&nbsp; 📍 {t.opd.location}</span>
           </div>
         </div>
 
@@ -102,7 +110,7 @@ export default function Header() {
                 if (l.dropdown) {
                   return (
                     <div
-                      key={l.label}
+                      key={l.href}
                       className="relative"
                       onMouseEnter={() => openDrop(l.label)}
                       onMouseLeave={closeDrop}
@@ -117,14 +125,12 @@ export default function Header() {
                           className="text-white/70 transition-transform duration-200"
                           style={{ transform: dropOpen ? "rotate(180deg)" : "rotate(0deg)" }}
                         />
-                        {/* Underline */}
                         <span
                           className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-white transition-all duration-200 origin-left"
                           style={{ transform: active || dropOpen ? "scaleX(1)" : "scaleX(0)" }}
                         />
                       </button>
 
-                      {/* Dropdown panel */}
                       <div
                         className="absolute top-full left-0 mt-1.5 w-52 bg-white rounded-2xl border border-gray-100 py-2 overflow-hidden"
                         style={{
@@ -139,7 +145,7 @@ export default function Header() {
                       >
                         {l.dropdown.map((item) => (
                           <Link
-                            key={item.label}
+                            key={item.href}
                             href={item.href}
                             className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-[#374151] transition-all duration-150 hover:pl-5"
                             onMouseEnter={e => { e.currentTarget.style.color = item.color; e.currentTarget.style.background = item.bg; }}
@@ -156,7 +162,7 @@ export default function Header() {
 
                 return (
                   <Link
-                    key={l.label}
+                    key={l.href}
                     href={l.href}
                     className="relative group px-3 lg:px-4 py-2.5 text-sm font-semibold transition-colors duration-200"
                     style={{ color: active ? "white" : "rgba(255,255,255,0.85)" }}
@@ -164,7 +170,6 @@ export default function Header() {
                     <span className="group-hover:text-white transition-colors duration-200">
                       {l.label}
                     </span>
-                    {/* Underline */}
                     <span
                       className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-white transition-all duration-200 origin-left group-hover:scale-x-100"
                       style={{ transform: active ? "scaleX(1)" : "scaleX(0)" }}
@@ -174,8 +179,9 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Hamburger */}
+            {/* Right side: Language switcher + hamburger */}
             <div className="flex items-center gap-2 flex-shrink-0">
+              <LanguageSwitcher />
               <button
                 onClick={() => setMenuOpen(o => !o)}
                 className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl transition-colors"
@@ -189,7 +195,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile menu — smooth slide */}
+        {/* Mobile menu */}
         <div
           className="md:hidden overflow-hidden"
           style={{
@@ -217,7 +223,7 @@ export default function Header() {
 
                 if (l.dropdown) {
                   return (
-                    <div key={l.label}>
+                    <div key={l.href}>
                       <button
                         onClick={() => setMobileServicesOpen(o => !o)}
                         className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-sm font-semibold mb-1 text-[#374151] hover:bg-gray-50 transition-colors"
@@ -237,7 +243,7 @@ export default function Header() {
                         <div className="ml-3 mb-2 space-y-1">
                           {l.dropdown.map((item) => (
                             <Link
-                              key={item.label}
+                              key={item.href}
                               href={item.href}
                               onClick={() => setMenuOpen(false)}
                               className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors"
@@ -255,7 +261,7 @@ export default function Header() {
 
                 return (
                   <Link
-                    key={l.label}
+                    key={l.href}
                     href={l.href}
                     onClick={() => setMenuOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors mb-1"
@@ -270,7 +276,6 @@ export default function Header() {
                 );
               })}
             </nav>
-
 
           </div>
         </div>

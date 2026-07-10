@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import FloatingActions from "@/components/FloatingActions";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -30,8 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className="min-h-screen flex flex-col antialiased overflow-x-hidden">
-        {children}
-        <FloatingActions />
+        <LanguageProvider>
+          {children}
+          <FloatingActions />
+        </LanguageProvider>
       </body>
     </html>
   );
