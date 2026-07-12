@@ -1,7 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Ano-Rectal Conditions — Piles, Fissure, Fistula & More | ZEN Laser Procto Care, Dhule",
+  description:
+    "Detailed guide to ano-rectal conditions treated at ZEN Laser Procto Care, Dhule: Piles (Haemorrhoids), Fissure in Ano, Fistula in Ano, Pilonidal Sinus, Perineal Tear, Recto-Vaginal Fistula, Anal Stenosis — symptoms, causes, and laser treatments.",
+  keywords:
+    "piles symptoms dhule, fissure in ano dhule, fistula treatment dhule, pilonidal sinus dhule, anal stenosis dhule, haemorrhoids dhule, ano-rectal conditions dhule, recto-vaginal fistula treatment",
+  openGraph: {
+    type: "website",
+    url: "https://www.sita-ramhospital.com/conditions",
+    siteName: "Sitaram Hospital & ZEN Laser Procto Care",
+    title: "Ano-Rectal Conditions — Piles, Fissure, Fistula & More | Dhule",
+    description:
+      "Symptoms, causes and laser treatment options for Piles, Fissure, Fistula, Pilonidal Sinus and other ano-rectal conditions at ZEN Laser Procto Care, Dhule.",
+    images: [{ url: "https://www.sita-ramhospital.com/img/procto-care.png", alt: "Ano-Rectal Conditions — ZEN Laser Procto Care Dhule" }],
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ano-Rectal Conditions Treated | ZEN Laser Procto Care, Dhule",
+    description: "Piles, Fissure, Fistula, Pilonidal Sinus and more — symptoms and laser treatments at Sitaram Hospital, Dhule.",
+    images: ["https://www.sita-ramhospital.com/img/procto-care.png"],
+  },
+  alternates: { canonical: "https://www.sita-ramhospital.com/conditions" },
+};
 
 const conditions = [
   {

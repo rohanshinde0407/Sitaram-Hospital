@@ -1,7 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Laser Treatments for Piles, Fissure & Fistula — Advanced Procedures | ZEN Laser Procto Care, Dhule",
+  description:
+    "Complete guide to advanced laser procedures at ZEN Laser Procto Care, Dhule: Laser Hemorrhoidoplasty, DGHAL-RAR, VAAFT, FILAC, RFA, Anal Sphincterometry, Sclerotherapy — painless, day care, same-day discharge.",
+  keywords:
+    "laser piles treatment dhule, VAAFT fistula dhule, FILAC fistula laser dhule, DGHAL-RAR dhule, laser hemorrhoidoplasty dhule, RFA piles dhule, sclerotherapy dhule, day care proctology dhule",
+  openGraph: {
+    type: "website",
+    url: "https://www.sita-ramhospital.com/treatments",
+    siteName: "Sitaram Hospital & ZEN Laser Procto Care",
+    title: "Laser Treatments — Piles, Fissure & Fistula | ZEN Laser Procto Care, Dhule",
+    description:
+      "Advanced laser procedures for ano-rectal conditions at ZEN Laser Procto Care, Dhule — Painless, Day Care, Same-Day Discharge. VAAFT, FILAC, DGHAL-RAR, RFA and more.",
+    images: [{ url: "https://www.sita-ramhospital.com/img/procto-care.png", alt: "Laser Treatments — ZEN Laser Procto Care Dhule" }],
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Laser Treatments for Piles, Fissure & Fistula | Dhule",
+    description: "VAAFT, FILAC, DGHAL-RAR, Laser Hemorrhoidoplasty and more — day care laser procedures at ZEN Laser Procto Care, Dhule.",
+    images: ["https://www.sita-ramhospital.com/img/procto-care.png"],
+  },
+  alternates: { canonical: "https://www.sita-ramhospital.com/treatments" },
+};
 
 const treatments = [
   {
