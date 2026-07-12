@@ -132,14 +132,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Treatments Page -->
-  <url>
-    <loc>https://www.sita-ramhospital.com/treatments</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Our Doctors -->
   <url>
     <loc>https://www.sita-ramhospital.com/our-doctors</loc>
