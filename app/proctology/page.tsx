@@ -1,9 +1,11 @@
 import ProctologyContent from "./ProctologyContent";
 
 export const metadata = {
-  title: "Proctology — ZEN Laser Procto Care, Sitaram Hospital Dhule",
+  title: "Piles, Fissure & Fistula Laser Treatment in Dhule — ZEN Laser Procto Care",
   description:
-    "Advanced laser treatment for Piles, Fissure, Fistula, Pilonidal Sinus and more ano-rectal conditions at ZEN Laser Procto Care, Sitaram Hospital, Dhule.",
+    "Suffering from Piles, Fissure or Fistula in Dhule? Get painless laser treatment at ZEN Laser Procto Care, Sitaram Hospital. No cuts, no stitches, home the same day. Dr. Ravindra Wankhedkar.",
+  keywords:
+    "pailes dhule, piles dhule, fisher dhule, fissure in ano dhule, fistula dhule, mulvyadh dhule, bawaseer dhule, bleeding while passing stool dhule, pain in anus dhule, pus discharge near anus dhule, laser piles surgery dhule, no cut piles treatment dhule, painless piles treatment dhule, same day discharge piles dhule, pilonidal sinus dhule, ano-rectal doctor dhule, proctologist dhule, wankhedkar hospital piles",
   openGraph: {
     type: "website" as const,
     url: "https://www.sita-ramhospital.com/proctology",

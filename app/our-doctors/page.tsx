@@ -1,9 +1,11 @@
 import OurDoctorsContent from "./OurDoctorsContent";
 
 export const metadata = {
-  title: "Our Doctors — Sitaram Hospital, Dhule",
+  title: "Dr. Ravi Wankhedkar & Dr. Meena Wankhedkar — Sitaram Hospital, Dhule",
   description:
-    "Meet Dr. Ravindra S. Wankhedkar and Dr. Meena R. Wankhedkar — nationally and internationally recognised specialists in coloproctology, laser surgery, and family medicine at Sitaram Hospital, Dhule.",
+    "Dr. Ravindra Wankhedkar — IMA National President 2018, Senior Surgeon & Laser Proctologist at Sitaram Hospital, Dhule. Dr. Meena Wankhedkar — Family Physician & Obstetrician. Wankhedkar Hospital, Dhule.",
+  keywords:
+    "dr ravi wankhedkar dhule, dr ravindra wankhedkar, ravi wankhedkar hospital dhule, dr meena wankhedkar dhule, meena wankhedkar hospital dhule, wankhedkar hospital dhule, wankhedkar doctor dhule, IMA president doctor dhule, best surgeon dhule, best doctor dhule, coloproctologist dhule, laser surgeon dhule, family doctor dhule, sitaram hospital doctors",
   openGraph: {
     type: "website" as const,
     url: "https://www.sita-ramhospital.com/our-doctors",

@@ -1,9 +1,11 @@
 import AboutContent from "./AboutContent";
 
 export const metadata = {
-  title: "About Us — Sitaram Hospital, Dhule",
+  title: "About Sitaram Hospital — Dr. Ravi & Dr. Meena Wankhedkar, Dhule",
   description:
-    "Learn the story behind Sitaram Hospital and ZEN Laser Procto Care, Dhule — four decades of compassionate, ethical, and affordable healthcare by Dr. Ravi and Dr. Meena Wankhedkar.",
+    "Sitaram Hospital, Dhule — started in 1986 by Dr. Ravi Wankhedkar and Dr. Meena Wankhedkar. Trusted for 40+ years by the people of Dhule and North Maharashtra for affordable, compassionate healthcare.",
+  keywords:
+    "sitaram hospital history dhule, dr ravi wankhedkar dhule, dr meena wankhedkar dhule, wankhedkar hospital dhule story, who started sitaram hospital, best doctors dhule, trusted hospital dhule, affordable hospital dhule, anna hazare hospital dhule, bhagirath clinic dhule, devki nursing home dhule",
   openGraph: {
     type: "website" as const,
     url: "https://www.sita-ramhospital.com/about",

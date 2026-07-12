@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Laser Treatments for Piles, Fissure & Fistula — Advanced Procedures | ZEN Laser Procto Care, Dhule",
+  title: "Painless Laser Surgery for Piles, Fissure & Fistula in Dhule — No Cuts, Home Same Day",
   description:
-    "Complete guide to advanced laser procedures at ZEN Laser Procto Care, Dhule: Laser Hemorrhoidoplasty, DGHAL-RAR, VAAFT, FILAC, RFA, Anal Sphincterometry, Sclerotherapy — painless, day care, same-day discharge.",
+    "Laser surgery for Piles (Pailes), Fissure (Fisher) & Fistula in Dhule — no cuts, no stitches, go home same day. VAAFT, FILAC, DGHAL-RAR, Laser Hemorrhoidoplasty at Sitaram Hospital, Dhule.",
   keywords:
-    "laser piles treatment dhule, VAAFT fistula dhule, FILAC fistula laser dhule, DGHAL-RAR dhule, laser hemorrhoidoplasty dhule, RFA piles dhule, sclerotherapy dhule, day care proctology dhule",
+    "laser surgery for pailes dhule, fisher laser treatment dhule, fistula laser surgery dhule, no cut surgery dhule, painless piles surgery dhule, day care surgery dhule, same day discharge piles dhule, no stitch surgery dhule, VAAFT fistula dhule, FILAC fistula laser dhule, DGHAL-RAR dhule, laser hemorrhoidoplasty dhule, RFA piles dhule, sclerotherapy dhule, wankhedkar hospital laser surgery",
   openGraph: {
     type: "website",
     url: "https://www.sita-ramhospital.com/treatments",

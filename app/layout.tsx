@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description:
     "Sitaram Hospital, Dhule — 40+ years of trusted healthcare. ZEN Laser Procto Care: advanced laser treatment for Piles, Fissure & Fistula. Painless · Day Care · Home Same Day. Dr. Ravindra Wankhedkar.",
   keywords:
-    "sitaram hospital dhule, ZEN laser procto care, piles treatment dhule, fissure treatment dhule, fistula treatment dhule, laser proctology dhule, ano-rectal treatment dhule, Dr Ravindra Wankhedkar, best hospital dhule, haemorrhoids dhule",
+    "sitaram hospital dhule, ZEN laser procto care, dhule top hospital, best hospital in dhule, wankhedkar hospital dhule, ravi wankhedkar hospital, dr meena wankhedkar hospital, piles treatment dhule, pailes dhule, fisher dhule, fissure treatment dhule, fistula treatment dhule, mulvyadh dhule, bawaseer dhule, laser proctology dhule, ano-rectal treatment dhule, Dr Ravindra Wankhedkar, Dr Meena Wankhedkar, haemorrhoids dhule, bleeding piles dhule, pain during passing stool dhule",
   metadataBase: new URL("https://www.sita-ramhospital.com"),
   openGraph: {
     type: "website",

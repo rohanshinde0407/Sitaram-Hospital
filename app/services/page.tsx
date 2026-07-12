@@ -1,9 +1,11 @@
 import ServicesContent from "./ServicesContent";
 
 export const metadata = {
-  title: "Our Services — Sitaram Hospital, Dhule",
+  title: "Hospital Services in Dhule — Surgery, Maternity, Proctology | Sitaram Hospital",
   description:
-    "Comprehensive healthcare services at Sitaram Hospital — Surgery, Women's Department, Proctology (Piles, Fissure, Fistula) and Family Physician services. All under one roof in Dhule, Maharashtra.",
+    "Sitaram Hospital Dhule — Surgery, Laparoscopic Surgery, Maternity, Normal & Caesarean Delivery, Laser Piles Treatment, Family Doctor. Wankhedkar Hospital, Dhule. All services under one roof.",
+  keywords:
+    "dhule top hospital services, wankhedkar hospital dhule services, hernia surgery dhule, appendix surgery dhule, laparoscopic surgery dhule, maternity hospital dhule, normal delivery dhule, caesarean dhule, delivery hospital dhule, gynaecologist dhule, family doctor dhule, piles fissure fistula dhule, pailes treatment dhule, fisher treatment dhule, sitaram hospital services",
   openGraph: {
     type: "website" as const,
     url: "https://www.sita-ramhospital.com/services",

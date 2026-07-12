@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Ano-Rectal Conditions — Piles, Fissure, Fistula & More | ZEN Laser Procto Care, Dhule",
+  title: "Piles, Fissure & Fistula Symptoms & Causes — ZEN Laser Procto Care, Dhule",
   description:
-    "Detailed guide to ano-rectal conditions treated at ZEN Laser Procto Care, Dhule: Piles (Haemorrhoids), Fissure in Ano, Fistula in Ano, Pilonidal Sinus, Perineal Tear, Recto-Vaginal Fistula, Anal Stenosis — symptoms, causes, and laser treatments.",
+    "Understand your condition — Piles (Pailes), Fissure (Fisher), Fistula, Pilonidal Sinus, Anal Stenosis. Symptoms, causes and laser treatment at ZEN Laser Procto Care, Sitaram Hospital, Dhule.",
   keywords:
-    "piles symptoms dhule, fissure in ano dhule, fistula treatment dhule, pilonidal sinus dhule, anal stenosis dhule, haemorrhoids dhule, ano-rectal conditions dhule, recto-vaginal fistula treatment",
+    "pailes symptoms, piles symptoms dhule, fisher symptoms dhule, fissure in ano symptoms dhule, fistula symptoms dhule, mulvyadh lakshane, bawaseer symptoms, bleeding while toilet dhule, burning during passing stool dhule, pain in anus dhule, pus discharge near anus dhule, pilonidal sinus symptoms dhule, anal stenosis dhule, haemorrhoids dhule, recto-vaginal fistula dhule, ano-rectal conditions dhule, wankhedkar hospital conditions treated",
   openGraph: {
     type: "website",
     url: "https://www.sita-ramhospital.com/conditions",
