@@ -87,7 +87,11 @@ const jsonLd = {
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, UPI, Card",
       "areaServed": ["Dhule", "North Maharashtra", "Maharashtra"],
-      "sameAs": ["https://maps.app.goo.gl/5QVF217ZRecwuvMcA"],
+      "sameAs": [
+        "https://maps.app.goo.gl/5QVF217ZRecwuvMcA",
+        "https://www.facebook.com/people/Sitaram-Hospital-Dhule/61591739822089/",
+        "https://www.instagram.com/sitaramhospitaldhule/",
+      ],
     },
     {
       "@type": "Physician",
